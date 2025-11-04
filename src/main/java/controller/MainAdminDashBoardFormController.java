@@ -1,6 +1,8 @@
 package controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,12 +11,19 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.shape.Circle;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class MainAdminDashBoardFormController implements Initializable {
+
+    private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm:ss a");
+
+    private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy");
 
     @FXML
     private JFXButton btnDashboard;
@@ -106,9 +115,21 @@ public class MainAdminDashBoardFormController implements Initializable {
         }
     }
 
+    private void setDateTime(){
+        Timeline clock = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
+            LocalDateTime now = LocalDateTime.now();
+            lblTime.setText(now.format(timeFormatter));
+            lblData.setText(now.format(dateTimeFormatter));
+        }));
+        clock.setCycleCount(Timeline.INDEFINITE);
+        clock.play();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Circle clip = new Circle(28, 28,25);
         imgProfilePic.setClip(clip);
+
+        setDateTime();
     }
 }
