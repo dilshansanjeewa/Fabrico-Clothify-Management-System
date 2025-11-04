@@ -31,6 +31,10 @@ public class MainAdminDashBoardFormController implements Initializable {
     @FXML
     private JFXButton btnEmployees;
 
+
+    @FXML
+    private JFXButton btnItems;
+
     @FXML
     private JFXButton btnLogout;
 
@@ -74,6 +78,11 @@ public class MainAdminDashBoardFormController implements Initializable {
 
     @FXML
     void btnEmployeesOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnItemsOnAction(ActionEvent event) {
 
     }
 

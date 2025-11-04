@@ -80,42 +80,42 @@
                         <Image url="@../images/icons/order%20icon.png" />
                      </image>
                   </ImageView>
-                  <JFXButton fx:id="btnEmployees" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="184.0" onAction="#btnEmployeesOnAction" prefHeight="50.0" prefWidth="180.0" text="         Employees" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold" size="18.0" />
-                     </font>
-                  </JFXButton>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="16.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/icons/employee%20icon.png" />
-                     </image>
-                  </ImageView>
-                  <JFXButton fx:id="btnSupplyers" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="234.0" onAction="#btnSupplyersOnAction" prefHeight="50.0" prefWidth="180.0" text="         Supplyers" textFill="WHITE">
+                  <JFXButton fx:id="btnEmployees" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="234.0" onAction="#btnEmployeesOnAction" prefHeight="50.0" prefWidth="180.0" text="         Employees" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="18.0" />
                      </font>
                   </JFXButton>
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="16.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/icons/supplyer%20icon.png" />
+                        <Image url="@../images/icons/employee%20icon.png" />
                      </image>
                   </ImageView>
-                  <JFXButton fx:id="btnReports" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="284.0" onAction="#btnReportsOnAction" prefHeight="50.0" prefWidth="180.0" text="         Reports" textFill="WHITE">
+                  <JFXButton fx:id="btnSupplyers" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="284.0" onAction="#btnSupplyersOnAction" prefHeight="50.0" prefWidth="180.0" text="         Supplyers" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="18.0" />
                      </font>
                   </JFXButton>
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="16.0" layoutY="294.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/icons/reports%20icon.png" />
+                        <Image url="@../images/icons/supplyer%20icon.png" />
                      </image>
                   </ImageView>
-                  <JFXButton fx:id="btnSettings" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="334.0" onAction="#btnSettingsOnAction" prefHeight="50.0" prefWidth="180.0" text="         Settings" textFill="WHITE">
+                  <JFXButton fx:id="btnReports" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="334.0" onAction="#btnReportsOnAction" prefHeight="50.0" prefWidth="180.0" text="         Reports" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="18.0" />
                      </font>
                   </JFXButton>
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="16.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons/reports%20icon.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btnSettings" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="384.0" onAction="#btnSettingsOnAction" prefHeight="50.0" prefWidth="180.0" text="         Settings" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="16.0" layoutY="394.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/icons/setting%20icon.png" />
                      </image>
@@ -128,6 +128,16 @@
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="16.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="9.666666666666629">
                      <image>
                         <Image url="@../images/icons/logout%20icon.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btnItems" alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="5.0" layoutY="184.0" onAction="#btnItemsOnAction" prefHeight="50.0" prefWidth="180.0" text="         Items" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="16.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons/item%20icon.png" />
                      </image>
                   </ImageView>
                </children></AnchorPane>
