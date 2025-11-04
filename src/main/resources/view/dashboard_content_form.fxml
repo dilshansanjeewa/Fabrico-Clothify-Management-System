@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="560.0" prefWidth="1000.0" style="-fx-background-color: F3EDE4;" styleClass="Pane" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardContentFormController">
    <children>
-      <Label layoutX="10.0" layoutY="42.0" text="Good Morning, Dilshan">
+      <Label fx:id="lblGreeting" layoutX="10.0" layoutY="42.0" text="Good Morning, Dilshan">
          <font>
             <Font name="Arial Narrow Bold" size="32.0" />
          </font>
