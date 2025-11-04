@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="620.0" prefWidth="1180.0" style="-fx-background-color: F3EDE4;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainAdminDashBoardFormController">
+   <children>
+      <BorderPane fx:id="mainBorderPane" prefHeight="620.0" prefWidth="1180.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="61.0" prefWidth="1180.0" style="-fx-background-color: B9935A;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="lblData" alignment="CENTER_RIGHT" layoutX="702.6666666666667" layoutY="6.0" prefHeight="20.0" prefWidth="200.0" text="Thursday, Octomber 30, 2025" textFill="WHITE" AnchorPane.rightAnchor="277.33333333333326">
+                     <font>
+                        <Font name="Arial Narrow Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTime" alignment="CENTER_RIGHT" layoutX="702.6666666666667" layoutY="25.0" prefHeight="29.0" prefWidth="200.0" text="11:45:51 AM" textFill="WHITE" AnchorPane.rightAnchor="277.33333333333326">
+                     <font>
+                        <Font name="Arial Narrow Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="imgProfilePic" fitHeight="55.0" fitWidth="55.0" layoutX="921.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="204.0">
+                     <image>
+                        <Image url="@../images/users/admin%20demo.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblUserName" layoutX="986.0" layoutY="25.0" prefHeight="29.0" prefWidth="180.0" text="Dilshan Sanjeewa" textFill="WHITE" AnchorPane.rightAnchor="14.0">
+                     <font>
+                        <Font name="Arial Narrow Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblRole" layoutX="986.0" layoutY="6.0" prefHeight="20.0" prefWidth="70.0" text="Admin" textFill="WHITE" AnchorPane.rightAnchor="124.0">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="60.0" fitWidth="181.0" layoutX="7.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logos/fabrico%20logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="550.0" prefWidth="180.0" style="-fx-background-color: B9935A;" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="btnDashboard" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="34.0" onAction="#btnDashboardOnAction" prefHeight="50.0" prefWidth="180.0" text="         Dashboard" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="16.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons/dashboard%20icon.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btnPos" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="84.0" onAction="#btnPosOnAction" prefHeight="50.0" prefWidth="180.0" text="         POS" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="16.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons/pos%20icon.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btnOrders" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="134.0" onAction="#btnOrdersOnAction" prefHeight="50.0" prefWidth="180.0" text="         Orders" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="16.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons/order%20icon.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btnEmployees" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="184.0" onAction="#btnEmployeesOnAction" prefHeight="50.0" prefWidth="180.0" text="         Employees" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="16.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons/employee%20icon.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btnSupplyers" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="234.0" onAction="#btnSupplyersOnAction" prefHeight="50.0" prefWidth="180.0" text="         Supplyers" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="16.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons/supplyer%20icon.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btnReports" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="284.0" onAction="#btnReportsOnAction" prefHeight="50.0" prefWidth="180.0" text="         Reports" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="16.0" layoutY="294.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons/reports%20icon.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btnSettings" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="334.0" onAction="#btnSettingsOnAction" prefHeight="50.0" prefWidth="180.0" text="         Settings" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="16.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons/setting%20icon.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btnLogout" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="509.0" onAction="#btnLogoutOnAction" prefHeight="50.0" prefWidth="180.0" text="         Logout" textFill="WHITE" AnchorPane.bottomAnchor="0.33333333333337123">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="16.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="9.666666666666629">
+                     <image>
+                        <Image url="@../images/icons/logout%20icon.png" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
