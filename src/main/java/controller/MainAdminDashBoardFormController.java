@@ -3,12 +3,14 @@ package controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.shape.Circle;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -58,7 +60,7 @@ public class MainAdminDashBoardFormController implements Initializable {
 
     @FXML
     void btnDashboardOnAction(ActionEvent event) {
-
+        setContent("/view/dashboard_content_form.fxml");
     }
 
     @FXML
@@ -94,6 +96,14 @@ public class MainAdminDashBoardFormController implements Initializable {
     @FXML
     void btnSupplyersOnAction(ActionEvent event) {
 
+    }
+
+    private void setContent(String path) {
+        try {
+            mainBorderPane.setCenter(FXMLLoader.load(getClass().getResource(path)));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
