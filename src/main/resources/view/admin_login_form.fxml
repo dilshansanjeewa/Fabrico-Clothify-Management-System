@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="1180.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminLoginFormController">
+   <children>
+      <ImageView fitHeight="500.0" fitWidth="1202.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/backgrounds/login%20bg%20croped.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="525.0" layoutY="48.0" text="Admin Login">
+         <font>
+            <Font name="Arial Narrow Bold" size="26.0" />
+         </font>
+      </Label>
+      <TextField layoutX="465.0" layoutY="140.0" opacity="0.8" prefHeight="31.0" prefWidth="250.0" promptText="Email Address" style="-fx-background-color: WHITE; -fx-border-color: B9935A; -fx-border-radius: 5;">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </TextField>
+      <PasswordField layoutX="465.0" layoutY="196.0" opacity="0.8" prefHeight="32.0" prefWidth="250.0" promptText="Password" style="-fx-background-color: WHITE; -fx-border-color: B9935A; -fx-border-radius: 5;">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </PasswordField>
+      <JFXButton layoutX="465.0" layoutY="276.0" prefHeight="32.0" prefWidth="250.0" style="-fx-background-color: B9935A;" text="Login">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <Hyperlink layoutX="638.0" layoutY="332.0" text="Register" textFill="#b9935a">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Hyperlink>
+      <Label layoutX="465.0" layoutY="335.0" text="Don't you have an account?">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
