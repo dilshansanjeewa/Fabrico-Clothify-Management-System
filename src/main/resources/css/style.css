@@ -7,3 +7,104 @@
 .Pane:hover {
     -fx-background-color:  F3EDE4;
 }
+
+.search-bar:focus {
+    -fx-background-color: WHITE;
+}
+
+.search-bar-container:hover {
+    -fx-effect: dropshadow(gaussian, rgba(83,109,254,0.3), 8, 0.2, 0, 0);
+}
+
+.emp-form {
+        -fx-background-color: FFFFFF;
+        -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+}
+
+.emp-form-input-fields {
+    -fx-background-color: FFFFFF;
+    -fx-background-radius: 10;
+    -fx-border-color: #B9935A;
+    -fx-border-radius: 10;
+}
+
+.emp-form-input-fields:hover {
+    -fx-background-color:  F3EDE4;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0.3, 0, 2);
+}
+
+.emp-form-input-fields:focused {
+    -fx-background-color:  FFFFFF;
+}
+
+.emp-img-view {
+    -fx-border-color: 000000;
+    -fx-border-radius: 10;
+}
+
+.btn-upload-image{
+    -fx-background-color: FFFFFF;
+    -fx-background-radius: 10;
+    -fx-border-color: #B9935A;
+    -fx-border-width: 0.8;
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0.2, 0, 1);
+}
+
+.btn-upload-image:hover {
+    -fx-background-color: F3EDE4;
+    -fx-text-fill: #000000;
+    -fx-border-color: #000000;
+}
+
+.btn-clear-form{
+    -fx-background-color: FFFFFF;
+    -fx-background-radius: 10;
+    -fx-border-color: #707070;
+    -fx-border-width: 0.5;
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0.2, 0, 1);
+}
+
+.btn-add-employee{
+    -fx-background-color: #00FF00;
+    -fx-background-radius: 10;
+    -fx-border-color: black;
+    -fx-border-width: 0.2;
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0.2, 0, 1);
+}
+
+.btn-add-employee:hover{
+    -fx-background-color: F3EDE4;
+    -fx-border-color: #00FF00;
+}
+
+.btn-update-employee{
+    -fx-background-color: #00D8FF;
+    -fx-background-radius: 10;
+    -fx-border-color: black;
+    -fx-border-width: 0.2;
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0.2, 0, 1);
+}
+
+.btn-update-employee:hover{
+    -fx-background-color: F3EDE4;
+    -fx-border-color: #00D8FF;
+}
+
+.btn-delete-employee{
+    -fx-background-color: #FF0050;
+    -fx-background-radius: 10;
+    -fx-border-color: black;
+    -fx-border-width: 0.2;
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0.2, 0, 1);
+}
+
+.btn-delete-employee:hover{
+    -fx-background-color: F3EDE4;
+    -fx-border-color: #FF0050;
+}

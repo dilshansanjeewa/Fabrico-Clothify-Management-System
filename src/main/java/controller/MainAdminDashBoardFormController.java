@@ -78,7 +78,7 @@ public class MainAdminDashBoardFormController implements Initializable {
 
     @FXML
     void btnEmployeesOnAction(ActionEvent event) {
-
+        setContent("/view/employee_management_form.fxml");
     }
 
     @FXML

@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="560.0" prefWidth="1000.0" style="-fx-background-color: F3EDE4;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmployeeManagementFormController">
+   <children>
+      <BorderPane prefHeight="560.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="35.333343505859375" minWidth="-Infinity" prefWidth="18.666688919067383" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="619.3333511352539" minWidth="378.66668701171875" prefWidth="575.3333333333334" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="494.66668701171875" minWidth="10.0" prefWidth="406.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="494.66668701171875" minHeight="10.0" prefHeight="494.66668701171875" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="42.000020345052064" minHeight="-Infinity" prefHeight="4.666646321614564" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <GridPane prefWidth="575.0" styleClass="emp-form" stylesheets="@../css/style.css" GridPane.columnIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="49.99998982747396" minHeight="0.0" prefHeight="49.99998982747396" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="442.0" minHeight="10.0" prefHeight="438.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="48.666656494140625" minHeight="4.666666666666686" prefHeight="8.666666666666686" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="575.0">
+                           <children>
+                              <Label text="Employee Details">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </FlowPane>
+                        <GridPane GridPane.rowIndex="1">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.3333740234375" minWidth="10.0" prefWidth="200.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="385.66667683919263" minWidth="10.0" prefWidth="385.66667683919263" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="-Infinity" minHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="59.0" layoutY="10.0" text="First Name :">
+                                       <font>
+                                          <Font name="Arial Narrow Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label layoutX="59.0" layoutY="10.0" text="Last Name :">
+                                       <font>
+                                          <Font name="Arial Narrow Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="10.0" layoutY="50.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                                 <children>
+                                    <Label layoutX="59.0" layoutY="10.0" text="Email Address :">
+                                       <font>
+                                          <Font name="Arial Narrow Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="10.0" layoutY="90.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                                 <children>
+                                    <Label layoutX="59.0" layoutY="10.0" text="Phone Number :">
+                                       <font>
+                                          <Font name="Arial Narrow Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="10.0" layoutY="130.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+                                 <children>
+                                    <Label layoutX="59.0" layoutY="10.0" text="Gender :">
+                                       <font>
+                                          <Font name="Arial Narrow Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="10.0" layoutY="170.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="6">
+                                 <children>
+                                    <Label layoutX="59.0" layoutY="10.0" text="Province :">
+                                       <font>
+                                          <Font name="Arial Narrow Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="10.0" layoutY="210.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="7">
+                                 <children>
+                                    <Label layoutX="59.0" layoutY="10.0" text="District :">
+                                       <font>
+                                          <Font name="Arial Narrow Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="10.0" layoutY="250.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="8">
+                                 <children>
+                                    <Label layoutX="59.0" layoutY="10.0" text="Street Address :">
+                                       <font>
+                                          <Font name="Arial Narrow Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="10.0" layoutY="290.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="9">
+                                 <children>
+                                    <Label layoutX="59.0" layoutY="10.0" text="Postal Code :">
+                                       <font>
+                                          <Font name="Arial Narrow Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="10.0" layoutY="50.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                 <children>
+                                    <Label layoutX="59.0" layoutY="10.0" text="Date of Birth :">
+                                       <font>
+                                          <Font name="Arial Narrow Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <TextField layoutX="14.0" layoutY="3.0" prefHeight="35.0" prefWidth="300.0" styleClass="emp-form-input-fields" stylesheets="@../css/style.css">
+                                       <font>
+                                          <Font name="Arial" size="16.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <TextField layoutX="14.0" layoutY="3.0" prefHeight="35.0" prefWidth="300.0" styleClass="emp-form-input-fields" stylesheets="@../css/style.css">
+                                       <font>
+                                          <Font name="Arial" size="16.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <DatePicker layoutX="14.0" layoutY="3.0" prefHeight="35.0" prefWidth="300.0" styleClass="emp-form-input-fields" stylesheets="@../css/style.css" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <children>
+                                    <TextField layoutX="14.0" layoutY="3.0" prefHeight="35.0" prefWidth="300.0" styleClass="emp-form-input-fields" stylesheets="@../css/style.css">
+                                       <font>
+                                          <Font name="Arial" size="16.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <children>
+                                    <TextField layoutX="14.0" layoutY="3.0" prefHeight="35.0" prefWidth="300.0" styleClass="emp-form-input-fields" stylesheets="@../css/style.css">
+                                       <font>
+                                          <Font name="Arial Narrow" size="16.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <children>
+                                    <JFXRadioButton layoutX="14.0" layoutY="3.0" prefHeight="35.0" prefWidth="140.0" styleClass="emp-form-input-fields" stylesheets="@../css/style.css" text="Male">
+                                       <selectedColor>
+                                          <Color red="0.061000000685453415" green="0.6100000143051147" blue="0.18867439031600952" />
+                                       </selectedColor>
+                                       <unSelectedColor>
+                                          <Color red="0.5350877046585083" green="0.5350877046585083" blue="0.5350877046585083" />
+                                       </unSelectedColor>
+                                       <font>
+                                          <Font name="Arial" size="16.0" />
+                                       </font>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="toggleGender" />
+                                       </toggleGroup>
+                                    </JFXRadioButton>
+                                    <JFXRadioButton layoutX="173.0" layoutY="3.0" prefHeight="35.0" prefWidth="140.0" styleClass="emp-form-input-fields" stylesheets="@../css/style.css" text="Female" toggleGroup="$toggleGender">
+                                       <selectedColor>
+                                          <Color red="0.6100000143051147" green="0.061000000685453415" blue="0.061000000685453415" />
+                                       </selectedColor>
+                                       <unSelectedColor>
+                                          <Color red="0.5350877046585083" green="0.5350877046585083" blue="0.5350877046585083" />
+                                       </unSelectedColor>
+                                       <font>
+                                          <Font name="Arial" size="16.0" />
+                                       </font>
+                                    </JFXRadioButton>
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <children>
+                                    <ComboBox layoutX="14.0" layoutY="3.0" prefHeight="35.0" prefWidth="300.0" styleClass="emp-form-input-fields" stylesheets="@../css/style.css" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                 <children>
+                                    <ComboBox layoutX="14.0" layoutY="2.0" prefHeight="35.0" prefWidth="300.0" styleClass="emp-form-input-fields" stylesheets="@../css/style.css" />
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                 <children>
+                                    <TextField layoutX="14.0" layoutY="2.0" prefHeight="35.0" prefWidth="300.0" styleClass="emp-form-input-fields" stylesheets="@../css/style.css">
+                                       <font>
+                                          <Font name="Arial" size="16.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                 <children>
+                                    <TextField layoutX="14.0" layoutY="2.0" prefHeight="35.0" prefWidth="300.0" styleClass="emp-form-input-fields" stylesheets="@../css/style.css">
+                                       <font>
+                                          <Font name="Arial" size="16.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                 <children>
+                                    <JFXButton layoutX="267.0" layoutY="6.0" prefHeight="31.0" prefWidth="100.0" styleClass="btn-clear-form" text="CLEAR" textFill="#707070">
+                                       <font>
+                                          <Font name="Arial" size="16.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+                  <GridPane GridPane.columnIndex="2">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="282.0" minHeight="10.0" prefHeight="96.99998728434245" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="356.3333511352539" minHeight="10.0" prefHeight="271.6666793823242" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="153.0" minHeight="10.0" prefHeight="110.66668701171875" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="48.666656494140625" minHeight="0.0" prefHeight="5.33331298828125" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <FlowPane alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                           <children>
+                              <Pane prefHeight="260.0" prefWidth="200.0" styleClass="emp-form" stylesheets="@../css/style.css">
+                                 <children>
+                                    <ImageView fitHeight="180.0" fitWidth="180.0" layoutX="13.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/other/demo%20employee%20image.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton layoutX="40.0" layoutY="214.0" prefHeight="32.0" prefWidth="120.0" styleClass="btn-upload-image" text="UPLOAD" textFill="#b9935a">
+                                       <font>
+                                          <Font name="Arial" size="16.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </FlowPane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                           <children>
+                              <ButtonBar layoutX="20.0" layoutY="75.0" prefHeight="40.0" prefWidth="323.0">
+                                <buttons>
+                                    <JFXButton prefHeight="32.0" prefWidth="100.0" ripplerFill="LIME" styleClass="btn-add-employee" stylesheets="@../css/style.css" text="ADD">
+                                       <font>
+                                          <Font name="Arial" size="16.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton layoutX="260.0" layoutY="14.0" prefHeight="32.0" prefWidth="100.0" ripplerFill="#00bdde" styleClass="btn-update-employee" stylesheets="@../css/style.css" text="UPDATE">
+                                       <font>
+                                          <Font name="Arial" size="16.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXButton layoutX="260.0" layoutY="14.0" prefHeight="32.0" prefWidth="100.0" ripplerFill="#de0045" styleClass="btn-delete-employee" stylesheets="@../css/style.css" text="DELETE">
+                                       <font>
+                                          <Font name="Arial" size="16.0" />
+                                       </font>
+                                    </JFXButton>
+                                </buttons>
+                              </ButtonBar>
+                           </children>
+                        </Pane>
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+         </center>
+         <top>
+            <GridPane prefHeight="60.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="278.3333282470703" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="320.6666666666667" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="402.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="10.0" layoutY="10.0" text="Employee Management" textFill="#b9935a">
+                           <font>
+                              <Font name="Arial Narrow Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="414.0" GridPane.columnIndex="2">
+                     <children>
+                        <HBox prefHeight="36.0" prefWidth="380.0" style="-fx-background-color: F3EDE4; -fx-border-color: #b9935a; -fx-border-radius: 20; -fx-background-radius: 20;" styleClass="search-bar-container" stylesheets="@../css/style.css">
+                           <children>
+                              <Pane prefHeight="36.0" prefWidth="36.0">
+                                 <children>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="7.0" layoutY="4.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons/search%20icon%20%23b9935a.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                              <TextField fx:id="txtSearchBar" onAction="#txtSearchBarOnAction" onKeyReleased="#txtSearchBarOnKeyReleased" prefHeight="33.0" prefWidth="345.0" promptText="Search Employee by Name, Email or Phone" style="-fx-background-radius: 20; -fx-border-color: #b9935a; -fx-border-radius: 20; -fx-background-color: F3EDE4;">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </FlowPane>
+               </children>
+            </GridPane>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
