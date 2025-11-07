@@ -86,7 +86,7 @@
                                                       <Image url="@../images/icons/search%20icon%20%23b9935a.png" />
                                                    </image>
                                                 </ImageView>
-                                                <TextField layoutX="25.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="33.0" prefWidth="347.0" promptText="Search Items by Name" style="-fx-background-color: F3EDE4; -fx-background-radius: 10;">
+                                                <TextField fx:id="txtSearch" layoutX="25.0" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#txtSearchonAction" prefHeight="33.0" prefWidth="347.0" promptText="Search Items by Name" style="-fx-background-color: F3EDE4; -fx-background-radius: 10;">
                                                    <font>
                                                       <Font name="Arial" size="16.0" />
                                                    </font>
@@ -105,7 +105,7 @@
                      <children>
                         <Pane layoutX="25.0" layoutY="3.0" prefHeight="45.0" prefWidth="250.0" styleClass="low-stock-alert">
                            <children>
-                              <Label alignment="CENTER_RIGHT" layoutX="67.0" layoutY="12.0" prefHeight="21.0" prefWidth="148.0" text="3 Items are Low">
+                              <Label fx:id="lblLowStock" alignment="CENTER_RIGHT" layoutX="67.0" layoutY="12.0" prefHeight="21.0" prefWidth="148.0" text="3 Items are Low">
                                  <font>
                                     <Font name="Arial" size="18.0" />
                                  </font>
@@ -180,7 +180,7 @@
                                                 <Font name="Arial" size="16.0" />
                                              </font>
                                           </Label>
-                                          <TextField layoutY="24.0" prefHeight="32.0" prefWidth="420.0" styleClass="item-form-input-fields">
+                                          <TextField fx:id="txtItemName" layoutY="24.0" prefHeight="32.0" prefWidth="420.0" styleClass="item-form-input-fields">
                                              <font>
                                                 <Font name="Arial" size="16.0" />
                                              </font>
@@ -194,7 +194,7 @@
                                                 <Font name="Arial" size="16.0" />
                                              </font>
                                           </Label>
-                                          <ComboBox layoutX="4.0" layoutY="24.0" prefHeight="32.0" prefWidth="225.0" styleClass="item-form-input-fields" />
+                                          <ComboBox fx:id="comboCategory" layoutX="4.0" layoutY="24.0" prefHeight="32.0" prefWidth="225.0" styleClass="item-form-input-fields" />
                                        </children>
                                     </Pane>
                                  </children>
@@ -216,7 +216,7 @@
                                                 <Font name="Arial" size="16.0" />
                                              </font>
                                           </Label>
-                                          <ComboBox layoutX="2.0" layoutY="24.0" prefHeight="32.0" prefWidth="173.0" styleClass="item-form-input-fields" />
+                                          <ComboBox fx:id="comboSubCategory" layoutX="2.0" layoutY="24.0" prefHeight="32.0" prefWidth="173.0" styleClass="item-form-input-fields" />
                                        </children>
                                     </Pane>
                                     <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
@@ -226,8 +226,8 @@
                                                 <Font name="Arial" size="16.0" />
                                              </font>
                                           </Label>
-                                          <ComboBox layoutX="9.0" layoutY="24.0" prefHeight="32.0" prefWidth="170.0" styleClass="item-form-input-fields" />
-                                          <JFXButton alignment="BASELINE_LEFT" layoutX="186.0" layoutY="24.0" prefHeight="32.0" prefWidth="54.0" ripplerFill="#b9935a" styleClass="plus-btn" text="NEW">
+                                          <ComboBox fx:id="comboSuplier" layoutX="9.0" layoutY="24.0" onAction="#comboSuplieronAction" prefHeight="32.0" prefWidth="170.0" styleClass="item-form-input-fields" />
+                                          <JFXButton fx:id="btnAddSupplier" alignment="BASELINE_LEFT" layoutX="186.0" layoutY="24.0" onAction="#btnAddSupplieronAction" prefHeight="32.0" prefWidth="54.0" ripplerFill="#b9935a" styleClass="plus-btn" text="NEW">
                                              <font>
                                                 <Font name="Arial Bold" size="10.0" />
                                              </font>
@@ -246,8 +246,8 @@
                                                 <Font name="Arial" size="16.0" />
                                              </font>
                                           </Label>
-                                          <ComboBox layoutX="14.0" layoutY="24.0" prefHeight="32.0" prefWidth="166.0" styleClass="item-form-input-fields" />
-                                          <JFXButton alignment="BASELINE_LEFT" layoutX="185.0" layoutY="24.0" prefHeight="32.0" prefWidth="54.0" ripplerFill="#b9935a" styleClass="plus-btn" text="NEW">
+                                          <ComboBox fx:id="comboBrand" layoutX="14.0" layoutY="24.0" prefHeight="32.0" prefWidth="166.0" styleClass="item-form-input-fields" />
+                                          <JFXButton fx:id="btnAddNewBrand" alignment="BASELINE_LEFT" layoutX="185.0" layoutY="24.0" onAction="#btnAddNewBrandonAction" prefHeight="32.0" prefWidth="54.0" ripplerFill="#b9935a" styleClass="plus-btn" text="NEW">
                                              <font>
                                                 <Font name="Arial Bold" size="10.0" />
                                              </font>
@@ -278,7 +278,7 @@
                                                 <Font name="Arial" size="16.0" />
                                              </font>
                                           </Label>
-                                          <ComboBox layoutX="2.0" layoutY="24.0" prefHeight="32.0" prefWidth="172.0" styleClass="item-form-input-fields" />
+                                          <ComboBox fx:id="comboSize" layoutX="2.0" layoutY="24.0" prefHeight="32.0" prefWidth="172.0" styleClass="item-form-input-fields" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
@@ -288,8 +288,8 @@
                                                 <Font name="Arial" size="16.0" />
                                              </font>
                                           </Label>
-                                          <TextField layoutX="8.0" layoutY="24.0" prefHeight="32.0" prefWidth="130.0" styleClass="item-form-input-fields" />
-                                          <ColorPicker layoutX="142.0" layoutY="23.0" prefHeight="32.0" prefWidth="95.0" styleClass="item-form-input-fields" />
+                                          <TextField fx:id="txtColor" layoutX="8.0" layoutY="24.0" onAction="#txtColoronAction" prefHeight="32.0" prefWidth="130.0" styleClass="item-form-input-fields" />
+                                          <ColorPicker fx:id="itmColor" layoutX="142.0" layoutY="23.0" onAction="#itmColoronAction" prefHeight="32.0" prefWidth="95.0" styleClass="item-form-input-fields" />
                                        </children>
                                     </Pane>
                                     <Pane layoutX="191.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
@@ -299,7 +299,7 @@
                                                 <Font name="Arial" size="16.0" />
                                              </font>
                                           </Label>
-                                          <TextField layoutX="7.0" layoutY="24.0" prefHeight="32.0" prefWidth="224.0" styleClass="item-form-input-fields" />
+                                          <TextField fx:id="txtCostPrice" layoutX="7.0" layoutY="24.0" prefHeight="32.0" prefWidth="224.0" styleClass="item-form-input-fields" />
                                        </children>
                                     </Pane>
                                  </children>
@@ -322,7 +322,7 @@
                                                 <Font name="Arial" size="16.0" />
                                              </font>
                                           </Label>
-                                          <DatePicker layoutX="6.0" layoutY="24.0" prefHeight="32.0" prefWidth="224.0" styleClass="item-form-input-fields" />
+                                          <DatePicker fx:id="dateAdding" layoutX="6.0" layoutY="24.0" prefHeight="32.0" prefWidth="224.0" styleClass="item-form-input-fields" />
                                        </children>
                                     </Pane>
                                     <Pane layoutX="437.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
@@ -332,7 +332,7 @@
                                                 <Font name="Arial" size="16.0" />
                                              </font>
                                           </Label>
-                                          <TextField layoutX="4.0" layoutY="24.0" prefHeight="32.0" prefWidth="171.0" styleClass="item-form-input-fields" />
+                                          <TextField fx:id="txtQty" layoutX="4.0" layoutY="24.0" prefHeight="32.0" prefWidth="171.0" styleClass="item-form-input-fields" />
                                        </children>
                                     </Pane>
                                     <Pane layoutX="437.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
@@ -342,7 +342,7 @@
                                                 <Font name="Arial" size="16.0" />
                                              </font>
                                           </Label>
-                                          <TextField layoutX="8.0" layoutY="24.0" prefHeight="32.0" prefWidth="230.0" styleClass="item-form-input-fields" />
+                                          <TextField fx:id="txtSellingPrice" layoutX="8.0" layoutY="24.0" prefHeight="32.0" prefWidth="230.0" styleClass="item-form-input-fields" />
                                        </children>
                                     </Pane>
                                  </children>
@@ -363,12 +363,12 @@
                                                 <Font name="Arial" size="16.0" />
                                              </font>
                                           </Label>
-                                          <TextField layoutX="4.0" layoutY="27.0" prefHeight="32.0" prefWidth="534.0" styleClass="item-form-input-fields" />
+                                          <TextField fx:id="txtDescription" layoutX="4.0" layoutY="27.0" prefHeight="32.0" prefWidth="534.0" styleClass="item-form-input-fields" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                        <children>
-                                          <JFXButton layoutX="16.0" layoutY="27.0" prefHeight="32.0" prefWidth="92.0" styleClass="btn-clear-form" text="CLEAR" textFill="#707070">
+                                          <JFXButton fx:id="btnCancel" layoutX="16.0" layoutY="27.0" onAction="#btnCancelonAction" prefHeight="32.0" prefWidth="92.0" styleClass="btn-clear-form" text="CLEAR" textFill="#707070">
                                              <font>
                                                 <Font name="Arial" size="16.0" />
                                              </font>
@@ -393,7 +393,7 @@
                            <children>
                               <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                                  <children>
-                                    <ImageView fitHeight="190.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="imgItem" fitHeight="190.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/other/demo%20cloth%20image%201.jpg" />
                                        </image>
@@ -402,7 +402,7 @@
                               </FlowPane>
                               <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <children>
-                                    <JFXButton prefHeight="30.0" prefWidth="151.0" styleClass="upload-cloth-btn" text="UPLOAD">
+                                    <JFXButton fx:id="btnUpload" onAction="#btnUploadonAction" prefHeight="30.0" prefWidth="151.0" styleClass="upload-cloth-btn" text="UPLOAD">
                                        <font>
                                           <Font name="Arial" size="14.0" />
                                        </font>
@@ -413,17 +413,17 @@
                                  <children>
                                     <Pane prefHeight="100.0" prefWidth="230.0">
                                        <children>
-                                          <JFXButton layoutX="64.0" layoutY="9.0" prefHeight="32.0" prefWidth="100.0" styleClass="add-itm-btn" text="ADD">
+                                          <JFXButton fx:id="btnAdd" layoutX="64.0" layoutY="9.0" onAction="#btnAddonAction" prefHeight="32.0" prefWidth="100.0" styleClass="add-itm-btn" text="ADD">
                                              <font>
                                                 <Font name="Arial" size="16.0" />
                                              </font>
                                           </JFXButton>
-                                          <JFXButton layoutX="8.0" layoutY="51.0" prefHeight="32.0" prefWidth="100.0" styleClass="update-itm-btn" text="UPDATE">
+                                          <JFXButton fx:id="btnUpdate" layoutX="8.0" layoutY="51.0" onAction="#btnUpdateonAction" prefHeight="32.0" prefWidth="100.0" styleClass="update-itm-btn" text="UPDATE">
                                              <font>
                                                 <Font name="Arial" size="16.0" />
                                              </font>
                                           </JFXButton>
-                                          <JFXButton layoutX="122.0" layoutY="51.0" prefHeight="32.0" prefWidth="100.0" styleClass="delete-itm-btn" text="DELETE">
+                                          <JFXButton fx:id="btnDelete" layoutX="122.0" layoutY="51.0" onAction="#btnDeleteonAction" prefHeight="32.0" prefWidth="100.0" styleClass="delete-itm-btn" text="DELETE">
                                              <font>
                                                 <Font name="Arial" size="16.0" />
                                              </font>
