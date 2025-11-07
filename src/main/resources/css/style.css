@@ -200,3 +200,33 @@
     -fx-border-radius: 5;
     -fx-effect: dropshadow(gaussian, rgba(73,58,35,0.3), 8, 0.2, 0, 1);
 }
+
+.pop-up {
+    -fx-background-color: #F3EDE4;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(73,58,35,0.3), 8, 0.2, 0, 1);
+}
+
+.pop-up-input-fields {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 8;
+    -fx-border-color: #B9935A;
+    -fx-border-width: 0.8;
+    -fx-border-radius: 8;
+}
+
+.pop-up-input-fields:hover {
+    -fx-effect: dropshadow(gaussian, rgba(73,58,35,0.3), 8, 0.2, 0, 1);
+}
+
+.pop-up-save-btn {
+    -fx-background-color: #967442;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(gaussian, rgba(73,58,35,0.3), 8, 0.2, 0, 1);
+}
+
+.pop-up-cancel-btn {
+    -fx-background-color: #c9ad85;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(gaussian, rgba(73,58,35,0.3), 8, 0.2, 0, 1);
+}
