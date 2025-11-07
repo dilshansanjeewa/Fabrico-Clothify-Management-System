@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="560.0" prefWidth="1000.0" style="-fx-background-color: F3EDE4;" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemManagementFormController">
+   <top>
+      <GridPane prefHeight="64.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="35.33332824707031" minHeight="10.0" prefHeight="35.33332824707031" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="35.33333079020181" minHeight="10.0" prefHeight="20.000005086263023" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label text="Item Management">
+                     <font>
+                        <Font name="Arial Bold" size="32.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="1000.0" GridPane.rowIndex="1">
+               <children>
+                  <Label text="Add, Edit and Manage Store Inventry">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+         </children>
+      </GridPane>
+   </top>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="-Infinity" minHeight="5.333330869674683" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="38.66667175292969" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="412.0" minHeight="10.0" prefHeight="407.3333282470703" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane prefHeight="57.0" prefWidth="1000.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" prefWidth="400.0" />
+                <ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" prefWidth="300.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="9.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="35.0" prefWidth="380.0" style="-fx-background-radius: 10; -fx-border-color: #b9935a; -fx-border-radius: 10;">
+                           <children>
+                              <Group>
+                                 <children>
+                                    <Pane prefHeight="36.0" prefWidth="380.0" style="-fx-background-radius: 10;">
+                                       <children>
+                                          <Group layoutX="5.0">
+                                             <children>
+                                                <ImageView fitHeight="28.0" fitWidth="25.0" layoutX="1.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/icons/search%20icon%20%23b9935a.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <TextField layoutX="25.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="33.0" prefWidth="347.0" promptText="Search Items by Name" style="-fx-background-color: F3EDE4; -fx-background-radius: 10;">
+                                                   <font>
+                                                      <Font name="Arial" size="16.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </Group>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Group>
+                           </children>
+                        </HBox>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                     <children>
+                        <Pane layoutX="25.0" layoutY="3.0" prefHeight="45.0" prefWidth="250.0" styleClass="low-stock-alert">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" layoutX="67.0" layoutY="12.0" prefHeight="21.0" prefWidth="148.0" text="3 Items are Low">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons/warning%20icon.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+            <GridPane prefWidth="967.0" GridPane.rowIndex="2">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="933.6666870117188" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="376.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <GridPane styleClass="item-form" GridPane.columnIndex="1">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="0.0" prefWidth="20.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="690.3333435058594" minWidth="10.0" prefWidth="683.0000019073486" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="10.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="255.6666259765625" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="20.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <GridPane styleClass="item-form" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="10.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="10.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <GridPane GridPane.columnIndex="1">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="500.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="325.33331298828125" minWidth="10.0" prefWidth="303.33331298828125" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Pane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutY="3.0" text="Item Name">
+                                             <font>
+                                                <Font name="Arial" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField layoutY="24.0" prefHeight="32.0" prefWidth="420.0" styleClass="item-form-input-fields">
+                                             <font>
+                                                <Font name="Arial" size="16.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <Label layoutX="5.0" layoutY="2.0" text="Category">
+                                             <font>
+                                                <Font name="Arial" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox layoutX="4.0" layoutY="24.0" prefHeight="32.0" prefWidth="225.0" styleClass="item-form-input-fields" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="180.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="244.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="243.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Pane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="2.0" layoutY="2.0" text="Sub Category">
+                                             <font>
+                                                <Font name="Arial" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox layoutX="2.0" layoutY="24.0" prefHeight="32.0" prefWidth="173.0" styleClass="item-form-input-fields" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <Label layoutX="9.0" layoutY="2.0" text="Supplier">
+                                             <font>
+                                                <Font name="Arial" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox layoutX="9.0" layoutY="24.0" prefHeight="32.0" prefWidth="170.0" styleClass="item-form-input-fields" />
+                                          <JFXButton alignment="BASELINE_LEFT" layoutX="186.0" layoutY="24.0" prefHeight="32.0" prefWidth="54.0" ripplerFill="#b9935a" styleClass="plus-btn" text="NEW">
+                                             <font>
+                                                <Font name="Arial Bold" size="10.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="218.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/icons/add.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="188.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                       <children>
+                                          <Label layoutX="13.0" layoutY="2.0" text="Brand">
+                                             <font>
+                                                <Font name="Arial" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox layoutX="14.0" layoutY="24.0" prefHeight="32.0" prefWidth="166.0" styleClass="item-form-input-fields" />
+                                          <JFXButton alignment="BASELINE_LEFT" layoutX="185.0" layoutY="24.0" prefHeight="32.0" prefWidth="54.0" ripplerFill="#b9935a" styleClass="plus-btn" text="NEW">
+                                             <font>
+                                                <Font name="Arial Bold" size="10.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="218.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/icons/add.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="324.0" minWidth="10.0" prefWidth="182.9999796549479" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="324.0" minWidth="10.0" prefWidth="245.9999796549479" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="494.66668701171875" minWidth="10.0" prefWidth="234.000020345052" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Pane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="2.0" layoutY="2.0" text="Size">
+                                             <font>
+                                                <Font name="Arial" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <ComboBox layoutX="2.0" layoutY="24.0" prefHeight="32.0" prefWidth="172.0" styleClass="item-form-input-fields" />
+                                       </children>
+                                    </Pane>
+                                    <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <Label layoutX="9.0" layoutY="2.0" text="Color">
+                                             <font>
+                                                <Font name="Arial" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField layoutX="8.0" layoutY="24.0" prefHeight="32.0" prefWidth="130.0" styleClass="item-form-input-fields" />
+                                          <ColorPicker layoutX="142.0" layoutY="23.0" prefHeight="32.0" prefWidth="95.0" styleClass="item-form-input-fields" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="191.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                       <children>
+                                          <Label layoutX="9.0" layoutY="2.0" text="Cost Price (Rs.)">
+                                             <font>
+                                                <Font name="Arial" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField layoutX="7.0" layoutY="24.0" prefHeight="32.0" prefWidth="224.0" styleClass="item-form-input-fields" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </GridPane>
+                              <GridPane layoutX="20.0" layoutY="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="324.0" minWidth="10.0" prefWidth="182.9999796549479" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="324.0" minWidth="10.0" prefWidth="245.9999796549479" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="494.66668701171875" minWidth="10.0" prefWidth="234.000020345052" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Pane prefHeight="200.0" prefWidth="200.0" />
+                                    <Pane layoutX="191.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                       <children>
+                                          <Label layoutX="9.0" layoutY="2.0" text="Adding Date">
+                                             <font>
+                                                <Font name="Arial" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <DatePicker layoutX="6.0" layoutY="24.0" prefHeight="32.0" prefWidth="224.0" styleClass="item-form-input-fields" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="437.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="5.0" layoutY="2.0" text="Quantity">
+                                             <font>
+                                                <Font name="Arial" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField layoutX="4.0" layoutY="24.0" prefHeight="32.0" prefWidth="171.0" styleClass="item-form-input-fields" />
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="437.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <Label layoutX="9.0" layoutY="2.0" text="Selling Price (Rs.)">
+                                             <font>
+                                                <Font name="Arial" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField layoutX="8.0" layoutY="24.0" prefHeight="32.0" prefWidth="230.0" styleClass="item-form-input-fields" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="544.3333333333334" minWidth="10.0" prefWidth="544.3333333333334" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="322.66668701171875" minWidth="10.0" prefWidth="111.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Pane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="5.0" layoutY="5.0" text="Description">
+                                             <font>
+                                                <Font name="Arial" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField layoutX="4.0" layoutY="27.0" prefHeight="32.0" prefWidth="534.0" styleClass="item-form-input-fields" />
+                                       </children>
+                                    </Pane>
+                                    <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <JFXButton layoutX="16.0" layoutY="27.0" prefHeight="32.0" prefWidth="92.0" styleClass="btn-clear-form" text="CLEAR" textFill="#707070">
+                                             <font>
+                                                <Font name="Arial" size="16.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </GridPane>
+                        <GridPane styleClass="item-form" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="10.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="300.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="10.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="206.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="281.6666564941406" minHeight="10.0" prefHeight="99.99998474121094" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <ImageView fitHeight="190.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/other/demo%20cloth%20image%201.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </FlowPane>
+                              <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <JFXButton prefHeight="30.0" prefWidth="151.0" styleClass="upload-cloth-btn" text="UPLOAD">
+                                       <font>
+                                          <Font name="Arial" size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </FlowPane>
+                              <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <Pane prefHeight="100.0" prefWidth="230.0">
+                                       <children>
+                                          <JFXButton layoutX="64.0" layoutY="9.0" prefHeight="32.0" prefWidth="100.0" styleClass="add-itm-btn" text="ADD">
+                                             <font>
+                                                <Font name="Arial" size="16.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <JFXButton layoutX="8.0" layoutY="51.0" prefHeight="32.0" prefWidth="100.0" styleClass="update-itm-btn" text="UPDATE">
+                                             <font>
+                                                <Font name="Arial" size="16.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <JFXButton layoutX="122.0" layoutY="51.0" prefHeight="32.0" prefWidth="100.0" styleClass="delete-itm-btn" text="DELETE">
+                                             <font>
+                                                <Font name="Arial" size="16.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </FlowPane>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

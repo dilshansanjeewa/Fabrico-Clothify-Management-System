@@ -83,7 +83,7 @@ public class MainAdminDashBoardFormController implements Initializable {
 
     @FXML
     void btnItemsOnAction(ActionEvent event) {
-
+        setContent("/view/item_management_form.fxml");
     }
 
     @FXML

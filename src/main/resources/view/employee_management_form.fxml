@@ -306,19 +306,19 @@
                         </FlowPane>
                         <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                            <children>
-                              <ButtonBar layoutX="20.0" layoutY="75.0" prefHeight="40.0" prefWidth="323.0">
+                              <ButtonBar layoutX="26.0" layoutY="75.0" prefHeight="40.0" prefWidth="323.0">
                                 <buttons>
-                                    <JFXButton prefHeight="32.0" prefWidth="100.0" ripplerFill="LIME" styleClass="btn-add-employee" stylesheets="@../css/style.css" text="ADD">
+                                    <JFXButton prefHeight="32.0" prefWidth="100.0" ripplerFill="WHITE" styleClass="add-itm-btn" stylesheets="@../css/style.css" text="ADD">
                                        <font>
                                           <Font name="Arial" size="16.0" />
                                        </font>
                                     </JFXButton>
-                                    <JFXButton layoutX="260.0" layoutY="14.0" prefHeight="32.0" prefWidth="100.0" ripplerFill="#00bdde" styleClass="btn-update-employee" stylesheets="@../css/style.css" text="UPDATE">
+                                    <JFXButton layoutX="260.0" layoutY="14.0" prefHeight="32.0" prefWidth="100.0" ripplerFill="WHITE" styleClass="update-itm-btn" stylesheets="@../css/style.css" text="UPDATE">
                                        <font>
                                           <Font name="Arial" size="16.0" />
                                        </font>
                                     </JFXButton>
-                                    <JFXButton layoutX="260.0" layoutY="14.0" prefHeight="32.0" prefWidth="100.0" ripplerFill="#de0045" styleClass="btn-delete-employee" stylesheets="@../css/style.css" text="DELETE">
+                                    <JFXButton layoutX="260.0" layoutY="14.0" prefHeight="32.0" prefWidth="100.0" ripplerFill="WHITE" styleClass="delete-itm-btn" stylesheets="@../css/style.css" text="DELETE">
                                        <font>
                                           <Font name="Arial" size="16.0" />
                                        </font>
@@ -354,18 +354,18 @@
                   </Pane>
                   <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="414.0" GridPane.columnIndex="2">
                      <children>
-                        <HBox prefHeight="36.0" prefWidth="380.0" style="-fx-background-color: F3EDE4; -fx-border-color: #b9935a; -fx-border-radius: 20; -fx-background-radius: 20;" styleClass="search-bar-container" stylesheets="@../css/style.css">
+                        <HBox prefHeight="36.0" prefWidth="380.0" style="-fx-background-color: F3EDE4; -fx-border-color: #b9935a; -fx-border-radius: 10; -fx-background-radius: 10;" styleClass="search-bar-container" stylesheets="@../css/style.css">
                            <children>
                               <Pane prefHeight="36.0" prefWidth="36.0">
                                  <children>
-                                    <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="7.0" layoutY="4.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="5.0" layoutY="4.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../images/icons/search%20icon%20%23b9935a.png" />
                                        </image>
                                     </ImageView>
                                  </children>
                               </Pane>
-                              <TextField fx:id="txtSearchBar" onAction="#txtSearchBarOnAction" onKeyReleased="#txtSearchBarOnKeyReleased" prefHeight="33.0" prefWidth="345.0" promptText="Search Employee by Name, Email or Phone" style="-fx-background-radius: 20; -fx-border-color: #b9935a; -fx-border-radius: 20; -fx-background-color: F3EDE4;">
+                              <TextField fx:id="txtSearchBar" onAction="#txtSearchBarOnAction" onKeyReleased="#txtSearchBarOnKeyReleased" prefHeight="33.0" prefWidth="345.0" promptText="Search Employee by Name, Email or Phone" style="-fx-background-radius: 10; -fx-border-color: F3EDE4; -fx-border-radius: 10; -fx-background-color: F3EDE4;">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
