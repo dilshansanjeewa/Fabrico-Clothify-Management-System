@@ -140,5 +140,7 @@ public class MainAdminDashBoardFormController implements Initializable {
         imgProfilePic.setClip(clip);
 
         setDateTime();
+
+        setContent("/view/dashboard_content_form.fxml");
     }
 }
