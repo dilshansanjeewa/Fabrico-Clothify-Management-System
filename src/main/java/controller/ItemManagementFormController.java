@@ -4,7 +4,6 @@ import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ComboBox;
@@ -90,22 +89,12 @@ public class ItemManagementFormController {
 
     @FXML
     void btnAddNewBrandonAction(ActionEvent event) {
-
+        showPopup("/view/add_new_brand_popup_form.fxml");
     }
 
     @FXML
     void btnAddSupplieronAction(ActionEvent event) {
-        try {
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/add_new_supplier_form.fxml"));
-//            Parent root = new FXMLLoader(getClass().getResource("/view/add_new_supplier_form.fxml")).load();
-            Stage stage = new Stage();
-            stage.setResizable(false);
-            stage.setScene(new Scene(new FXMLLoader(getClass().getResource("/view/add_new_supplier_form.fxml")).load()));
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.showAndWait();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        showPopup("/view/add_new_supplier_popup_form.fxml");
     }
 
     @FXML
@@ -151,6 +140,20 @@ public class ItemManagementFormController {
     @FXML
     void txtSearchonAction(ActionEvent event) {
 
+    }
+
+    private void showPopup(String path) {
+        try {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+//            Parent root = new FXMLLoader(getClass().getResource(path)).load();
+            Stage stage = new Stage();
+            stage.setResizable(false);
+            stage.setScene(new Scene(new FXMLLoader(getClass().getResource(path)).load()));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
