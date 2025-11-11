@@ -1,0 +1,257 @@
+/* Global Style */
+.root {
+    -fx-background-color: #F3EDE4;
+}
+
+/* ============= TOP BAR ============= */
+.pos-top-bar {
+    -fx-background-color: linear-gradient(to right, #b9935a, #b9935a, #b9935a);
+    -fx-padding: 8;
+    -fx-background-radius: 0 0 10 10;
+}
+
+.search-field {
+    -fx-background-color: #F3EDE4;
+    -fx-background-radius: 25;
+    -fx-padding: 8 15;
+    -fx-border-color: transparent;
+}
+
+.search-container {
+    -fx-background-color: #F3EDE4;
+    -fx-background-radius: 10;
+    -fx-padding: ;
+}
+
+.search-container:hover {
+    -fx-effect: dropshadow(gaussian, rgba(73,58,35,0.3), 8, 0.2, 0, 1);
+}
+
+.user-info-container {
+    -fx-padding:0 10;
+}
+
+.quick-btn {
+    -fx-background-color: #F3EDE4;
+    -fx-background-radius: 10;
+    -fx-border-color: #b9935a;
+    -fx-border-radius: 10;
+    -fx-padding: 6 14;
+    -fx-effect: dropshadow(gaussian, rgba(73,58,35,0.3), 8, 0.2, 0, 1);
+}
+
+.quick-btn:hover {
+    -fx-background-color: #b9935a;
+}
+
+/* ============= PRODUCT GRID ============= */
+.product-scroll {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.product-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 8, 0, 0, 2);
+    -fx-alignment: center;
+    -fx-padding: 10;
+    -fx-spacing: 4;
+}
+
+.product-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 3);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.product-name {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.product-category {
+    -fx-text-fill: #888;
+    -fx-font-size: 12px;
+}
+
+.product-price {
+    -fx-text-fill: #00ADB5;
+    -fx-font-weight: bold;
+}
+
+.add-cart-btn {
+    -fx-background-color: #00ADB5;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+}
+
+/* ============= CART ============= */
+.cart-container {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+}
+/*=============================================================================*/
+
+.table-view{
+   -fx-background-color: transparent;
+}
+
+.table-view:focused{
+    -fx-background-color: transparent;
+}
+
+/* Spaltenköpfe
+    Struktur column-header-background -> column-header */
+
+.table-view .column-header-background{
+    -fx-background-color: #b9935a;
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: BLACK;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: white;
+}
+
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #616161;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #424242;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #005797;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background,
+.table-view > .virtual-flow > .scroll-bar:horizontal,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track-background {
+    -fx-background-color: transparent;
+}
+
+
+
+.table-view > .virtual-flow > .scroll-bar > .increment-button,
+.table-view > .virtual-flow > .scroll-bar > .decrement-button {
+    -fx-opacity: 0;
+}
+/*=============================================================================*/
+
+.checkout-button{
+    -fx-background-color: #b9935a;
+    -fx-background-radius: 8;
+    -fx-border-color: #b9935a;
+    -fx-border-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(73,58,35,0.3), 8, 0.2, 0, 1);
+}
+
+.checkout-button:hover{
+    -fx-background-color: #a67f46;
+}
+
+.cancle-button{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 8;
+    -fx-border-color: #b9935a;
+    -fx-border-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(73,58,35,0.3), 8, 0.2, 0, 1);
+}
+
+.cancle-button:hover {
+    -fx-background-color: #eaeaea;
+}
+
+/*-------------------Product card container---------------------*/
+
+.sort-bar{
+    -fx-background-color: WHITE;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0.1, 0, 0);
+}
+
+.sort-combobox{
+    -fx-background-color: #F3EDE4;
+    -fx-border-color: #b9935a;
+    -fx-border-width: 0.7;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.sort-combobox:hover{
+    -fx-background-color: #FFFFFF;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0.1, 0, 0);
+}
+
+.sort-cancel-button{
+    -fx-background-color: #F3EDE4;
+    -fx-border-color: #b9935a;
+    -fx-border-width: 0.7;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+}
+
+.sort-cancel-button:hover{
+    -fx-background-color: #FFFFFF;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0.1, 0, 0);
+}
+
+/*-----------------SCROLL------------------*/
+
+.product-scroll {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/*-----------product cards-----------*/
+
+.product-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 12;
+    -fx-padding: 10;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0, 0, 2);
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 3);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+.add-cart-btn {
+    -fx-background-color:  #b9935a;
+    -fx-background-radius: 7;
+    -fx-padding: 5 12;
+}
+
+.add-cart-btn:hover {
+    -fx-background-color: #a67f46;
+}
+
+
+@media screen and (max-width: 900px) {
+    .pos-top-bar { -fx-spacing: 10; }
+    .search-field { -fx-pref-width: 250; }
+}

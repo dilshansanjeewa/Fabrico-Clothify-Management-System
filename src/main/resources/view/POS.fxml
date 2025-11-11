@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1180.0" stylesheets="@../css/pos.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <GridPane styleClass="pos-top-bar" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="190.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="400.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="240.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fitHeight="60.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logos/Fabrico%20pos%20logo.png" />
+               </image>
+            </ImageView>
+            <Pane prefHeight="50.0" prefWidth="400.0" GridPane.columnIndex="1">
+               <children>
+                  <HBox layoutX="10.0" layoutY="12.0" prefHeight="36.0" prefWidth="380.0" styleClass="search-container">
+                     <children>
+                        <Pane prefHeight="36.0" prefWidth="36.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="28.0" layoutX="5.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons/search%20icon%20%23b9935a.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <TextField prefHeight="36.0" prefWidth="350.0" styleClass="search-field">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <HBox alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="240.0" styleClass="user-info-container" GridPane.columnIndex="3">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/users/admin%20demo.png" />
+                     </image>
+                  </ImageView>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="54.0" prefWidth="170.0" style="-fx-padding: 5 10;">
+                     <children>
+                        <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="16.0" prefWidth="77.0" text="Admin">
+                           <font>
+                              <Font name="Arial Narrow" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="23.0" prefWidth="174.0" text="Dilshan Sanjeewa">
+                           <font>
+                              <Font name="Arial Narrow Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+   </top>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane prefHeight="50.0" prefWidth="1165.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="223.9999796549479" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="352.0000203450521" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="117.3333740234375" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="283.6666259765625" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="206.66670735677076" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <JFXListView prefWidth="372.0" visible="false" GridPane.columnIndex="1" />
+                  <Pane prefHeight="50.0" prefWidth="301.0" GridPane.columnIndex="3">
+                     <children>
+                        <JFXButton layoutX="22.0" layoutY="8.0" prefHeight="35.0" prefWidth="121.0" ripplerFill="#f3ede4" styleClass="quick-btn" text="CUSTOMERS">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="157.0" layoutY="7.0" prefHeight="35.0" prefWidth="120.0" ripplerFill="#f3ede4" styleClass="quick-btn" text="ALL ITEMS">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="50.0" prefWidth="221.0" GridPane.columnIndex="4">
+                     <children>
+                        <Label alignment="BASELINE_RIGHT" layoutY="7.0" prefHeight="16.0" prefWidth="199.0" text="Thursday, Octomber 30, 2025">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="BASELINE_RIGHT" layoutX="74.0" layoutY="25.0" prefHeight="20.0" prefWidth="124.0" text="11:11 AM">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+            <GridPane style="-fx-padding: 10;" GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="680.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="500.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <GridPane styleClass="cart-container" GridPane.columnIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Order Summery">
+                           <font>
+                              <Font name="Arial Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                          <columns>
+                            <TableColumn prefWidth="234.00006103515625" text="ITEM" />
+                            <TableColumn prefWidth="63.33331298828125" text="PRICE" />
+                              <TableColumn prefWidth="45.33331298828125" text="QTY" />
+                              <TableColumn prefWidth="64.666748046875" text="DISCOUNT" />
+                              <TableColumn prefWidth="64.0" text="TOTAL" />
+                          </columns>
+                        </TableView>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="10.0" layoutY="3.0" text="Subtotal">
+                                       <font>
+                                          <Font name="Arial" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="370.0" layoutY="2.0" prefHeight="21.0" prefWidth="100.0" text="Rs.00.00">
+                                       <font>
+                                          <Font name="Arial Narrow" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="10.0" layoutY="3.0" text="Discount">
+                                       <font>
+                                          <Font name="Arial" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="370.0" layoutY="2.0" prefHeight="21.0" prefWidth="100.0" text="Rs.00.00">
+                                       <font>
+                                          <Font name="Arial Narrow" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Pane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="11.0" layoutY="3.0" text="Net total" textFill="#b9935a">
+                                       <font>
+                                          <Font name="Arial Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="370.0" layoutY="2.0" prefHeight="23.0" prefWidth="100.0" text="Rs.00.00" textFill="#b9935a">
+                                       <font>
+                                          <Font name="Arial Narrow Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                           <children>
+                              <JFXButton layoutX="354.0" layoutY="9.0" prefHeight="32.0" prefWidth="100.0" styleClass="checkout-button" text="Checkout" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="235.0" layoutY="9.0" prefHeight="32.0" prefWidth="100.0" styleClass="cancle-button" text="Cancle">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </Pane>
+                     </children>
+                  </GridPane>
+                  <GridPane style="-fx-padding: 0 10 0 0;">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <GridPane style="-fx-padding: 5;" styleClass="sort-bar">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="40.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="65.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <FlowPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label text="Sort By:">
+                                       <font>
+                                          <Font name="Arial Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </FlowPane>
+                              <FlowPane alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <Label text="Category ">
+                                       <font>
+                                          <Font name="Arial" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox prefHeight="30.0" prefWidth="105.0" styleClass="sort-combobox" />
+                                 </children>
+                              </FlowPane>
+                              <FlowPane alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                                 <children>
+                                    <Label text="Brand ">
+                                       <font>
+                                          <Font name="Arial" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox prefHeight="30.0" prefWidth="105.0" styleClass="sort-combobox" />
+                                 </children>
+                              </FlowPane>
+                              <FlowPane alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+                                 <children>
+                                    <Label text="Type ">
+                                       <font>
+                                          <Font name="Arial" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox prefHeight="30.0" prefWidth="105.0" styleClass="sort-combobox" />
+                                 </children>
+                              </FlowPane>
+                              <FlowPane alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+                                 <children>
+                                    <JFXButton prefHeight="30.0" prefWidth="67.0" styleClass="sort-cancel-button" text="CLEAR">
+                                       <font>
+                                          <Font name="Arial" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </FlowPane>
+                           </children>
+                        </GridPane>
+                        <FlowPane alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="200.0" style="-fx-padding: 0 0 0 10; -fx-background-radius: 7;" styleClass="sort-bar" GridPane.rowIndex="1">
+                           <children>
+                              <Label text="sort: ">
+                                 <font>
+                                    <Font name="Arial Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="20.0" layoutY="12.0" text="Boys&gt; T-shirts&gt; Nike">
+                                 <font>
+                                    <Font name="Arial Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </FlowPane>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0" styleClass="product-scroll" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+                           <content>
+                              <FlowPane hgap="15.0" prefWrapLength="690.0" style="-fx-padding: 10;" vgap="15.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <VBox prefHeight="220.0" prefWidth="160.0" spacing="6.0" styleClass="product-card">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/items/sample%204.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="16.0" prefWidth="153.0" text="Cotton Casual Shirt" textFill="#222831">
+                                             <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="20.0" layoutY="189.0" prefHeight="16.0" prefWidth="153.0" text="Category: Men" textFill="#777777">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="16.0" prefWidth="139.0" text="Rs. 3,100.00" textFill="#b9935a">
+                                             <font>
+                                                <Font name="Arial Narrow Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXButton styleClass="add-cart-btn" text="Add to Cart" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="20.0" layoutY="20.0" prefHeight="220.0" prefWidth="160.0" spacing="6.0" styleClass="product-card">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/items/sample%206.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="16.0" prefWidth="140.0" text="ADRO Men Cotton Hooded" textFill="#222831">
+                                             <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="20.0" layoutY="189.0" prefHeight="16.0" prefWidth="153.0" text="Category: Men" textFill="#777777">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="16.0" prefWidth="139.0" text="Rs. 6,350.00" textFill="#b9935a">
+                                             <font>
+                                                <Font name="Arial Narrow Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXButton styleClass="add-cart-btn" text="Add to Cart" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="20.0" layoutY="20.0" prefHeight="220.0" prefWidth="160.0" spacing="6.0" styleClass="product-card">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/items/sample%207.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="16.0" prefWidth="153.0" text="LEOTUDE Man Cotton" textFill="#222831">
+                                             <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="20.0" layoutY="189.0" prefHeight="16.0" prefWidth="153.0" text="Category: Men" textFill="#777777">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="16.0" prefWidth="139.0" text="Rs. 2,800.00" textFill="#b9935a">
+                                             <font>
+                                                <Font name="Arial Narrow Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXButton styleClass="add-cart-btn" text="Add to Cart" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="371.0" layoutY="20.0" prefHeight="220.0" prefWidth="160.0" spacing="6.0" styleClass="product-card">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/items/sample%208.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="16.0" prefWidth="153.0" text="American Eagle Women's Cotton Blend A-Line Midi Dress" textFill="#222831">
+                                             <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="20.0" layoutY="189.0" prefHeight="16.0" prefWidth="153.0" text="Category: Women" textFill="#777777">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="16.0" prefWidth="139.0" text="Rs. 3,700.00" textFill="#b9935a">
+                                             <font>
+                                                <Font name="Arial Narrow Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXButton styleClass="add-cart-btn" text="Add to Cart" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="195.0" layoutY="20.0" prefHeight="220.0" prefWidth="160.0" spacing="6.0" styleClass="product-card">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/items/sample%206.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="16.0" prefWidth="140.0" text="ADRO Men Cotton Hooded" textFill="#222831">
+                                             <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="20.0" layoutY="189.0" prefHeight="16.0" prefWidth="153.0" text="Category: Men" textFill="#777777">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="16.0" prefWidth="139.0" text="Rs. 6,350.00" textFill="#b9935a">
+                                             <font>
+                                                <Font name="Arial Narrow Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXButton styleClass="add-cart-btn" text="Add to Cart" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="546.0" layoutY="20.0" prefHeight="220.0" prefWidth="160.0" spacing="6.0" styleClass="product-card">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/items/sample%208.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="16.0" prefWidth="153.0" text="American Eagle Women's Cotton Blend A-Line Midi Dress" textFill="#222831">
+                                             <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="20.0" layoutY="189.0" prefHeight="16.0" prefWidth="153.0" text="Category: Women" textFill="#777777">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="16.0" prefWidth="139.0" text="Rs. 3,700.00" textFill="#b9935a">
+                                             <font>
+                                                <Font name="Arial Narrow Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXButton styleClass="add-cart-btn" text="Add to Cart" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="20.0" layoutY="20.0" prefHeight="220.0" prefWidth="160.0" spacing="6.0" styleClass="product-card">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/items/sample%204.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="16.0" prefWidth="153.0" text="Cotton Casual Shirt" textFill="#222831">
+                                             <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="20.0" layoutY="189.0" prefHeight="16.0" prefWidth="153.0" text="Category: Men" textFill="#777777">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="16.0" prefWidth="139.0" text="Rs. 3,100.00" textFill="#b9935a">
+                                             <font>
+                                                <Font name="Arial Narrow Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXButton styleClass="add-cart-btn" text="Add to Cart" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="371.0" layoutY="20.0" prefHeight="220.0" prefWidth="160.0" spacing="6.0" styleClass="product-card">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/items/sample%207.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="16.0" prefWidth="153.0" text="LEOTUDE Man Cotton" textFill="#222831">
+                                             <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="20.0" layoutY="189.0" prefHeight="16.0" prefWidth="153.0" text="Category: Men" textFill="#777777">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="16.0" prefWidth="139.0" text="Rs. 2,800.00" textFill="#b9935a">
+                                             <font>
+                                                <Font name="Arial Narrow Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXButton styleClass="add-cart-btn" text="Add to Cart" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="195.0" layoutY="295.0" prefHeight="220.0" prefWidth="160.0" spacing="6.0" styleClass="product-card">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/items/sample%208.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="16.0" prefWidth="153.0" text="American Eagle Women's Cotton Blend A-Line Midi Dress" textFill="#222831">
+                                             <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="20.0" layoutY="189.0" prefHeight="16.0" prefWidth="153.0" text="Category: Women" textFill="#777777">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="16.0" prefWidth="139.0" text="Rs. 3,700.00" textFill="#b9935a">
+                                             <font>
+                                                <Font name="Arial Narrow Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXButton styleClass="add-cart-btn" text="Add to Cart" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="546.0" layoutY="295.0" prefHeight="220.0" prefWidth="160.0" spacing="6.0" styleClass="product-card">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/items/sample%207.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="16.0" prefWidth="153.0" text="LEOTUDE Man Cotton" textFill="#222831">
+                                             <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="20.0" layoutY="189.0" prefHeight="16.0" prefWidth="153.0" text="Category: Men" textFill="#777777">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="16.0" prefWidth="139.0" text="Rs. 2,800.00" textFill="#b9935a">
+                                             <font>
+                                                <Font name="Arial Narrow Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXButton styleClass="add-cart-btn" text="Add to Cart" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="20.0" layoutY="295.0" prefHeight="220.0" prefWidth="160.0" spacing="6.0" styleClass="product-card">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/items/sample%206.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="16.0" prefWidth="140.0" text="ADRO Men Cotton Hooded" textFill="#222831">
+                                             <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="20.0" layoutY="189.0" prefHeight="16.0" prefWidth="153.0" text="Category: Men" textFill="#777777">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="16.0" prefWidth="139.0" text="Rs. 6,350.00" textFill="#b9935a">
+                                             <font>
+                                                <Font name="Arial Narrow Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXButton styleClass="add-cart-btn" text="Add to Cart" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="371.0" layoutY="295.0" prefHeight="220.0" prefWidth="160.0" spacing="6.0" styleClass="product-card">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/items/sample%204.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Label prefHeight="16.0" prefWidth="153.0" text="Cotton Casual Shirt" textFill="#222831">
+                                             <font>
+                                                <Font name="Arial Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="20.0" layoutY="189.0" prefHeight="16.0" prefWidth="153.0" text="Category: Men" textFill="#777777">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="16.0" prefWidth="139.0" text="Rs. 3,100.00" textFill="#b9935a">
+                                             <font>
+                                                <Font name="Arial Narrow Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXButton styleClass="add-cart-btn" text="Add to Cart" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="12.0" />
+                                             </font>
+                                          </JFXButton>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </FlowPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>
