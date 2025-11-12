@@ -21,7 +21,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1180.0" stylesheets="@../css/pos.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1180.0" stylesheets="@../css/pos.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PosViewController">
    <top>
       <GridPane styleClass="pos-top-bar" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -52,7 +52,7 @@
                               </ImageView>
                            </children>
                         </Pane>
-                        <TextField prefHeight="36.0" prefWidth="350.0" styleClass="search-field">
+                        <TextField fx:id="txtSearch" onAction="#txtSearchonAction" onKeyReleased="#txtSearchonKeyReleased" prefHeight="36.0" prefWidth="350.0" promptText="Search Items" styleClass="search-field">
                            <font>
                               <Font name="Arial" size="14.0" />
                            </font>
@@ -63,19 +63,19 @@
             </Pane>
             <HBox alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="240.0" styleClass="user-info-container" GridPane.columnIndex="3">
                <children>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgUser" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/users/admin%20demo.png" />
                      </image>
                   </ImageView>
                   <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="54.0" prefWidth="170.0" style="-fx-padding: 5 10;">
                      <children>
-                        <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="16.0" prefWidth="77.0" text="Admin">
+                        <Label fx:id="lblRole" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="16.0" prefWidth="77.0" text="Admin">
                            <font>
                               <Font name="Arial Narrow" size="14.0" />
                            </font>
                         </Label>
-                        <Label layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="23.0" prefWidth="174.0" text="Dilshan Sanjeewa">
+                        <Label fx:id="lblUserName" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="23.0" prefWidth="174.0" text="Dilshan Sanjeewa">
                            <font>
                               <Font name="Arial Narrow Bold" size="20.0" />
                            </font>
@@ -109,15 +109,15 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <JFXListView prefWidth="372.0" visible="false" GridPane.columnIndex="1" />
+                  <JFXListView fx:id="lstSuggestions" prefWidth="372.0" visible="false" GridPane.columnIndex="1" />
                   <Pane prefHeight="50.0" prefWidth="301.0" GridPane.columnIndex="3">
                      <children>
-                        <JFXButton layoutX="22.0" layoutY="8.0" prefHeight="35.0" prefWidth="121.0" ripplerFill="#f3ede4" styleClass="quick-btn" text="CUSTOMERS">
+                        <JFXButton fx:id="btnCustomers" layoutX="22.0" layoutY="8.0" onAction="#btnCustomersonAction" prefHeight="35.0" prefWidth="121.0" ripplerFill="#f3ede4" styleClass="quick-btn" text="CUSTOMERS">
                            <font>
                               <Font name="Arial" size="14.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton layoutX="157.0" layoutY="7.0" prefHeight="35.0" prefWidth="120.0" ripplerFill="#f3ede4" styleClass="quick-btn" text="ALL ITEMS">
+                        <JFXButton fx:id="btnAllItems" layoutX="157.0" layoutY="7.0" onAction="#btnAllItemsonAction" prefHeight="35.0" prefWidth="120.0" ripplerFill="#f3ede4" styleClass="quick-btn" text="ALL ITEMS">
                            <font>
                               <Font name="Arial" size="14.0" />
                            </font>
@@ -126,12 +126,12 @@
                   </Pane>
                   <Pane prefHeight="50.0" prefWidth="221.0" GridPane.columnIndex="4">
                      <children>
-                        <Label alignment="BASELINE_RIGHT" layoutY="7.0" prefHeight="16.0" prefWidth="199.0" text="Thursday, Octomber 30, 2025">
+                        <Label fx:id="lblDate" alignment="BASELINE_RIGHT" layoutY="7.0" prefHeight="16.0" prefWidth="199.0" text="Thursday, Octomber 30, 2025">
                            <font>
                               <Font name="Arial" size="14.0" />
                            </font>
                         </Label>
-                        <Label alignment="BASELINE_RIGHT" layoutX="74.0" layoutY="25.0" prefHeight="20.0" prefWidth="124.0" text="11:11 AM">
+                        <Label fx:id="lblTime" alignment="BASELINE_RIGHT" layoutX="74.0" layoutY="25.0" prefHeight="20.0" prefWidth="124.0" text="11:11 AM">
                            <font>
                               <Font name="Arial" size="16.0" />
                            </font>
@@ -165,13 +165,13 @@
                               <Font name="Arial Bold" size="18.0" />
                            </font>
                         </Label>
-                        <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                        <TableView fx:id="tblSummery" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                           <columns>
-                            <TableColumn prefWidth="234.00006103515625" text="ITEM" />
-                            <TableColumn prefWidth="63.33331298828125" text="PRICE" />
-                              <TableColumn prefWidth="45.33331298828125" text="QTY" />
-                              <TableColumn prefWidth="64.666748046875" text="DISCOUNT" />
-                              <TableColumn prefWidth="64.0" text="TOTAL" />
+                            <TableColumn fx:id="colItem" prefWidth="234.00006103515625" text="ITEM" />
+                            <TableColumn fx:id="colPrice" prefWidth="63.33331298828125" text="PRICE" />
+                              <TableColumn fx:id="colQty" prefWidth="45.33331298828125" text="QTY" />
+                              <TableColumn fx:id="colDescount" prefWidth="64.666748046875" text="DISCOUNT" />
+                              <TableColumn fx:id="colTotal" prefWidth="64.0" text="TOTAL" />
                           </columns>
                         </TableView>
                         <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
@@ -183,7 +183,7 @@
                                           <Font name="Arial" size="18.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="370.0" layoutY="2.0" prefHeight="21.0" prefWidth="100.0" text="Rs.00.00">
+                                    <Label fx:id="lblSubTotal" layoutX="370.0" layoutY="2.0" prefHeight="21.0" prefWidth="100.0" text="Rs.00.00">
                                        <font>
                                           <Font name="Arial Narrow" size="20.0" />
                                        </font>
@@ -197,7 +197,7 @@
                                           <Font name="Arial" size="18.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="370.0" layoutY="2.0" prefHeight="21.0" prefWidth="100.0" text="Rs.00.00">
+                                    <Label fx:id="lblDescount" layoutX="370.0" layoutY="2.0" prefHeight="21.0" prefWidth="100.0" text="Rs.00.00">
                                        <font>
                                           <Font name="Arial Narrow" size="20.0" />
                                        </font>
@@ -211,7 +211,7 @@
                                           <Font name="Arial Bold" size="18.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="370.0" layoutY="2.0" prefHeight="23.0" prefWidth="100.0" text="Rs.00.00" textFill="#b9935a">
+                                    <Label fx:id="lblNetToal" layoutX="370.0" layoutY="2.0" prefHeight="23.0" prefWidth="100.0" text="Rs.00.00" textFill="#b9935a">
                                        <font>
                                           <Font name="Arial Narrow Bold" size="20.0" />
                                        </font>
@@ -222,12 +222,12 @@
                         </VBox>
                         <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                            <children>
-                              <JFXButton layoutX="354.0" layoutY="9.0" prefHeight="32.0" prefWidth="100.0" styleClass="checkout-button" text="Checkout" textFill="WHITE">
+                              <JFXButton fx:id="btnCheckout" layoutX="354.0" layoutY="9.0" onAction="#btnCheckoutonAction" prefHeight="32.0" prefWidth="100.0" styleClass="checkout-button" text="Checkout" textFill="WHITE">
                                  <font>
                                     <Font name="Arial" size="14.0" />
                                  </font>
                               </JFXButton>
-                              <JFXButton layoutX="235.0" layoutY="9.0" prefHeight="32.0" prefWidth="100.0" styleClass="cancle-button" text="Cancle">
+                              <JFXButton fx:id="btnCancelOrder" layoutX="235.0" layoutY="9.0" onAction="#btnCancelOrderonAction" prefHeight="32.0" prefWidth="100.0" styleClass="cancle-button" text="Cancle">
                                  <font>
                                     <Font name="Arial" size="14.0" />
                                  </font>
@@ -274,7 +274,7 @@
                                           <Font name="Arial" size="14.0" />
                                        </font>
                                     </Label>
-                                    <ComboBox prefHeight="30.0" prefWidth="105.0" styleClass="sort-combobox" />
+                                    <ComboBox fx:id="comboCategory" onAction="#comboCategoryonAction" prefHeight="30.0" prefWidth="105.0" styleClass="sort-combobox" />
                                  </children>
                               </FlowPane>
                               <FlowPane alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
@@ -284,7 +284,7 @@
                                           <Font name="Arial" size="14.0" />
                                        </font>
                                     </Label>
-                                    <ComboBox prefHeight="30.0" prefWidth="105.0" styleClass="sort-combobox" />
+                                    <ComboBox fx:id="comboBrand" onAction="#comboBrandonAction" prefHeight="30.0" prefWidth="105.0" styleClass="sort-combobox" />
                                  </children>
                               </FlowPane>
                               <FlowPane alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
@@ -294,12 +294,12 @@
                                           <Font name="Arial" size="14.0" />
                                        </font>
                                     </Label>
-                                    <ComboBox prefHeight="30.0" prefWidth="105.0" styleClass="sort-combobox" />
+                                    <ComboBox fx:id="comboType" onAction="#comboTypeonAction" prefHeight="30.0" prefWidth="105.0" styleClass="sort-combobox" />
                                  </children>
                               </FlowPane>
                               <FlowPane alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
                                  <children>
-                                    <JFXButton prefHeight="30.0" prefWidth="67.0" styleClass="sort-cancel-button" text="CLEAR">
+                                    <JFXButton fx:id="btnClearSort" onAction="#btnClearSortonAction" prefHeight="30.0" prefWidth="67.0" styleClass="sort-cancel-button" text="CLEAR">
                                        <font>
                                           <Font name="Arial" size="12.0" />
                                        </font>
@@ -315,16 +315,16 @@
                                     <Font name="Arial Bold" size="10.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="20.0" layoutY="12.0" text="Boys&gt; T-shirts&gt; Nike">
+                              <Label fx:id="lblSortOrder" layoutX="20.0" layoutY="12.0" text="Boys&gt; T-shirts&gt; Nike">
                                  <font>
                                     <Font name="Arial Bold" size="10.0" />
                                  </font>
                               </Label>
                            </children>
                         </FlowPane>
-                        <ScrollPane prefHeight="200.0" prefWidth="200.0" styleClass="product-scroll" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+                        <ScrollPane fx:id="scrollProducts" prefHeight="200.0" prefWidth="200.0" styleClass="product-scroll" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
                            <content>
-                              <FlowPane hgap="15.0" prefWrapLength="690.0" style="-fx-padding: 10;" vgap="15.0">
+                              <FlowPane fx:id="flowProducts" hgap="15.0" prefWrapLength="690.0" style="-fx-padding: 10;" vgap="15.0">
                                  <padding>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </padding>
