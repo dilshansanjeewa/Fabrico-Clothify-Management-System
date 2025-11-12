@@ -1,18 +1,29 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
 <hibernate-configuration>
-    <session-factory name="java:hibernate/SessionFactory">
+    <session-factory>
 
         <!-- JDBC Database Connection Settings -->
-        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="connection.url"><!-- your database url --></property>
-        <property name="connection.username"><!-- your database username --></property>
-        <property name="connection.password"><!-- your database password --></property>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/<!--DB name-->?createDatabaseIfNotExist=true</property>
+        <property name="hibernate.connection.username"><!--username--></property>
+        <property name="hibernate.connection.password"><!--password--></property>
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- JDBC connection pool settings -->
+        <property name="hibernate.connection.pool_size">5</property>
 
         <!-- Show SQL statements in console -->
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
 
         <!-- Enable Hibernate to automatically create/drop tables -->
-        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
     </session-factory>
 </hibernate-configuration>
