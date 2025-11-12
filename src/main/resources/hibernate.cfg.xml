@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-configuration>
+    <session-factory name="java:hibernate/SessionFactory">
+
+        <!-- JDBC Database Connection Settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url"><!-- your database url --></property>
+        <property name="connection.username"><!-- your database username --></property>
+        <property name="connection.password"><!-- your database password --></property>
+
+        <!-- Show SQL statements in console -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Enable Hibernate to automatically create/drop tables -->
+        <property name="hibernate.hbm2ddl.auto">create</property>
+    </session-factory>
+</hibernate-configuration>
