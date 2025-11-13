@@ -36,7 +36,7 @@ public class EmployeeEntity {
     @Column(name = "phone_number", nullable = false, unique = true, length = 16)
     private String phone;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 512)
     private String password;
 
     @Column(nullable = false, length = 16)

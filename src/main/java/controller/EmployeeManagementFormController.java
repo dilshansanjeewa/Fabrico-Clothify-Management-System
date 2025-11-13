@@ -12,6 +12,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.FileChooser;
+import model.dto.EmployeeDto;
+import service.EmployeeService;
+import service.impl.EmployeeServiceImpl;
+import util.PasswordUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,8 +29,13 @@ public class EmployeeManagementFormController implements Initializable {
     FileChooser fileChooser;
     private File selectedImage;
     private final String employeeImageDir = "employee_image/";
+
+    //----- comboBox Data List -----//
     ObservableList<String> Provinces = FXCollections.observableArrayList();
     ObservableList<String> districts = FXCollections.observableArrayList();
+
+    //----- Employee Service for all logics -----//
+    EmployeeService employeeService = new EmployeeServiceImpl();
 
     @FXML
     private JFXButton btnCancel;
@@ -114,10 +123,30 @@ public class EmployeeManagementFormController implements Initializable {
     void btnSaveonAction(ActionEvent event) {
 
         if(checkInputFields()){
+            EmployeeDto employeeDto = new EmployeeDto(
+                    txtFirstName.getText(),
+                    txtLastName.getText(),
+                    getGender(),
+                    dateDob.getValue(),
+                    txtEmail.getText(),
+                    txtPhone.getText(),
+                    PasswordUtil.hashPassword(txtPassword.getText()),
+                    getRole(),
+                    comboProvince.getValue(),
+                    comboDistrict.getValue(),
+                    txtAddress.getText(),
+                    txtPostalCode.getText(),
+                    saveEmployeeImg()
+            );
+            boolean b = employeeService.saveEmployee(employeeDto);
+
+            if(b){
+                System.out.println("saved successed...");
+            }else {
+                System.out.println("not saved...");
+            }
 
         }
-
-//        System.out.println(saveEmployeeImg());
     }
 
     @FXML
@@ -195,6 +224,21 @@ public class EmployeeManagementFormController implements Initializable {
     @FXML
     void txtSearchonKeyReleased(KeyEvent event) {
 
+    }
+    private String getRole(){
+        if(radioAdmin.isSelected()){
+            return "Admin";
+        }else {
+            return "Employee";
+        }
+    }
+
+    private String getGender(){
+        if(radioMale.isSelected()){
+            return "Male";
+        }else {
+            return "Female";
+        }
     }
 
     private boolean checkInputFields(){
