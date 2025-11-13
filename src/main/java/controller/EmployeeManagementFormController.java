@@ -2,14 +2,12 @@ package controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXRadioButton;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.ListView;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
@@ -27,6 +25,8 @@ public class EmployeeManagementFormController implements Initializable {
     FileChooser fileChooser;
     private File selectedImage;
     private final String employeeImageDir = "employee_image/";
+    ObservableList<String> Provinces = FXCollections.observableArrayList();
+    ObservableList<String> districts = FXCollections.observableArrayList();
 
     @FXML
     private JFXButton btnCancel;
@@ -44,10 +44,10 @@ public class EmployeeManagementFormController implements Initializable {
     private JFXButton btnUpload;
 
     @FXML
-    private ComboBox<?> comboDistrict;
+    private ComboBox<String> comboDistrict;
 
     @FXML
-    private ComboBox<?> comboProvince;
+    private ComboBox<String> comboProvince;
 
     @FXML
     private DatePicker dateDob;
@@ -69,6 +69,12 @@ public class EmployeeManagementFormController implements Initializable {
 
     @FXML
     private JFXRadioButton radioMale;
+
+    @FXML
+    private ToggleGroup toggleGender;
+
+    @FXML
+    private ToggleGroup toggleRole;
 
     @FXML
     private TextField txtAddress;
@@ -107,12 +113,16 @@ public class EmployeeManagementFormController implements Initializable {
     @FXML
     void btnSaveonAction(ActionEvent event) {
 
-        System.out.println(saveEmployeeImg());
+        if(checkInputFields()){
+
+        }
+
+//        System.out.println(saveEmployeeImg());
     }
 
     @FXML
     void btnUpdateonAction(ActionEvent event) {
-
+        checkInputFields();
     }
 
     @FXML
@@ -128,7 +138,48 @@ public class EmployeeManagementFormController implements Initializable {
 
     @FXML
     void comboProvinceonAction(ActionEvent event) {
+        if(comboDistrict.isDisable()){
+            comboDistrict.setDisable(false);
+        }
+        
+        if(comboProvince.getValue().equals("Western")){
+            districts.clear();
+            districts.addAll("Gampaha", "Colombo", "Kalutara");
 
+        } else if (comboProvince.getValue().equals("Central")) {
+            districts.clear();
+            districts.addAll("Matale", "Kandy", "Nuwara Eliya");
+
+        } else if (comboProvince.getValue().equals("Southern")) {
+            districts.clear();
+            districts.addAll("Galle", "Matara", "Hambantota");
+
+        } else if (comboProvince.getValue().equals("Eastern")) {
+            districts.clear();
+            districts.addAll("Trincomalee", "Batticaloa", "Ampara");
+
+        } else if (comboProvince.getValue().equals("Northern")) {
+            districts.clear();
+            districts.addAll("Jaffna", "Kilinochchi", "Mannar", "Mullaitivu", "Vavuniya");
+
+        } else if (comboProvince.getValue().equals("North Western")) {
+            districts.clear();
+            districts.addAll("Kurunegala", "Puttalam");
+
+        } else if (comboProvince.getValue().equals("North Central")) {
+            districts.clear();
+            districts.addAll("Anuradhapura", "Polonnaruwa");
+
+        } else if (comboProvince.getValue().equals("Sabaragamuwa")) {
+            districts.clear();
+            districts.addAll("Kegalle", "Ratnapura");
+
+        } else {
+            districts.clear();
+            districts.addAll("Badulla", "Monaragala");
+        }
+
+        comboDistrict.setItems(districts);
     }
 
     @FXML
@@ -144,6 +195,88 @@ public class EmployeeManagementFormController implements Initializable {
     @FXML
     void txtSearchonKeyReleased(KeyEvent event) {
 
+    }
+
+    private boolean checkInputFields(){
+        if(txtFirstName.getText() == null || txtFirstName.getText().isEmpty()){
+            showErrorAlerts("Entre First Name");
+            return false;
+
+        } else if (txtLastName.getText() == null || txtLastName.getText().isEmpty()) {
+            showErrorAlerts("Entre Last Name");
+            return false;
+
+        } else if (!(radioMale.isSelected() || radioFemale.isSelected())) {
+            showErrorAlerts("Select Gender");
+            return false;
+
+        } else if (dateDob.getValue() == null) {
+            showErrorAlerts("Entre Date of Birth");
+            return false;
+
+        } else if (txtEmail.getText() == null || txtEmail.getText().isEmpty()) {
+            showErrorAlerts("Entre Employee Email Address");
+            return false;
+
+        } else if (!validateEmail()) {
+            showErrorAlerts("Input Valid Email Addres");
+            return false;
+
+        } else if (txtPhone.getText() == null || txtPhone.getText().isEmpty()) {
+            showErrorAlerts("Entre Phone Number");
+            return false;
+
+        } else if (txtPassword.getText() == null || txtPassword.getText().isEmpty()) {
+            showErrorAlerts("Entre Password");
+            return false;
+
+        } else if (!(radioAdmin.isSelected() || radioEmployee.isSelected())) {
+            showErrorAlerts("Select Role");
+            return false;
+
+        } else if (comboDistrict.getValue() == null) {
+            showErrorAlerts("Select District");
+            return false;
+
+        } else if (comboProvince.getValue() == null) {
+            showErrorAlerts("Select Province");
+            return false;
+
+        } else if (txtAddress.getText() == null || txtAddress.getText().isEmpty()) {
+            showErrorAlerts("Entre Street Address");
+            return false;
+
+        } else if (txtPostalCode.getText() == null || txtPostalCode.getText().isEmpty()) {
+            showErrorAlerts("Entre Postal Code");
+            return false;
+
+        } else {
+            return true;
+        }
+
+    }
+
+    private boolean validateEmail(){
+        String email = txtEmail.getText();
+
+        if (email.equals(email.toLowerCase())){
+            try {
+                if(email.substring(email.length()-10).equals("@gmail.com")){
+                    return true;
+                }
+            }catch (StringIndexOutOfBoundsException ex){
+                return false;
+            }
+        }
+
+        return false;
+    }
+
+    private void showErrorAlerts(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
     private String saveEmployeeImg(){
@@ -177,6 +310,9 @@ public class EmployeeManagementFormController implements Initializable {
         if(!dir.exists()){
             dir.mkdir();
         }
+        
+        Provinces.addAll("Western", "Uva", "Southern", "Sabaragamuwa", "Northern", "North Western", "North Central", "Eastern", "Central");
+        comboProvince.setItems(Provinces);
 
     }
 }
