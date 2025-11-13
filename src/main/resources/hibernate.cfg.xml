@@ -8,9 +8,9 @@
 
         <!-- JDBC Database Connection Settings -->
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/<!--DB name-->?createDatabaseIfNotExist=true</property>
-        <property name="hibernate.connection.username"><!--username--></property>
-        <property name="hibernate.connection.password"><!--password--></property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/<!-- database name -->?createDatabaseIfNotExist=true</property>
+        <property name="hibernate.connection.username"><!-- username --></property>
+        <property name="hibernate.connection.password"><!-- password --></property>
 
         <!-- SQL dialect -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -24,6 +24,9 @@
 
         <!-- Enable Hibernate to automatically create/drop tables -->
         <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Mapping Entity Classes -->
+        <mapping class="model.entity.EmployeeEntity"/>
 
     </session-factory>
 </hibernate-configuration>
