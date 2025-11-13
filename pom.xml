@@ -16,21 +16,21 @@
 
     <dependencies>
 
-        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-controls -->
+        <!-- JavaFX Controls -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>24</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-fxml -->
+        <!-- JavaFX-FXML Loader -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>24</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.jfoenix/jfoenix -->
+        <!-- Jfoenix -->
         <dependency>
             <groupId>com.jfoenix</groupId>
             <artifactId>jfoenix</artifactId>
@@ -65,6 +65,12 @@
             <version>2.0.9</version>
         </dependency>
 
+        <!-- lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.42</version>
+        </dependency>
     </dependencies>
 
 </project>
