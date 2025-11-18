@@ -10,6 +10,8 @@ public class HibernateUtil {
 
     private static SessionFactory sessionFactory = buildSessionFactory();
 
+    private HibernateUtil(){}
+
     private static SessionFactory buildSessionFactory() {
         StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure().build();
 
@@ -25,6 +27,6 @@ public class HibernateUtil {
     }
 
     public static void shutdown() {
-        getSessionFactory().close();
+        sessionFactory.close();
     }
 }
