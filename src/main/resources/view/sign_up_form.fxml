@@ -8,109 +8,98 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1180.0" stylesheets="@../css/sign-in.css" xmlns="http://javafx.com/javafx/25" fx:controller="controller.SignUpFormController" xmlns:fx="http://javafx.com/fxml/1">
-   <center>
-      <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1180.0" stylesheets="@../css/sign-in.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SignUpFormController">
+   <right>
+      <AnchorPane BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane>
-               <children>
-                  <ImageView fitHeight="620.0" fitWidth="1180.0" layoutY="-18.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/backgrounds/sign%20up%20bg.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="595.0" layoutY="146.0" onMouseClicked="#imgOnMouseClicked" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/users/admin%20demo.png" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="795.0" layoutY="121.0" text="EMAIL ADDREASS">
-                     <font>
-                        <Font name="Arial Bold" size="16.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="txtEmail" layoutX="795.0" layoutY="145.0" prefHeight="36.0" prefWidth="290.0" styleClass="input-field">
-                     <font>
-                        <Font name="Arial" size="15.0" />
-                     </font>
-                  </TextField>
-                  <Label layoutX="795.0" layoutY="191.0" text="PASSWORD">
-                     <font>
-                        <Font name="Arial Bold" size="16.0" />
-                     </font>
-                  </Label>
-                  <PasswordField fx:id="txtPassword" layoutX="795.0" layoutY="214.0" prefHeight="36.0" prefWidth="290.0" styleClass="input-field">
-                     <font>
-                        <Font name="Arial" size="14.0" />
-                     </font>
-                  </PasswordField>
-                  <JFXButton fx:id="btnSignUp" layoutX="794.0" layoutY="519.0" onAction="#btnSignUponAction" prefHeight="36.0" prefWidth="290.0" styleClass="sign-in-btn" text="SIGN UP" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold" size="18.0" />
-                     </font>
-                  </JFXButton>
-                  <Label layoutX="795.0" layoutY="260.0" text="FULL NAME">
-                     <font>
-                        <Font name="Arial Bold" size="16.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="txtName" layoutX="795.0" layoutY="284.0" prefHeight="36.0" prefWidth="290.0" styleClass="input-field">
-                     <font>
-                        <Font name="Arial" size="15.0" />
-                     </font>
-                  </TextField>
-                  <JFXButton fx:id="btnOtp" layoutX="795.0" layoutY="340.0" onAction="#btnOtponAction" prefHeight="36.0" prefWidth="117.0" styleClass="sign-in-btn" text="Send OTP" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold" size="18.0" />
-                     </font>
-                  </JFXButton>
-                  <Label layoutX="795.0" layoutY="386.0" text="ENTER OTP">
-                     <font>
-                        <Font name="Arial Bold" size="16.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="txtOtp" layoutX="795.0" layoutY="410.0" prefHeight="36.0" prefWidth="164.0" styleClass="input-field">
-                     <font>
-                        <Font name="Arial" size="15.0" />
-                     </font>
-                  </TextField>
-                  <JFXButton fx:id="btnVerify" layoutX="967.0" layoutY="410.0" onAction="#btnVerifyonAction" prefHeight="36.0" prefWidth="117.0" styleClass="sign-in-btn" text="Verify" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold" size="18.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton fx:id="btnSelectImg" layoutX="600.0" layoutY="330.0" onAction="#btnSelectImgonAction" prefHeight="36.0" prefWidth="139.0" styleClass="sign-in-btn" text="Celect image" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold" size="18.0" />
-                     </font>
-                  </JFXButton>
-                  <Label layoutX="607.0" layoutY="121.0" text="PROFILE IMAGE">
-                     <font>
-                        <Font name="Arial Bold" size="16.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="lblWerning" layoutX="795.0" layoutY="456.0" prefHeight="15.0" prefWidth="287.0" text="warning " textFill="RED">
-                     <font>
-                        <Font name="Arial Bold" size="12.0" />
-                     </font>
-                  </Label>
-                  <JFXButton fx:id="btnBack" layoutX="600.0" layoutY="519.0" onAction="#btnBackinAction" prefHeight="36.0" prefWidth="139.0" styleClass="sign-in-btn" text="  BACK" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Bold" size="18.0" />
-                     </font>
-                  </JFXButton>
-                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="622.0" layoutY="527.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/icons/arrow-left.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </AnchorPane>
+            <ImageView fitHeight="620.0" fitWidth="1180.0" layoutX="-8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/backgrounds/sign%20up%20bg.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgAdmin" fitHeight="150.0" fitWidth="150.0" layoutX="595.0" layoutY="146.0" onMouseClicked="#imgOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/users/admin%20demo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="795.0" layoutY="121.0" text="EMAIL ADDREASS">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtEmail" layoutX="795.0" layoutY="145.0" prefHeight="36.0" prefWidth="290.0" styleClass="input-field">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </TextField>
+            <Label layoutX="795.0" layoutY="191.0" text="PASSWORD">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="txtPassword" layoutX="795.0" layoutY="214.0" prefHeight="36.0" prefWidth="290.0" styleClass="input-field">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </PasswordField>
+            <JFXButton fx:id="btnSignUp" disable="true" layoutX="794.0" layoutY="519.0" onAction="#btnSignUponAction" prefHeight="36.0" prefWidth="290.0" styleClass="sign-in-btn" text="SIGN UP" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="795.0" layoutY="260.0" text="FULL NAME">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtName" layoutX="795.0" layoutY="284.0" prefHeight="36.0" prefWidth="290.0" styleClass="input-field">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </TextField>
+            <JFXButton fx:id="btnSendOtp" layoutX="795.0" layoutY="340.0" onAction="#btnSendOtponAction" prefHeight="36.0" prefWidth="117.0" styleClass="sign-in-btn" text="Send OTP" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="lblEnterOtp" disable="true" layoutX="795.0" layoutY="386.0" text="ENTER OTP">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtOtp" disable="true" layoutX="795.0" layoutY="410.0" prefHeight="36.0" prefWidth="164.0" styleClass="input-field">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </TextField>
+            <JFXButton fx:id="btnVerify" disable="true" layoutX="967.0" layoutY="410.0" onAction="#btnVerifyonAction" prefHeight="36.0" prefWidth="117.0" styleClass="sign-in-btn" text="Verify" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="607.0" layoutY="121.0" text="PROFILE IMAGE">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblWerning" layoutX="795.0" layoutY="456.0" prefHeight="15.0" prefWidth="287.0" textFill="RED">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnBack" layoutX="600.0" layoutY="519.0" onAction="#btnBackinAction" prefHeight="36.0" prefWidth="139.0" styleClass="sign-in-btn" text="  BACK" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="622.0" layoutY="527.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons/arrow-left.png" />
+               </image>
+            </ImageView>
          </children>
-      </FlowPane>
-   </center>
+      </AnchorPane>
+   </right>
 </BorderPane>
