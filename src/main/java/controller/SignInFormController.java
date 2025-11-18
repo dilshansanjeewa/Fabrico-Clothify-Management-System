@@ -3,7 +3,6 @@ package controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -13,7 +12,7 @@ public class SignInFormController {
     private JFXButton btnSignIn;
 
     @FXML
-    private Hyperlink linkSignUp;
+    private JFXButton btnSignUp;
 
     @FXML
     private TextField txtEmail;
@@ -27,7 +26,7 @@ public class SignInFormController {
     }
 
     @FXML
-    void linkSignUponAction(ActionEvent event) {
+    void btnSignUponAction(ActionEvent event) {
 
     }
 

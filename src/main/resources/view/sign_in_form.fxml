@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -45,11 +44,11 @@
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </JFXButton>
-            <Hyperlink fx:id="linkSignUp" layoutX="928.0" layoutY="459.0" onAction="#linkSignUponAction" text="SIGN UP AS AN ADMIN">
+            <JFXButton fx:id="btnSignUp" layoutX="778.0" layoutY="470.0" onAction="#btnSignUponAction" prefHeight="36.0" prefWidth="290.0" styleClass="sign-in-btn" text="SIGN UP" textFill="WHITE">
                <font>
-                  <Font name="Arial" size="12.0" />
+                  <Font name="Arial Bold" size="18.0" />
                </font>
-            </Hyperlink>
+            </JFXButton>
          </children>
       </AnchorPane>
    </children>

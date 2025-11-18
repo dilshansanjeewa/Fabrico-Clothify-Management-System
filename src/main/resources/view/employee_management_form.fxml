@@ -108,7 +108,12 @@
                      <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0">
                            <children>
-                              <Label text="Employee Details">
+                              <Label text="Employee ID - ">
+                                 <font>
+                                    <Font name="Arial Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblId" layoutX="20.0" layoutY="18.0" prefHeight="17.0" prefWidth="125.0" text="EMP001">
                                  <font>
                                     <Font name="Arial Bold" size="15.0" />
                                  </font>
@@ -312,7 +317,7 @@
                                           <Font name="Arial" size="14.0" />
                                        </font>
                                     </Label>
-                                    <ComboBox fx:id="comboDistrict" prefHeight="30.0" prefWidth="330.0" styleClass="form-input-field" />
+                                    <ComboBox fx:id="comboDistrict" disable="true" prefHeight="30.0" prefWidth="330.0" styleClass="form-input-field" />
                                  </children>
                               </VBox>
                            </children>
