@@ -1,0 +1,11 @@
+.input-field {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 9;
+    -fx-border-color: #b9935a;
+    -fx-border-radius: 8;
+}
+
+.sign-in-btn {
+    -fx-background-color: #b9935a;
+    -fx-background-radius: 8;
+}
