@@ -40,6 +40,6 @@ public class SignInServiceImpl implements SignInService {
     }
 
     private void getAll(){
-        adminEntityList = signInRepository.getAll();
+        if(adminEntityList == null) adminEntityList = signInRepository.getAll();
     }
 }
