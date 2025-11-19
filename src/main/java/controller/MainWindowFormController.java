@@ -24,7 +24,7 @@ public class MainWindowFormController implements Initializable {
         Stage stage = (Stage) btnGetStarted.getScene().getWindow();
         stage.close();
         try {
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/main_login_form.fxml"))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/sign_in_form.fxml"))));
             stage.show();
         } catch (IOException e) {
             throw new RuntimeException(e);

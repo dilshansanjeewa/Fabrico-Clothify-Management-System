@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.shape.Circle;
@@ -114,6 +115,13 @@ public class MainAdminDashBoardFormController implements Initializable {
     @FXML
     void btnSupplyersOnAction(ActionEvent event) {
 
+    }
+
+    public void setAdminData(String[] adminData){
+        imgProfilePic.setImage(new Image("file:"+adminData[1]));
+        System.out.println(adminData[0]+adminData[1]);
+        lblUserName.setText(adminData[0]);
+        lblRole.setText("Admin");
     }
 
     private void setContent(String path) {
