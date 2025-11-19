@@ -8,9 +8,9 @@
 
         <!-- JDBC Database Connection Settings -->
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/<!-- database name -->?createDatabaseIfNotExist=true</property>
-        <property name="hibernate.connection.username"><!-- username --></property>
-        <property name="hibernate.connection.password"><!-- password --></property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/<!--YOUR DB NAME--></property>
+        <property name="hibernate.connection.username"><!--YOUR DB USERNAME--></property>
+        <property name="hibernate.connection.password"><!--YOUR DB PASSWORD--></property>
 
         <!-- SQL dialect -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -27,6 +27,8 @@
 
         <!-- Mapping Entity Classes -->
         <mapping class="model.entity.EmployeeEntity"/>
+        <mapping class="model.entity.UserEntity"/>
+        <mapping class="model.entity.AdminEntity"/>
 
     </session-factory>
 </hibernate-configuration>

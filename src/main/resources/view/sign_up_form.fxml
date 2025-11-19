@@ -44,7 +44,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </PasswordField>
-            <JFXButton fx:id="btnSignUp" disable="true" layoutX="794.0" layoutY="519.0" onAction="#btnSignUponAction" prefHeight="36.0" prefWidth="290.0" styleClass="sign-in-btn" text="SIGN UP" textFill="WHITE">
+            <JFXButton fx:id="btnSignUp" layoutX="794.0" layoutY="519.0" onAction="#btnSignUponAction" prefHeight="36.0" prefWidth="290.0" styleClass="sign-in-btn" text="SIGN UP" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font>

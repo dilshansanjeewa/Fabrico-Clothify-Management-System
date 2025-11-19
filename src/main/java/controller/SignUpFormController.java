@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -15,6 +16,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import model.dto.Admin;
+import service.SignUpService;
+import service.impl.SignUpServiceImpl;
+import util.PasswordUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,10 +30,14 @@ import java.util.ResourceBundle;
 
 public class SignUpFormController implements Initializable {
 
+    SignUpService signUpService = new SignUpServiceImpl();
+
     Stage stage;
     FileChooser fileChooser;
     private final String adminImageDirectory = "admin_image/";
     File selectedImage;
+
+    Alert errorAlert = new Alert(Alert.AlertType.ERROR);
 
     @FXML
     private JFXButton btnBack;
@@ -86,7 +95,14 @@ public class SignUpFormController implements Initializable {
 
     @FXML
     void btnSignUponAction(ActionEvent event) {
-
+        if (checkInputFields()){
+            signUpService.save(new Admin(
+                    txtEmail.getText(),
+                    PasswordUtil.hashPassword(txtPassword.getText()),
+                    txtName.getText(),
+                    getImagePath()
+            ));
+        }
     }
 
     @FXML
@@ -106,6 +122,27 @@ public class SignUpFormController implements Initializable {
         System.out.println("image clicked");
     }
 
+    private void showErrors(String message){
+        errorAlert.setTitle("INPUT ERROR");
+        errorAlert.setContentText(message);
+        errorAlert.show();
+    }
+
+    private boolean checkInputFields(){
+        if(txtEmail.getText() == null || txtEmail.getText().isEmpty()){
+            showErrors("Please Input Email Address");
+            return false;
+        } else if (txtPassword.getText() == null || txtPassword.getText().isEmpty()) {
+            showErrors("Please Input Password");
+            return false;
+        } else if (txtName.getText() == null || txtName.getText().isEmpty()) {
+            showErrors("Please Input Name");
+            return false;
+        }else {
+            return true;
+        }
+    }
+
     private String getImagePath(){
         return saveImage();
     }
@@ -118,26 +155,28 @@ public class SignUpFormController implements Initializable {
             return destinationFile.getPath();
         } catch (IOException e) {
             throw new RuntimeException(e);
+        } catch (NullPointerException e){
+            return "images/users/admin demo.png";
         }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        //----- Create a Directly to Save Admin Images if not Exists -----//
         File directory = new File(adminImageDirectory);
         if(!directory.exists()){
             directory.mkdir();
         }
 
+        //----- add round shape to image -----//
         Rectangle clip = new Rectangle(imgAdmin.getFitWidth(), imgAdmin.getFitHeight());
-        clip.setArcWidth(200); // Adjust for desired roundness
+        clip.setArcWidth(200);
         clip.setArcHeight(200);
         imgAdmin.setClip(clip);
-        //------------------------------------------------------------------------------------
 
+        //----- Initialize File Chooser -----//
         fileChooser = new FileChooser();
         fileChooser.setTitle("Select Admin Image");
-
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg")
         );
