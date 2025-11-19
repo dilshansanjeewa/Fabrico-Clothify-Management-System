@@ -50,6 +50,7 @@ public class SignInFormController {
 
                     stage = (Stage) txtEmail.getScene().getWindow();
                     stage.setTitle("Admin Panel");
+                    stage.setResizable(true);
                     stage.setScene(new Scene(root));
                     stage.show();
                 } catch (IOException e) {

@@ -119,7 +119,6 @@ public class MainAdminDashBoardFormController implements Initializable {
 
     public void setAdminData(String[] adminData){
         imgProfilePic.setImage(new Image("file:"+adminData[1]));
-        System.out.println(adminData[0]+adminData[1]);
         lblUserName.setText(adminData[0]);
         lblRole.setText("Admin");
     }

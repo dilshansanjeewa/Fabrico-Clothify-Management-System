@@ -118,8 +118,6 @@ public class SignUpFormController implements Initializable {
             selectedImage = adminImgFile;
             imgAdmin.setImage(new Image(selectedImage.toURI().toString()));
         }
-
-        System.out.println("image clicked");
     }
 
     private void showErrors(String message){
@@ -156,7 +154,7 @@ public class SignUpFormController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (NullPointerException e){
-            return "images/users/admin demo.png";
+            return "admin_image/admin demo.png";
         }
     }
 
