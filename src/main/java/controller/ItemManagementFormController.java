@@ -4,153 +4,58 @@ import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.control.ColorPicker;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
+import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
 
 public class ItemManagementFormController {
 
     @FXML
-    private JFXButton btnAdd;
+    private JFXButton btnAll;
 
     @FXML
-    private JFXButton btnAddNewBrand;
+    private JFXButton btnDeleteItems;
 
     @FXML
-    private JFXButton btnAddSupplier;
+    private JFXButton btnSaveItems;
 
     @FXML
-    private JFXButton btnCancel;
+    private JFXButton btnUpdateItems;
 
     @FXML
-    private JFXButton btnDelete;
+    private ImageView imgAleartIcon;
 
     @FXML
-    private JFXButton btnUpdate;
-
-    @FXML
-    private JFXButton btnUpload;
-
-    @FXML
-    private ComboBox<?> comboBrand;
-
-    @FXML
-    private ComboBox<?> comboCategory;
-
-    @FXML
-    private ComboBox<?> comboSize;
-
-    @FXML
-    private ComboBox<?> comboSubCategory;
-
-    @FXML
-    private ComboBox<?> comboSuplier;
-
-    @FXML
-    private DatePicker dateAdding;
-
-    @FXML
-    private ImageView imgItem;
-
-    @FXML
-    private ColorPicker itmColor;
+    private BorderPane itemManagementBorderPane;
 
     @FXML
     private Label lblLowStock;
 
     @FXML
-    private TextField txtColor;
-
-    @FXML
-    private TextField txtCostPrice;
-
-    @FXML
-    private TextField txtDescription;
-
-    @FXML
-    private TextField txtItemName;
-
-    @FXML
-    private TextField txtQty;
-
-    @FXML
-    private TextField txtSearch;
-
-    @FXML
-    private TextField txtSellingPrice;
-
-    @FXML
-    void btnAddNewBrandonAction(ActionEvent event) {
-        showPopup("/view/add_new_brand_popup_form.fxml");
+    void btnAllOnAction(ActionEvent event) {
+        loadContent("/view/all_item_form.fxml");
     }
 
     @FXML
-    void btnAddSupplieronAction(ActionEvent event) {
-        showPopup("/view/add_new_supplier_popup_form.fxml");
+    void btnDeleteItemsOnAction(ActionEvent event) {
+        loadContent("/view/delete_item_form.fxml");
     }
 
     @FXML
-    void btnAddonAction(ActionEvent event) {
-
+    void btnSaveItemsOnAction(ActionEvent event) {
+        loadContent("/view/save_item_form.fxml");
     }
 
     @FXML
-    void btnCancelonAction(ActionEvent event) {
-
+    void btnUpdateItemsOnAction(ActionEvent event) {
+        loadContent("/view/update_item_form.fxml");
     }
 
-    @FXML
-    void btnDeleteonAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnUpdateonAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnUploadonAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void comboSuplieronAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void itmColoronAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void txtColoronAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void txtSearchonAction(ActionEvent event) {
-
-    }
-
-    private void showPopup(String path) {
+    private void loadContent(String path){
         try {
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
-//            Parent root = new FXMLLoader(getClass().getResource(path)).load();
-            Stage stage = new Stage();
-            stage.setResizable(false);
-            stage.setScene(new Scene(new FXMLLoader(getClass().getResource(path)).load()));
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.showAndWait();
+            itemManagementBorderPane.setCenter(FXMLLoader.load(getClass().getResource(path)));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
