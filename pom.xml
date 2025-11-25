@@ -78,6 +78,14 @@
             <artifactId>jbcrypt</artifactId>
             <version>0.4</version>
         </dependency>
+
+        <!-- Model Mapper for map model classes -->
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>3.2.5</version>
+        </dependency>
+
     </dependencies>
 
 </project>
