@@ -8,6 +8,7 @@ import lombok.*;
 @Getter
 @ToString
 public class Supplier {
+    private Long id;
     private String name;
     private String email;
     private String phone;

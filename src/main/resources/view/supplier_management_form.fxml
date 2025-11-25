@@ -93,7 +93,11 @@
                                     <Font name="Arial Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtName" prefHeight="32.0" styleClass="input-fields" />
+                              <TextField fx:id="txtName" prefHeight="32.0" styleClass="input-fields">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </TextField>
                            </children>
                            <padding>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -106,7 +110,11 @@
                                     <Font name="Arial Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtEmail" prefHeight="32.0" styleClass="input-fields" />
+                              <TextField fx:id="txtEmail" prefHeight="32.0" styleClass="input-fields">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </TextField>
                            </children>
                            <padding>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -119,7 +127,11 @@
                                     <Font name="Arial Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtPhone" prefHeight="32.0" styleClass="input-fields" />
+                              <TextField fx:id="txtPhone" prefHeight="32.0" styleClass="input-fields">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </TextField>
                            </children>
                            <padding>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -132,7 +144,11 @@
                                     <Font name="Arial Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtAddress" prefHeight="32.0" styleClass="input-fields" />
+                              <TextField fx:id="txtAddress" prefHeight="32.0" styleClass="input-fields">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </TextField>
                            </children>
                            <padding>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -140,7 +156,7 @@
                         </VBox>
                         <VBox alignment="BOTTOM_RIGHT" layoutX="15.0" layoutY="225.0" prefHeight="40.0" prefWidth="379.0">
                            <children>
-                              <JFXButton fx:id="btnCancle" onAction="#btnCancleOnAction" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: WHITE; -fx-border-color: #B9935A; -fx-border-width: 0.5; -fx-background-radius: 10; -fx-border-radius: 10;" text="Cancel">
+                              <JFXButton fx:id="btnCancel" onAction="#btnCancelOnAction" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: WHITE; -fx-border-color: #B9935A; -fx-border-width: 0.5; -fx-background-radius: 10; -fx-border-radius: 10;" text="Cancel">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
@@ -168,8 +184,8 @@
                   <TableView fx:id="tblSupplier" prefHeight="280.0" prefWidth="580.0">
                     <columns>
                       <TableColumn fx:id="colName" editable="false" maxWidth="-1.0" minWidth="120.0" prefWidth="120.0" sortable="false" styleClass="column-header-background" text="Supplier Name" />
-                        <TableColumn fx:id="coEmail" editable="false" maxWidth="-1.0" minWidth="150.0" prefWidth="150.0" sortable="false" styleClass="column-header-background" text="Email Address" />
-                        <TableColumn fx:id="conPhone" editable="false" maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" sortable="false" styleClass="column-header-background" text="Phone Number" />
+                        <TableColumn fx:id="colEmail" editable="false" maxWidth="-1.0" minWidth="150.0" prefWidth="150.0" sortable="false" styleClass="column-header-background" text="Email Address" />
+                        <TableColumn fx:id="colPhone" editable="false" maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" sortable="false" styleClass="column-header-background" text="Phone Number" />
                         <TableColumn fx:id="colAddress" editable="false" maxWidth="-1.0" minWidth="204.0" prefWidth="100.0" sortable="false" styleClass="column-header-background" text="Address" />
                     </columns>
                   </TableView>
