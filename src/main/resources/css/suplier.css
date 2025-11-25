@@ -1,0 +1,84 @@
+.root {
+    -fx-background-color: #F3EDE4;
+}
+
+.search-bar-container {
+    -fx-border-color: #B9935A;
+    -fx-border-radius: 10;
+}
+
+.search-bar {
+    -fx-background-color: #F3EDE4;
+    -fx-background-radius: 10;
+}
+
+.form-bg {
+    -fx-border-color: #B9935A;
+    -fx-border-width: 0.5;
+    -fx-border-radius: 5;
+}
+
+.input-fields {
+    -fx-background-color: #F3EDE4;
+    -fx-background-radius: 10;
+    -fx-border-color: #B9935A;
+    -fx-border-radius: 10;
+    -fx-border-width: 0.5;
+}
+
+.input-fields:hover {
+    -fx-background-color: WHITE;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0.2, 0, 1);
+}
+
+.btn-action{
+    -fx-background-color: #B9935A;
+    -fx-background-radius: 5;
+}
+
+.btn-action:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 20, 0, 0, 0);
+}
+
+/* Table background */
+.table-view {
+    -fx-background-color: #F3EDE4;
+    -fx-border-color: #B9935A;
+    -fx-border-width: 0.5px;
+}
+
+/* Scroll bar background to match table */
+.table-view .virtual-flow .clipped-container .sheet {
+    -fx-background-color: #F3EDE4;
+}
+
+/* Column header */
+.table-view .column-header-background {
+    -fx-background-color: #B9935A;
+}
+
+.table-view .column-header,
+.table-view .column-header .label {
+    -fx-text-fill: #FFFFFF;      /* white text looks clean */
+    -fx-font-weight: bold;
+}
+
+/* Alternating row colors */
+.table-row-cell:filled:nth-row(odd) {
+    -fx-background-color: #F3EDE4;
+}
+
+.table-row-cell:filled:nth-row(even) {
+    -fx-background-color: #FFFFFF;
+}
+
+/* Row hover effect (optional but professional) */
+.table-row-cell:hover {
+    -fx-background-color: #e7d8c3;
+}
+
+/* Selected row */
+.table-row-cell:selected {
+    -fx-background-color: #B9935A;
+    -fx-text-fill: white;
+}
