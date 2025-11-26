@@ -15,7 +15,7 @@ public class ItemEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     @Column(nullable = false)
     private String name;
@@ -33,10 +33,13 @@ public class ItemEntity {
     private double costPrice;
 
     @Column(name = "selling_price")
-    private Double sellingPrice;
+    private double sellingPrice;
 
     @Column(columnDefinition = "TEXT")
     private String description;
+
+    @Column(name = "image_path")
+    private String imgPath;
 
     @ManyToOne
     @JoinColumn(name = "brand_id", nullable = false)

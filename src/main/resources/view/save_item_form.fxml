@@ -2,7 +2,6 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -76,7 +75,7 @@
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <ComboBox fx:id="comboCategory" prefHeight="32.0" prefWidth="285.0" styleClass="input-fields" />
+                              <ComboBox fx:id="comboCategory" prefHeight="32.0" prefWidth="285.0" promptText="SELECT" styleClass="input-fields" />
                            </children>
                         </VBox>
                         <VBox layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="584.0" spacing="3.0">
@@ -86,7 +85,7 @@
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <ComboBox fx:id="comboSubCategory" prefHeight="32.0" prefWidth="285.0" styleClass="input-fields" />
+                              <ComboBox fx:id="comboSubCategory" prefHeight="32.0" prefWidth="285.0" promptText="SELECT" styleClass="input-fields" />
                            </children>
                         </VBox>
                      </children>
@@ -95,17 +94,17 @@
                      <children>
                         <VBox prefHeight="60.0" prefWidth="584.0" spacing="3.0">
                            <children>
-                              <Label text="Supplier">
+                              <Label text="Brand">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <HBox spacing="5.0">
+                              <HBox prefHeight="32.0" prefWidth="297.0" spacing="5.0">
                                  <children>
-                                    <ComboBox fx:id="comboSupplier" prefHeight="32.0" prefWidth="225.0" styleClass="input-fields" />
+                                    <ComboBox fx:id="comboBrand" prefHeight="32.0" prefWidth="225.0" promptText="SELECT" styleClass="input-fields" />
                                     <Pane>
                                        <children>
-                                          <JFXButton fx:id="btnNewSupplier" onAction="#btnNewSupplierOnAction" prefHeight="32.0" prefWidth="55.0" styleClass="input-fields" text="    NEW">
+                                          <JFXButton fx:id="btnNewBrand" onAction="#btnNewBrandOnAction" prefHeight="32.0" prefWidth="55.0" styleClass="input-fields" text="    NEW">
                                              <font>
                                                 <Font name="Arial Bold" size="10.0" />
                                              </font>
@@ -121,49 +120,21 @@
                               </HBox>
                            </children>
                         </VBox>
-                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="584.0" spacing="3.0">
-                           <children>
-                              <Label text="Sub Category">
-                                 <font>
-                                    <Font name="Arial" size="16.0" />
-                                 </font>
-                              </Label>
-                              <HBox spacing="5.0">
-                                 <children>
-                                    <ComboBox fx:id="comboBrand" prefHeight="32.0" prefWidth="225.0" styleClass="input-fields" />
-                                    <Pane>
-                                       <children>
-                                          <Button fx:id="btnAddNewBrand" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#OnAction" prefHeight="32.0" prefWidth="55.0" styleClass="input-fields" text="NEW ">
-                                             <font>
-                                                <Font name="Arial Bold" size="10.0" />
-                                             </font>
-                                          </Button>
-                                          <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="2.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../images/icons/add.png" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </Pane>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox layoutX="10.0" layoutY="181.0" maxWidth="-Infinity" prefHeight="60.0" prefWidth="600.0" spacing="10.0">
-                     <children>
-                        <VBox prefHeight="60.0" prefWidth="200.0" spacing="3.0">
+                        <VBox prefHeight="56.0" prefWidth="578.0" spacing="3.0">
                            <children>
                               <Label text="Size">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <ComboBox fx:id="comboSize" prefHeight="32.0" prefWidth="200.0" styleClass="input-fields" />
+                              <ComboBox fx:id="comboSize" prefHeight="32.0" prefWidth="282.0" promptText="SELECT" styleClass="input-fields" />
                            </children>
                         </VBox>
-                        <VBox prefHeight="200.0" prefWidth="200.0" spacing="3.0">
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="181.0" prefHeight="60.0" prefWidth="600.0" spacing="12.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="578.0" spacing="3.0">
                            <children>
                               <Label text="Colour">
                                  <font>
@@ -172,23 +143,23 @@
                               </Label>
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <TextField fx:id="txtColor" prefHeight="32.0" prefWidth="200.0" styleClass="input-fields" />
+                                    <TextField fx:id="txtColor" prefHeight="32.0" prefWidth="285.0" styleClass="input-fields" />
                                  </children>
                               </HBox>
                            </children>
                         </VBox>
-                        <VBox layoutX="307.0" layoutY="10.0" prefHeight="60.0" prefWidth="200.0" spacing="3.0">
+                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="578.0" spacing="3.0">
                            <children>
                               <Label text="Quantity">
                                  <font>
                                     <Font name="Arial" size="16.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtQty" prefHeight="30.0" prefWidth="200.0" styleClass="input-fields">
-                                 <font>
-                                    <Font name="Arial" size="14.0" />
-                                 </font>
-                              </TextField>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="txtQty" prefHeight="32.0" prefWidth="285.0" styleClass="input-fields" />
+                                 </children>
+                              </HBox>
                            </children>
                         </VBox>
                      </children>
@@ -263,11 +234,7 @@
                               </Label>
                               <FlowPane alignment="CENTER" layoutX="10.0" layoutY="24.0" prefHeight="245.0" prefWidth="230.0" style="-fx-background-color: #F3EDE4;">
                                  <children>
-                                    <ImageView fx:id="imgItem" fitHeight="220.0" fitWidth="220.0" onMouseClicked="#imgItemOnMouseClicked" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/other/demo%20cloth%20image%201.jpg" />
-                                       </image>
-                                    </ImageView>
+                                    <ImageView fx:id="imgItem" fitHeight="220.0" fitWidth="220.0" onMouseClicked="#imgItemOnMouseClicked" pickOnBounds="true" preserveRatio="true" />
                                  </children>
                               </FlowPane>
                            </children>

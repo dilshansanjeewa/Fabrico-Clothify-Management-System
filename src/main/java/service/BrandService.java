@@ -7,4 +7,5 @@ import model.dto.Supplier;
 public interface BrandService {
     ObservableList<Supplier> getSuppliers();
     boolean save(Brand brand);
+    ObservableList<Brand> getAllBrands();
 }

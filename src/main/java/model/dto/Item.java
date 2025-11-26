@@ -9,14 +9,17 @@ import lombok.*;
 @ToString
 
 public class Item {
+
+    private Long id;
     private String name;
     private String category;
     private String subCategory;
-    private String brand;
+    private Brand brand;
     private String size;
     private String color;
     private int qty;
     private double costPrice;
     private Double sellingPrice;
     private String description;
+    private String imgPath;
 }

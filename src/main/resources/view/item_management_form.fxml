@@ -134,7 +134,7 @@
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Label>
-                              <ImageView fx:id="imgAleartIcon" fitHeight="35.0" fitWidth="35.0" layoutX="10.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="imgAlertIcon" fitHeight="35.0" fitWidth="35.0" layoutX="10.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/icons/warning%20icon.png" />
                                  </image>

@@ -4,13 +4,16 @@ import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ItemManagementFormController {
+public class ItemManagementFormController implements Initializable {
 
     @FXML
     private JFXButton btnAll;
@@ -25,7 +28,7 @@ public class ItemManagementFormController {
     private JFXButton btnUpdateItems;
 
     @FXML
-    private ImageView imgAleartIcon;
+    private ImageView imgAlertIcon;
 
     @FXML
     private BorderPane itemManagementBorderPane;
@@ -61,4 +64,8 @@ public class ItemManagementFormController {
         }
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadContent("/view/save_item_form.fxml");
+    }
 }

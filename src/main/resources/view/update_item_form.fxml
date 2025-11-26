@@ -2,7 +2,6 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -28,26 +27,30 @@
                         <Font name="Arial Narrow Bold" size="22.0" />
                     </font>
                 </Label>
-            <FlowPane alignment="CENTER_LEFT" hgap="2.0" prefHeight="40.0" prefWidth="702.0">
+            <FlowPane alignment="CENTER_LEFT" hgap="2.0" prefHeight="40.0" prefWidth="720.0">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="400.0" styleClass="search-bar-container">
+                  <Pane prefHeight="29.0" prefWidth="400.0">
                      <children>
-                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/icons/search%20icon%20%23b9935a.png" />
-                           </image>
-                        </ImageView>
-                        <TextField fx:id="txtSearch" onAction="#txtSearchOnAction" prefHeight="30.0" prefWidth="378.0" promptText="Search Item by Name" styleClass="search-bar">
-                           <font>
-                              <Font name="Arial" size="13.0" />
-                           </font>
-                        </TextField>
+                        <HBox alignment="CENTER_LEFT" layoutY="5.0" prefHeight="30.0" prefWidth="400.0" styleClass="search-bar-container">
+                           <children>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons/search%20icon%20%23b9935a.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="txtSearch" onAction="#txtSearchOnAction" prefHeight="30.0" prefWidth="378.0" promptText="Search Item by Name" styleClass="search-bar">
+                                 <font>
+                                    <Font name="Arial" size="13.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <padding>
+                              <Insets left="2.0" />
+                           </padding>
+                        </HBox>
                      </children>
-                     <padding>
-                        <Insets left="2.0" />
-                     </padding>
-                  </HBox>
-                  <ListView fx:id="lstSuggesions" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #F3EDE4;" />
+                  </Pane>
+                  <ListView fx:id="lstSuggesions" prefHeight="40.0" prefWidth="315.0" style="-fx-background-color: #F3EDE4;" visible="false" />
                </children>
             </FlowPane>
             </children>
@@ -118,17 +121,17 @@
                             <children>
                                 <VBox prefHeight="60.0" prefWidth="584.0" spacing="3.0">
                                     <children>
-                                        <Label text="Supplier">
+                                        <Label text="Brand">
                                             <font>
                                                 <Font name="Arial" size="16.0" />
                                             </font>
                                         </Label>
                                         <HBox spacing="5.0">
                                             <children>
-                                                <ComboBox fx:id="comboSupplier" prefHeight="32.0" prefWidth="225.0" styleClass="input-fields" />
+                                                <ComboBox fx:id="comboBrand" prefHeight="32.0" prefWidth="225.0" styleClass="input-fields" />
                                                 <Pane>
                                                     <children>
-                                                        <JFXButton fx:id="btnNewSupplier" onAction="#btnNewSupplierOnAction" prefHeight="32.0" prefWidth="55.0" styleClass="input-fields" text="    NEW">
+                                                        <JFXButton fx:id="btnNewBrand" onAction="#btnNewBrandOnAction" prefHeight="32.0" prefWidth="55.0" styleClass="input-fields" text="    NEW">
                                                             <font>
                                                                 <Font name="Arial Bold" size="10.0" />
                                                             </font>
@@ -146,47 +149,24 @@
                                 </VBox>
                                 <VBox layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="584.0" spacing="3.0">
                                     <children>
-                                        <Label text="Brand">
+                                        <HBox spacing="5.0">
+                                            <children>
+                                                <Pane />
+                                            </children>
+                                        </HBox>
+                                        <Label text="Size">
                                             <font>
                                                 <Font name="Arial" size="16.0" />
                                             </font>
                                         </Label>
-                                        <HBox spacing="5.0">
-                                            <children>
-                                                <ComboBox fx:id="comboBrand" prefHeight="32.0" prefWidth="225.0" styleClass="input-fields" />
-                                                <Pane>
-                                                    <children>
-                                                        <Button fx:id="btnAddNewBrand" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#OnAction" prefHeight="32.0" prefWidth="55.0" styleClass="input-fields" text="NEW ">
-                                                            <font>
-                                                                <Font name="Arial Bold" size="10.0" />
-                                                            </font>
-                                                        </Button>
-                                                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="2.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                                                            <image>
-                                                                <Image url="@../images/icons/add.png" />
-                                                            </image>
-                                                        </ImageView>
-                                                    </children>
-                                                </Pane>
-                                            </children>
-                                        </HBox>
+                                        <ComboBox fx:id="comboSize" prefHeight="32.0" prefWidth="285.0" styleClass="input-fields" />
                                     </children>
                                 </VBox>
                             </children>
                         </HBox>
                         <HBox layoutX="10.0" layoutY="181.0" maxWidth="-Infinity" prefHeight="60.0" prefWidth="600.0" spacing="10.0">
                             <children>
-                                <VBox prefHeight="60.0" prefWidth="200.0" spacing="3.0">
-                                    <children>
-                                        <Label text="Size">
-                                            <font>
-                                                <Font name="Arial" size="16.0" />
-                                            </font>
-                                        </Label>
-                                        <ComboBox fx:id="comboSize" prefHeight="32.0" prefWidth="200.0" styleClass="input-fields" />
-                                    </children>
-                                </VBox>
-                                <VBox prefHeight="200.0" prefWidth="200.0" spacing="3.0">
+                                <VBox prefHeight="200.0" prefWidth="578.0" spacing="3.0">
                                     <children>
                                         <Label text="Colour">
                                             <font>
@@ -195,19 +175,19 @@
                                         </Label>
                                         <HBox prefHeight="100.0" prefWidth="200.0">
                                             <children>
-                                                <TextField fx:id="txtColor" prefHeight="32.0" prefWidth="200.0" styleClass="input-fields" />
+                                                <TextField fx:id="txtColor" prefHeight="32.0" prefWidth="285.0" styleClass="input-fields" />
                                             </children>
                                         </HBox>
                                     </children>
                                 </VBox>
-                                <VBox layoutX="307.0" layoutY="10.0" prefHeight="60.0" prefWidth="200.0" spacing="3.0">
+                                <VBox layoutX="307.0" layoutY="10.0" prefHeight="60.0" prefWidth="578.0" spacing="3.0">
                                     <children>
                                         <Label text="Quantity">
                                             <font>
                                                 <Font name="Arial" size="16.0" />
                                             </font>
                                         </Label>
-                                        <TextField fx:id="txtQty" prefHeight="30.0" prefWidth="200.0" styleClass="input-fields">
+                                        <TextField fx:id="txtQty" prefHeight="30.0" prefWidth="285.0" styleClass="input-fields">
                                             <font>
                                                 <Font name="Arial" size="14.0" />
                                             </font>
@@ -286,11 +266,7 @@
                                         </Label>
                                         <FlowPane alignment="CENTER" layoutX="10.0" layoutY="24.0" prefHeight="245.0" prefWidth="230.0" style="-fx-background-color: #F3EDE4;">
                                             <children>
-                                                <ImageView fx:id="imgItem" fitHeight="220.0" fitWidth="220.0" onMouseClicked="#imgItemOnMouseClicked" pickOnBounds="true" preserveRatio="true">
-                                                    <image>
-                                                        <Image url="@../images/other/demo%20cloth%20image%201.jpg" />
-                                                    </image>
-                                                </ImageView>
+                                                <ImageView fx:id="imgItem" fitHeight="220.0" fitWidth="220.0" onMouseClicked="#imgItemOnMouseClicked" pickOnBounds="true" preserveRatio="true" />
                                             </children>
                                         </FlowPane>
                                     </children>
