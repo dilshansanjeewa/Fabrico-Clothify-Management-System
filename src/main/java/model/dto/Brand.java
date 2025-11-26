@@ -8,6 +8,7 @@ import lombok.*;
 @Getter
 @ToString
 public class Brand {
+    private Long id;
     private String name;
-    private Long supplierId;
+    private Supplier supplier;
 }
