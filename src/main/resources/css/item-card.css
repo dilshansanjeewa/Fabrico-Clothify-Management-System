@@ -1,0 +1,51 @@
+.product-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 12;
+    -fx-padding: 10;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0, 0, 2);
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 3);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+.add-cart-btn {
+    -fx-background-color:  #b9935a;
+    -fx-background-radius: 5;
+}
+
+.add-cart-btn:hover {
+    -fx-background-color: #a67f46;
+}
+
+.spinner {
+    -fx-background-color: #b9935a;
+}
+
+.spinner .text-field {
+    -fx-background-color: #F3EDE4;
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+}
+
+.spinner .increment-button,
+.spinner .decrement-button {
+    -fx-background-color: #b9935a;
+    -fx-background-radius: 0; /* Remove rounded corners if desired */
+}
+
+.spinner .increment-arrow,
+.spinner .decrement-arrow {
+    -fx-background-color: #000000; /* Color of the arrow shape */
+}
+
+/* Styling on hover */
+.spinner .increment-button:hover,
+.spinner .decrement-button:hover {
+    -fx-background-color: #b9935a;
+}

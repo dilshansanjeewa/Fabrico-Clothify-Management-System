@@ -7,11 +7,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -25,6 +27,8 @@ public class MainAdminDashBoardFormController implements Initializable {
     private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm:ss a");
 
     private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy");
+
+    private Stage posStage;
 
     @FXML
     private JFXButton btnDashboard;
@@ -99,7 +103,13 @@ public class MainAdminDashBoardFormController implements Initializable {
 
     @FXML
     void btnPosOnAction(ActionEvent event) {
-
+        posStage = new Stage();
+        try {
+            posStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/POS.fxml"))));
+            posStage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
@@ -114,7 +124,7 @@ public class MainAdminDashBoardFormController implements Initializable {
 
     @FXML
     void btnSupplyersOnAction(ActionEvent event) {
-
+        setContent("/view/supplier_management_form.fxml");
     }
 
     public void setAdminData(String[] adminData){

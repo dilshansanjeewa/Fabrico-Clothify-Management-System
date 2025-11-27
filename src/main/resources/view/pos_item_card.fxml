@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="310.0" prefWidth="210.0" spacing="5.0" styleClass="product-card" stylesheets="@../css/item-card.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PosItemCardController">
+   <children>
+      <ImageView fx:id="imgItem" fitHeight="175.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../images/sample_item_6.jpg" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="1.0">
+         <children>
+            <Label fx:id="lblName" alignment="TOP_LEFT" prefHeight="30.0" prefWidth="193.0" text="Sample item name">
+               <font>
+                  <Font name="Arial Narrow Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCategory" prefHeight="20.0" prefWidth="153.0" text="Category: Men" textFill="#777777">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblStock" prefHeight="19.0" prefWidth="181.0" text="In Stock - 25">
+               <font>
+                  <Font name="Arial" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPrice" prefHeight="22.0" prefWidth="202.0" text="Rs. 4,500.00" textFill="#b9935a">
+               <font>
+                  <Font name="Arial Narrow Bold" size="14.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="202.0" spacing="29.0">
+               <children>
+                  <FlowPane alignment="CENTER_LEFT">
+                     <children>
+                        <Spinner fx:id="spinnerQty" editable="true" prefHeight="9.0" prefWidth="60.0" />
+                     </children>
+                  </FlowPane>
+                  <FlowPane alignment="CENTER_RIGHT">
+                     <children>
+                        <JFXButton fx:id="btnAddToCart" onAction="#btnAddToCartOnAction" prefHeight="25.0" prefWidth="91.0" styleClass="add-cart-btn" text="Add to cart" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                     <HBox.margin>
+                        <Insets right="1.0" />
+                     </HBox.margin>
+                  </FlowPane>
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="3.0" right="3.0" />
+         </padding>
+      </VBox>
+   </children>
+   <padding>
+      <Insets top="5.0" />
+   </padding>
+</VBox>

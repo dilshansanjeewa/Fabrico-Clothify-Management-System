@@ -2,8 +2,12 @@ package controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -13,8 +17,17 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.FlowPane;
+import model.dto.Item;
+import service.ItemService;
+import service.impl.ItemServiceImpl;
 
-public class PosViewController {
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class PosViewController implements Initializable {
+
+    ItemService itemService = new ItemServiceImpl();
 
     @FXML
     private JFXButton btnAllItems;
@@ -99,7 +112,7 @@ public class PosViewController {
 
     @FXML
     void btnAllItemsonAction(ActionEvent event) {
-
+        loadItemCards();
     }
 
     @FXML
@@ -147,4 +160,28 @@ public class PosViewController {
 
     }
 
+    private void loadItemCards(){
+        flowProducts.getChildren().clear();
+        ObservableList<Item> allItems = itemService.getAllItems();
+
+        for (Item item : allItems){
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/pos_item_card.fxml"));
+                Parent card = loader.load();
+
+                PosItemCardController cardController = loader.getController();
+                cardController.setCardData(item);
+
+                flowProducts.getChildren().add(card);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }
