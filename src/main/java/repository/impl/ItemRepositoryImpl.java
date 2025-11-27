@@ -73,4 +73,27 @@ public class ItemRepositoryImpl implements ItemRepository {
             session.close();
         }
     }
+
+    @Override
+    public boolean delete(ItemEntity itemEntity) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = null;
+
+        try {
+            transaction = session.beginTransaction();
+            session.remove(itemEntity);
+
+            transaction.commit();
+            return true;
+
+        } catch (Exception e){
+            if (transaction != null){
+                transaction.rollback();
+            }
+            return false;
+
+        } finally {
+            session.close();
+        }
+    }
 }

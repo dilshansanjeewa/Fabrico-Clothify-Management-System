@@ -8,4 +8,5 @@ public interface ItemRepository {
     boolean save(ItemEntity item);
     List<ItemEntity> getAllItems();
     boolean update(ItemEntity itemEntity);
+    boolean delete(ItemEntity itemEntity);
 }

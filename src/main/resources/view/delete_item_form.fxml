@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -20,31 +21,39 @@
     <top>
         <FlowPane alignment="CENTER_LEFT" hgap="131.0" maxHeight="-Infinity" prefHeight="45.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
             <children>
-                <Label text="Delete Item" textFill="#b9935a">
-                    <font>
-                        <Font name="Arial Narrow Bold" size="22.0" />
-                    </font>
-                </Label>
-                <FlowPane alignment="CENTER_LEFT" hgap="2.0" prefHeight="40.0" prefWidth="702.0">
+            <Pane>
+               <children>
+                      <Label layoutY="14.0" text="Delete Item" textFill="#b9935a">
+                          <font>
+                              <Font name="Arial Narrow Bold" size="22.0" />
+                          </font>
+                      </Label>
+               </children>
+            </Pane>
+                <FlowPane alignment="CENTER_LEFT" hgap="2.0" prefHeight="40.0" prefWidth="720.0">
                     <children>
-                        <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="400.0" styleClass="search-bar-container">
-                            <children>
-                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../images/icons/search%20icon%20%23b9935a.png" />
-                                    </image>
-                                </ImageView>
-                                <TextField fx:id="txtSearch" onAction="#txtSearchOnAction" prefHeight="30.0" prefWidth="378.0" promptText="Search Item by Name" styleClass="search-bar">
-                                    <font>
-                                        <Font name="Arial" size="13.0" />
-                                    </font>
-                                </TextField>
-                            </children>
-                            <padding>
-                                <Insets left="2.0" />
-                            </padding>
-                        </HBox>
-                        <ListView fx:id="lstSuggestions" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #F3EDE4;" />
+                  <Pane>
+                     <children>
+                              <HBox alignment="CENTER_LEFT" layoutY="8.0" prefHeight="30.0" prefWidth="400.0" styleClass="search-bar-container">
+                                  <children>
+                                      <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                              <Image url="@../images/icons/search%20icon%20%23b9935a.png" />
+                                          </image>
+                                      </ImageView>
+                                      <TextField fx:id="txtSearch" onAction="#txtSearchOnAction" prefHeight="30.0" prefWidth="378.0" promptText="Search Item by Name" styleClass="search-bar">
+                                          <font>
+                                              <Font name="Arial" size="13.0" />
+                                          </font>
+                                      </TextField>
+                                  </children>
+                                  <padding>
+                                      <Insets left="2.0" />
+                                  </padding>
+                              </HBox>
+                     </children>
+                  </Pane>
+                        <ListView fx:id="lstSuggestions" prefHeight="45.0" prefWidth="315.0" style="-fx-background-color: #F3EDE4;" visible="false" />
                     </children>
                 </FlowPane>
             </children>

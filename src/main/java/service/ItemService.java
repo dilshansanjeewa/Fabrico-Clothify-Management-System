@@ -9,4 +9,5 @@ public interface ItemService {
     boolean save(Item item);
     ObservableList<Item> getAllItems();
     boolean update(Item item);
+    boolean delete(Item item);
 }

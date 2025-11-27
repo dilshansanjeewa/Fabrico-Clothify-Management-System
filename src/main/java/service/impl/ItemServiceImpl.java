@@ -45,6 +45,11 @@ public class ItemServiceImpl implements ItemService {
         return itemRepository.update(mapper.map(item, ItemEntity.class));
     }
 
+    @Override
+    public boolean delete(Item item) {
+        return itemRepository.delete(mapper.map(item, ItemEntity.class));
+    }
+
     private ObservableList<Item> getItemList(){
         if(! allItemList.isEmpty()){
             allItemList.clear();
