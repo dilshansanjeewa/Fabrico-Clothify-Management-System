@@ -133,6 +133,7 @@ public class UpdateItemFormController implements Initializable {
                 if(itemService.update(item)){
                     showSuccessAlert("Updated Successfully", "The item has been updated.");
                     clear();
+                    loadList();
                 } else {
                     showErrorAlert("The item has not been updated.");
                 }
@@ -264,7 +265,7 @@ public class UpdateItemFormController implements Initializable {
     private void showErrorAlert(String errorMessage){
         errorAlert.setTitle("INPUT ERROR");
         errorAlert.setContentText(errorMessage);
-        errorAlert.show();
+        errorAlert.showAndWait();
     }
 
     private void showSuccessAlert(String headerText, String contentText){
@@ -336,6 +337,13 @@ public class UpdateItemFormController implements Initializable {
         imgItem.setImage(image);
     }
 
+    private void loadList(){
+        allItemList = itemService.getAllItems();
+        filteredItemList = new FilteredList<>(allItemList, item -> true);
+
+        lstSuggesions.setItems(filteredItemList);
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -377,10 +385,8 @@ public class UpdateItemFormController implements Initializable {
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        allItemList = itemService.getAllItems();
-        filteredItemList = new FilteredList<>(allItemList, item -> true);
+        loadList();
 
-        lstSuggesions.setItems(filteredItemList);
 
         lstSuggesions.setCellFactory(itemListView -> new ListCell<Item>(){
             @Override
