@@ -1,6 +1,36 @@
-.search-bar:hover{
+/* Global Style */
+.root {
+    -fx-background-color: #F3EDE4;
+}
+
+/* Navigation Buttons */
+.btn-navigation {
+    -fx-background-color: #B9935A;
+    -fx-background-radius: 5;
+}
+
+.btn-navigation:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 20, 0, 0, 0);
+}
+
+/* Search Bar */
+
+.search-bar-container {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 20;
+    -fx-border-color: #B9935A;
+    -fx-border-radius: 20;
+}
+
+.search-bar-container:hover {
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
 }
+
+.search-bar-text-field {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 20;
+}
+
 
 .form-background{
     -fx-background-color: F3EDE4;
@@ -20,12 +50,62 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
 }
 
+.form-input-field:focused {
+    -fx-background-color: F3EDE4;
+}
+
 .image-card {
     -fx-background-color: #FFFFFF;
     -fx-border-color: #B9935A;
     -fx-background-radius: 10;
     -fx-border-radius: 10;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+}
+
+.btn-cancel{
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #B9935A;
+    -fx-border-width: 1;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+}
+
+.btn-action{
+    -fx-background-color: #B9935A;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width: 1;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+}
+
+.combo-sort {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 20;
+    -fx-border-color: #B9935A;
+    -fx-border-radius: 20;
+}
+
+.combo-sort:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+}
+
+.emp-card {
+    -fx-background-color: #F3EDE4;
+    -fx-background-radius: 12;
+    -fx-border-color: #B9935A;
+    -fx-border-radius: 12;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0, 0, 2);
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.emp-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 3);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
 }
 
 .button-card {

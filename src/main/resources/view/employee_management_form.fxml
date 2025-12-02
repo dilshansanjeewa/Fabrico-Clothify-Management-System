@@ -1,30 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXRadioButton?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1000.0" style="-fx-background-color: F3EDE4;" stylesheets="@../css/employee.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmployeeManagementFormController">
+<BorderPane fx:id="mainBorderPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1000.0" stylesheets="@../css/employee.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmployeeManagementFormController">
    <top>
-      <VBox alignment="CENTER" maxHeight="-Infinity" prefHeight="70.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="95.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <Label text="Employee Management">
                <font>
@@ -36,384 +25,61 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <padding>
+                  <Insets bottom="3.0" left="10.0" />
+               </padding>
+               <children>
+                  <JFXButton fx:id="btnAll" alignment="CENTER_RIGHT" onAction="#btnAllOnAction" prefHeight="32.0" prefWidth="130.0" styleClass="btn-navigation" text="All Employees   " textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <Pane>
+                     <children>
+                        <JFXButton fx:id="btnSave" alignment="CENTER_RIGHT" layoutY="7.0" onAction="#btnSaveOnAction" prefHeight="32.0" prefWidth="130.0" styleClass="btn-navigation" text="Save Employee " textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="2.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/add%20white.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane>
+                     <children>
+                        <JFXButton fx:id="btnUpdate" alignment="CENTER_RIGHT" layoutY="7.0" onAction="#btnUpdateOnAction" prefHeight="32.0" prefWidth="130.0" styleClass="btn-navigation" text="Update Details  " textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="6.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/update.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane>
+                     <children>
+                        <JFXButton fx:id="btnDelete" alignment="CENTER_RIGHT" layoutY="7.0" onAction="#btnDeleteOnAction" prefHeight="32.0" prefWidth="130.0" styleClass="btn-navigation" text="Delete Employee" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="3.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/cancel.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
          </children>
       </VBox>
    </top>
-   <center>
-      <GridPane BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-               <padding>
-                  <Insets left="20.0" />
-               </padding>
-               <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="360.0" style="-fx-border-color: #B9935A; -fx-border-radius: 10;" styleClass="search-bar">
-                     <children>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/icons/search%20icon%20%23b9935a.png" />
-                           </image>
-                        </ImageView>
-                        <TextField fx:id="txtSearch" onAction="#txtSearchonAction" onKeyReleased="#txtSearchonKeyReleased" prefHeight="34.0" prefWidth="359.0" promptText="Search by Name,email or Phone" style="-fx-background-color: F3EDE4; -fx-background-radius: 10;">
-                           <font>
-                              <Font name="Arial" size="14.0" />
-                           </font>
-                        </TextField>
-                     </children>
-                     <padding>
-                        <Insets left="4.0" />
-                     </padding>
-                  </HBox>
-               </children>
-               <GridPane.margin>
-                  <Insets bottom="4.0" top="4.0" />
-               </GridPane.margin>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="14.0" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
-               <padding>
-                  <Insets left="20.0" />
-               </padding>
-               <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="360.0">
-                     <padding>
-                        <Insets left="4.0" />
-                     </padding>
-                     <children>
-                        <ListView fx:id="lstSuggestions" disable="true" prefHeight="50.0" prefWidth="373.0" />
-                     </children>
-                  </HBox>
-               </children>
-            </HBox>
-            <GridPane styleClass="form-background" GridPane.rowIndex="2">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="400.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <GridPane.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </GridPane.margin>
-               <children>
-                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="6.0">
-                     <children>
-                        <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0">
-                           <children>
-                              <Label text="Employee ID - ">
-                                 <font>
-                                    <Font name="Arial Bold" size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblId" layoutX="20.0" layoutY="18.0" prefHeight="17.0" prefWidth="125.0" text="EMP001">
-                                 <font>
-                                    <Font name="Arial Bold" size="15.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <padding>
-                              <Insets left="10.0" top="3.0" />
-                           </padding>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
-                           <padding>
-                              <Insets left="10.0" top="3.0" />
-                           </padding>
-                           <children>
-                              <VBox prefHeight="47.0" prefWidth="270.0">
-                                 <children>
-                                    <Label text="First Name">
-                                       <font>
-                                          <Font name="Arial" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <TextField fx:id="txtFirstName" layoutX="10.0" layoutY="26.0" prefHeight="30.0" styleClass="form-input-field">
-                                       <font>
-                                          <Font name="Arial" size="14.0" />
-                                       </font>
-                                    </TextField>
-                                 </children>
-                              </VBox>
-                              <VBox layoutX="20.0" layoutY="13.0" prefHeight="47.0" prefWidth="270.0">
-                                 <children>
-                                    <Label text="Last Name">
-                                       <font>
-                                          <Font name="Arial" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <TextField fx:id="txtLastName" prefHeight="30.0" styleClass="form-input-field">
-                                       <font>
-                                          <Font name="Arial" size="14.0" />
-                                       </font>
-                                    </TextField>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="45.0" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
-                           <padding>
-                              <Insets left="10.0" top="3.0" />
-                           </padding>
-                           <children>
-                              <VBox prefHeight="47.0" prefWidth="270.0">
-                                 <children>
-                                    <Label text="Gender">
-                                       <font>
-                                          <Font name="Arial" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="35.0">
-                                       <children>
-                                          <JFXRadioButton fx:id="radioMale" prefHeight="30.0" prefWidth="115.0" styleClass="form-input-field" text="Male">
-                                             <font>
-                                                <Font name="Arial" size="14.0" />
-                                             </font>
-                                             <selectedColor>
-                                                <Color red="0.7254902124404907" green="0.5764706134796143" blue="0.3529411852359772" />
-                                             </selectedColor>
-                                             <toggleGroup>
-                                                <ToggleGroup fx:id="toggleGender" />
-                                             </toggleGroup>
-                                          </JFXRadioButton>
-                                          <JFXRadioButton fx:id="radioFemale" layoutX="10.0" layoutY="12.0" onAction="#radioFemale" prefHeight="30.0" prefWidth="115.0" styleClass="form-input-field" text="Female" toggleGroup="$toggleGender">
-                                             <font>
-                                                <Font name="Arial" size="14.0" />
-                                             </font>
-                                             <selectedColor>
-                                                <Color red="0.7254902124404907" green="0.5764706134796143" blue="0.3529411852359772" />
-                                             </selectedColor>
-                                          </JFXRadioButton>
-                                       </children>
-                                    </HBox>
-                                 </children>
-                              </VBox>
-                              <VBox layoutX="20.0" layoutY="13.0" prefHeight="47.0" prefWidth="270.0">
-                                 <children>
-                                    <Label text="Date of Birth">
-                                       <font>
-                                          <Font name="Arial" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <DatePicker fx:id="dateDob" prefHeight="30.0" prefWidth="269.0" styleClass="form-input-field" />
-                                 </children>
-                              </VBox>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="45.0" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
-                           <padding>
-                              <Insets left="10.0" top="3.0" />
-                           </padding>
-                           <children>
-                              <VBox prefHeight="47.0" prefWidth="270.0">
-                                 <children>
-                                    <Label text="Email Address">
-                                       <font>
-                                          <Font name="Arial" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <TextField fx:id="txtEmail" prefHeight="30.0" styleClass="form-input-field">
-                                       <font>
-                                          <Font name="Arial" size="14.0" />
-                                       </font>
-                                    </TextField>
-                                 </children>
-                              </VBox>
-                              <VBox layoutX="20.0" layoutY="13.0" prefHeight="47.0" prefWidth="270.0">
-                                 <children>
-                                    <Label text="Phone Number">
-                                       <font>
-                                          <Font name="Arial" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <TextField fx:id="txtPhone" prefHeight="30.0" styleClass="form-input-field">
-                                       <font>
-                                          <Font name="Arial Narrow" size="14.0" />
-                                       </font>
-                                    </TextField>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="156.0" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
-                           <padding>
-                              <Insets left="10.0" top="3.0" />
-                           </padding>
-                           <children>
-                              <VBox prefHeight="47.0" prefWidth="270.0">
-                                 <children>
-                                    <Label text="Password">
-                                       <font>
-                                          <Font name="Arial" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <PasswordField fx:id="txtPassword" prefHeight="30.0" styleClass="form-input-field">
-                                       <font>
-                                          <Font name="Arial" size="14.0" />
-                                       </font>
-                                    </PasswordField>
-                                 </children>
-                              </VBox>
-                              <VBox layoutX="20.0" layoutY="13.0" prefHeight="47.0" prefWidth="270.0">
-                                 <children>
-                                    <Label text="Role">
-                                       <font>
-                                          <Font name="Arial" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="35.0">
-                                       <children>
-                                          <JFXRadioButton fx:id="radioAdmin" prefHeight="30.0" prefWidth="130.0" styleClass="form-input-field" text="Admin">
-                                             <font>
-                                                <Font name="Arial" size="14.0" />
-                                             </font>
-                                             <selectedColor>
-                                                <Color red="0.7254902124404907" green="0.5764706134796143" blue="0.3529411852359772" />
-                                             </selectedColor>
-                                             <toggleGroup>
-                                                <ToggleGroup fx:id="toggleRole" />
-                                             </toggleGroup>
-                                          </JFXRadioButton>
-                                          <JFXRadioButton fx:id="radioEmployee" layoutX="10.0" layoutY="12.0" prefHeight="30.0" prefWidth="130.0" styleClass="form-input-field" text="Employee" toggleGroup="$toggleRole">
-                                             <font>
-                                                <Font name="Arial" size="14.0" />
-                                             </font>
-                                             <selectedColor>
-                                                <Color red="0.7254902124404907" green="0.5764706134796143" blue="0.3529411852359772" />
-                                             </selectedColor>
-                                          </JFXRadioButton>
-                                       </children>
-                                    </HBox>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="211.0" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
-                           <padding>
-                              <Insets left="10.0" top="3.0" />
-                           </padding>
-                           <children>
-                              <VBox prefHeight="47.0" prefWidth="270.0">
-                                 <children>
-                                    <Label text="Province">
-                                       <font>
-                                          <Font name="Arial" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <ComboBox fx:id="comboProvince" onAction="#comboProvinceonAction" prefHeight="30.0" prefWidth="330.0" styleClass="form-input-field" />
-                                 </children>
-                              </VBox>
-                              <VBox layoutX="20.0" layoutY="13.0" prefHeight="47.0" prefWidth="270.0">
-                                 <children>
-                                    <Label text="District">
-                                       <font>
-                                          <Font name="Arial" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <ComboBox fx:id="comboDistrict" disable="true" prefHeight="30.0" prefWidth="330.0" styleClass="form-input-field" />
-                                 </children>
-                              </VBox>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="211.0" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
-                           <padding>
-                              <Insets left="10.0" top="3.0" />
-                           </padding>
-                           <children>
-                              <VBox prefHeight="47.0" prefWidth="270.0">
-                                 <children>
-                                    <Label text="Street Address">
-                                       <font>
-                                          <Font name="Arial" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <TextField fx:id="txtAddress" prefHeight="30.0" styleClass="form-input-field">
-                                       <font>
-                                          <Font name="Arial" size="14.0" />
-                                       </font>
-                                    </TextField>
-                                 </children>
-                              </VBox>
-                              <VBox layoutX="20.0" layoutY="13.0" prefHeight="47.0" prefWidth="270.0">
-                                 <children>
-                                    <Label text="Postal Code">
-                                       <font>
-                                          <Font name="Arial" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="35.0" />
-                                    <TextField fx:id="txtPostalCode" layoutX="10.0" layoutY="26.0" prefHeight="30.0" styleClass="form-input-field">
-                                       <font>
-                                          <Font name="Arial Narrow" size="14.0" />
-                                       </font>
-                                    </TextField>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="1">
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                     <children>
-                        <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="290.0" prefWidth="220.0" spacing="30.0" styleClass="image-card">
-                           <children>
-                              <ImageView fx:id="imgEmployee" fitHeight="220.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/other/demo%20employee%20image.png" />
-                                 </image>
-                              </ImageView>
-                              <JFXButton fx:id="btnUpload" onAction="#btnUploadonAction" prefHeight="25.0" prefWidth="90.0" styleClass="upload-btn" text="UPLOAD">
-                                 <font>
-                                    <Font name="Arial" size="14.0" />
-                                 </font>
-                              </JFXButton>
-                           </children>
-                           <padding>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                           </padding>
-                        </VBox>
-                        <FlowPane alignment="BOTTOM_CENTER" hgap="10.0" layoutX="20.0" layoutY="240.0" prefHeight="48.0" prefWidth="380.0" styleClass="button-card">
-                           <children>
-                              <JFXButton fx:id="btnSave" onAction="#btnSaveonAction" prefWidth="80.0" ripplerFill="WHITE" styleClass="save-btn" text="SAVE">
-                                 <font>
-                                    <Font name="Arial" size="14.0" />
-                                 </font>
-                              </JFXButton>
-                              <JFXButton fx:id="btnUpdate" layoutX="178.0" layoutY="50.0" onAction="#btnUpdateonAction" prefHeight="25.0" prefWidth="80.0" ripplerFill="WHITE" styleClass="update-btn" text="UPDATE">
-                                 <font>
-                                    <Font name="Arial" size="14.0" />
-                                 </font>
-                              </JFXButton>
-                              <JFXButton fx:id="btnDelete" layoutX="202.0" layoutY="50.0" onAction="#btnDeleteonAction" prefWidth="80.0" styleClass="delete-btn" text="DELETE">
-                                 <font>
-                                    <Font name="Arial" size="14.0" />
-                                 </font>
-                              </JFXButton>
-                              <JFXButton fx:id="btnCancel" layoutX="245.0" layoutY="50.0" onAction="#btnCancelonAction" prefWidth="80.0" styleClass="cancel-btn" text="CANCEL">
-                                 <font>
-                                    <Font name="Arial" size="14.0" />
-                                 </font>
-                              </JFXButton>
-                           </children>
-                           <padding>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                           </padding>
-                        </FlowPane>
-                     </children>
-                  </VBox>
-               </children>
-            </GridPane>
-         </children>
-      </GridPane>
-   </center>
 </BorderPane>

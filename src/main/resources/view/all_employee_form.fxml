@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="1000.0" stylesheets="@../css/employee.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AllEmployeeFormController">
+    <top>
+        <HBox prefHeight="93.0" prefWidth="1000.0" spacing="112.0" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="1.0" />
+            </BorderPane.margin>
+            <padding>
+                <Insets left="10.0" top="10.0" />
+            </padding>
+            <children>
+                <Label text="All Employees" textFill="#b9935a">
+                    <font>
+                        <Font name="Arial Narrow Bold" size="22.0" />
+                    </font>
+                </Label>
+                <VBox prefHeight="90.0" prefWidth="400.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="32.0" prefWidth="400.0" styleClass="search-bar-container">
+                            <children>
+                                <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="29.0" prefWidth="35.0">
+                                    <children>
+                                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="6.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../images/icons/search%20icon%20%23b9935a.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </Pane>
+                                <TextField fx:id="txtSearch" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#txtSearchOnAction" prefHeight="32.0" prefWidth="360.0" styleClass="search-bar-text-field" />
+                            </children></HBox>
+                        <ListView fx:id="lstEmployeeSuggestions" prefHeight="50.0" prefWidth="200.0" visible="false" />
+                    </children>
+                </VBox>
+            <FlowPane alignment="TOP_RIGHT" prefHeight="83.0" prefWidth="240.0">
+               <children>
+                  <Label text="Sort by Gender: ">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="comboSortByGender" onAction="#comboSortByGenderOnAction" prefHeight="32.0" prefWidth="125.0" styleClass="combo-sort" />
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </FlowPane>
+            </children>
+        </HBox>
+    </top>
+   <center>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </BorderPane.margin>
+         <content>
+            <FlowPane fx:id="flowCardContainer" alignment="TOP_CENTER" hgap="20.0" prefHeight="360.0" prefWidth="965.0" prefWrapLength="1000.0" vgap="10.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </FlowPane>
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>
