@@ -17,7 +17,7 @@
    <left>
       <FlowPane alignment="CENTER" prefHeight="203.0" prefWidth="175.0" styleClass="image-card" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="175.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgEmployee" fitHeight="175.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/other/demo%20employee%20image.png" />
                </image>
@@ -41,7 +41,7 @@
                         <Font name="Arial Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="100.0" text="E001">
+                  <Label fx:id="lblVisibleId" layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="100.0" text="E001">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -55,7 +55,7 @@
                         <Font name="Arial" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="220.0" text="Sample First Name">
+                  <Label fx:id="lblFirstName" layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="220.0" text="Sample First Name">
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font>
@@ -72,7 +72,7 @@
                         <Font name="Arial" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="220.0" text="Sample Last Name">
+                  <Label fx:id="lblLastName" layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="220.0" text="Sample Last Name">
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font>
@@ -91,7 +91,7 @@
                               <Font name="Arial" size="13.0" />
                            </font>
                         </Label>
-                        <Label layoutX="10.0" layoutY="10.0" text="Sample Gender">
+                        <Label fx:id="lblGender" layoutX="10.0" layoutY="10.0" text="Sample Gender">
                            <font>
                               <Font name="Arial" size="13.0" />
                            </font>
@@ -105,7 +105,7 @@
                               <Font name="Arial" size="13.0" />
                            </font>
                         </Label>
-                        <Label layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="91.0" text="2000/01/01">
+                        <Label fx:id="lblDob" layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="91.0" text="2000/01/01">
                            <font>
                               <Font name="Arial" size="13.0" />
                            </font>
@@ -124,7 +124,7 @@
                         <Font name="Arial" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="210.0" text="sampleemail@gmail.com">
+                  <Label fx:id="lblEmail" layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="210.0" text="sampleemail@gmail.com">
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font>
@@ -149,7 +149,7 @@
                               <Font name="Arial" size="13.0" />
                            </font>
                         </Label>
-                        <Label layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="210.0" text="0771234567">
+                        <Label fx:id="lblMobile" layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="210.0" text="0771234567">
                            <font>
                               <Font name="Arial" size="14.0" />
                            </font>
@@ -166,7 +166,7 @@
                               <Font name="Arial" size="13.0" />
                            </font>
                         </Label>
-                        <Label layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="210.0" text="Sample Province">
+                        <Label fx:id="lblProvince" layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="210.0" text="Sample Province">
                            <font>
                               <Font name="Arial" size="14.0" />
                            </font>
@@ -183,7 +183,7 @@
                               <Font name="Arial" size="13.0" />
                            </font>
                         </Label>
-                        <Label layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="210.0" text="Sample District">
+                        <Label fx:id="lblDistrict" layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="210.0" text="Sample District">
                            <font>
                               <Font name="Arial" size="14.0" />
                            </font>
@@ -204,7 +204,7 @@
                               <Font name="Arial" size="13.0" />
                            </font>
                         </Label>
-                        <Label layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="300.0" text="No S1, Sample Street Addres, Sample Street">
+                        <Label fx:id="lblStreetAddress" layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="300.0" text="No S1, Sample Street Addres, Sample Street">
                            <font>
                               <Font name="Arial" size="14.0" />
                            </font>
@@ -221,7 +221,7 @@
                               <Font name="Arial" size="13.0" />
                            </font>
                         </Label>
-                        <Label layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="75.0" text="50150">
+                        <Label fx:id="lblPostalCode" layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="75.0" text="50150">
                            <font>
                               <Font name="Arial" size="14.0" />
                            </font>
