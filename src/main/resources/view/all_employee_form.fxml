@@ -43,7 +43,10 @@
                                         </ImageView>
                                     </children>
                                 </Pane>
-                                <TextField fx:id="txtSearch" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#txtSearchOnAction" prefHeight="32.0" prefWidth="360.0" styleClass="search-bar-text-field" />
+                                <TextField fx:id="txtSearch" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="32.0" prefWidth="360.0" styleClass="search-bar-text-field">
+                           <font>
+                              <Font name="Arial Bold" size="13.0" />
+                           </font></TextField>
                             </children></HBox>
                         <ListView fx:id="lstEmployeeSuggestions" prefHeight="50.0" prefWidth="200.0" visible="false" />
                     </children>
@@ -55,7 +58,7 @@
                         <Font name="Arial" size="14.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="comboSortByGender" onAction="#comboSortByGenderOnAction" prefHeight="32.0" prefWidth="125.0" styleClass="combo-sort" />
+                  <ComboBox fx:id="comboSortByGender" prefHeight="32.0" prefWidth="125.0" styleClass="combo-sort" />
                </children>
                <padding>
                   <Insets right="10.0" />
@@ -70,9 +73,9 @@
             <Insets bottom="10.0" left="10.0" right="10.0" />
          </BorderPane.margin>
          <content>
-            <FlowPane fx:id="flowCardContainer" alignment="TOP_CENTER" hgap="20.0" prefHeight="360.0" prefWidth="965.0" prefWrapLength="1000.0" vgap="10.0">
+            <FlowPane fx:id="flowCardContainer" alignment="TOP_CENTER" hgap="40.0" prefHeight="360.0" prefWidth="965.0" prefWrapLength="1000.0" vgap="30.0">
                <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
                </padding>
             </FlowPane>
          </content>
