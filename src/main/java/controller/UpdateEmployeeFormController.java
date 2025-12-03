@@ -119,8 +119,7 @@ public class UpdateEmployeeFormController implements Initializable {
 
         if(employeeImagefile != null){
             selectedImage = employeeImagefile;
-            loadImage(employeeImagefile);
-//            loadImage(new Image(selectedImage.toURI().toString()));
+            loadImage(new Image(selectedImage.toURI().toString()));
         }
     }
 
@@ -170,10 +169,6 @@ public class UpdateEmployeeFormController implements Initializable {
             showErrorAlert(("Please input postal code"));
             return false;
 
-        } else if (selectedImage == null) {
-            showErrorAlert("Please select employee image");
-            return false;
-
         } else {
             return true;
         }
@@ -205,8 +200,7 @@ public class UpdateEmployeeFormController implements Initializable {
         selectedEmployee.setDistrict(comboDistrict.getValue());
         selectedEmployee.setStreetAddress(txtAddress.getText());
         selectedEmployee.setPostalCode(txtPostalCode.getText());
-        selectedEmployee.setImgPath(saveImage());
-
+        if(selectedImage != null) selectedEmployee.setImgPath(saveImage());
         return selectedEmployee;
     }
 
@@ -247,13 +241,13 @@ public class UpdateEmployeeFormController implements Initializable {
         if(!comboDistrict.isDisable()) comboDistrict.setDisable(true);
         txtAddress.setText("");
         txtPostalCode.setText("");
-        selectedImage = null;
+        if(selectedImage != null) selectedImage = null;
+        selectedEmployee = null;
         loadImage();
     }
 
-    private void loadImage(File imageFile){
-        selectedImage = imageFile;
-        imgEmployee.setImage(new Image(selectedImage.toURI().toString()));
+    private void loadImage(Image image){
+        imgEmployee.setImage(image);
     }
 
     private void loadImage(){
@@ -299,7 +293,7 @@ public class UpdateEmployeeFormController implements Initializable {
         comboDistrict.setValue(emp.getDistrict());
         txtAddress.setText(emp.getStreetAddress());
         txtPostalCode.setText(emp.getPostalCode());
-        loadImage(new File(emp.getImgPath()));
+        loadImage(new Image(new File(emp.getImgPath()).toURI().toString()));
     }
 
     @Override
