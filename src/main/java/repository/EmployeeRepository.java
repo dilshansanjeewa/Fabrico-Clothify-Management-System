@@ -9,4 +9,5 @@ public interface EmployeeRepository {
     EmployeeEntity getLastEmployee();
     List<EmployeeEntity> getAllEmployees();
     boolean updateEmployee(EmployeeEntity employeeEntity);
+    boolean deleteEmployee(EmployeeEntity employeeEntity);
 }

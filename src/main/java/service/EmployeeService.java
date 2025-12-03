@@ -8,4 +8,5 @@ public interface EmployeeService {
     String getNewVisibleId();
     ObservableList<Employee> getAllEmployees();
     boolean updateEmployee(Employee employee);
+    boolean deleteEmployee(Employee employee);
 }

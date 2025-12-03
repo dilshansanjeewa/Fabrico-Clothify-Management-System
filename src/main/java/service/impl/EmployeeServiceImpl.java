@@ -59,6 +59,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeRepository.updateEmployee(mapper.map(employee, EmployeeEntity.class));
     }
 
+    @Override
+    public boolean deleteEmployee(Employee employee) {
+        return employeeRepository.deleteEmployee(mapper.map(employee, EmployeeEntity.class));
+    }
+
     private ObservableList<Employee> getEmployees(){
         if(!employees.isEmpty()) employees.clear();
 

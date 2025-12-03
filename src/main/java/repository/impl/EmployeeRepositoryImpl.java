@@ -85,4 +85,28 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
             session.close();
         }
     }
+
+    @Override
+    public boolean deleteEmployee(EmployeeEntity employeeEntity) {
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = null;
+
+        try {
+            transaction = session.beginTransaction();
+            session.remove(employeeEntity);
+
+            transaction.commit();
+            return true;
+
+        } catch (Exception e){
+            if (transaction != null){
+                transaction.rollback();
+            }
+            return false;
+
+        } finally {
+            session.close();
+        }
+    }
 }
