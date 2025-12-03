@@ -18,6 +18,9 @@ public class EmployeeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(name = "visible_id", unique = true)
+    private String visibleId;
+
     @Column(name = "first_name", nullable = false, length = 64)
     private String firstName;
 
@@ -35,12 +38,6 @@ public class EmployeeEntity {
 
     @Column(name = "phone_number", nullable = false, unique = true, length = 16)
     private String phone;
-
-    @Column(nullable = false, length = 512)
-    private String password;
-
-    @Column(nullable = false, length = 16)
-    private String role;
 
     @Column(nullable = false, length = 32)
     private String province;

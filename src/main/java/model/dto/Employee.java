@@ -9,20 +9,18 @@ import java.time.LocalDate;
 @Setter
 @Getter
 @ToString
-public class EmployeeDto {
-
+public class Employee {
+    private Long id;
+    private String visibleId;
     private String firstName;
     private String lastName;
     private String gender;
     private LocalDate dob;
     private String email;
     private String phone;
-    private String password;
-    private String role;
     private String province;
     private String district;
     private String streetAddress;
     private String postalCode;
-    private String image;
-
+    private String imgPath;
 }

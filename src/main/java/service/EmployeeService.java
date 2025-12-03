@@ -1,7 +1,8 @@
 package service;
 
-import model.dto.EmployeeDto;
+import model.dto.Employee;
 
 public interface EmployeeService {
-    boolean saveEmployee(EmployeeDto employee);
+    boolean saveEmployee(Employee employee);
+    String getNewVisibleId();
 }
