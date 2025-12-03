@@ -1,5 +1,7 @@
 package service.impl;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import model.dto.Employee;
 import model.entity.EmployeeEntity;
 import org.modelmapper.ModelMapper;
@@ -7,9 +9,15 @@ import repository.EmployeeRepository;
 import repository.impl.EmployeeRepositoryImpl;
 import service.EmployeeService;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EmployeeServiceImpl implements EmployeeService {
 
     private EmployeeRepository employeeRepository = new EmployeeRepositoryImpl();
+
+    private List<EmployeeEntity> employeeEntityList = new ArrayList<>();
+    private ObservableList<Employee> employees = FXCollections.observableArrayList();
 
     private ModelMapper mapper = new ModelMapper();
 
@@ -40,6 +48,33 @@ public class EmployeeServiceImpl implements EmployeeService {
         return createNewVisibleId();
     }
 
+    @Override
+    public ObservableList<Employee> getAllEmployees() {
+        loadEmployeeEntities();
+        return getEmployees();
+    }
+
+    @Override
+    public boolean updateEmployee(Employee employee) {
+        return employeeRepository.updateEmployee(mapper.map(employee, EmployeeEntity.class));
+    }
+
+    private ObservableList<Employee> getEmployees(){
+        if(!employees.isEmpty()) employees.clear();
+
+        for (EmployeeEntity entity : employeeEntityList){
+            employees.add(mapper.map(entity,Employee.class));
+        }
+
+        return employees;
+    }
+
+    private void loadEmployeeEntities(){
+        if(!employeeEntityList.isEmpty()) employeeEntityList.clear();
+
+        employeeEntityList = employeeRepository.getAllEmployees();
+    }
+
     private String createNewVisibleId() {
         EmployeeEntity last = getLast();
 
@@ -53,4 +88,5 @@ public class EmployeeServiceImpl implements EmployeeService {
     private EmployeeEntity getLast() {
         return employeeRepository.getLastEmployee();
     }
+
 }
