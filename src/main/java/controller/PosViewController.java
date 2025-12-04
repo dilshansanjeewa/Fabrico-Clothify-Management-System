@@ -2,6 +2,8 @@ package controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -11,38 +13,42 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.FlowPane;
+import javafx.util.Duration;
 import model.dto.CartItem;
 import model.dto.Item;
 import service.ItemService;
+import service.OrderService;
 import service.impl.ItemServiceImpl;
-import util.BillUtil;
-import util.EmailUtil;
+import service.impl.OrderServiceImpl;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class PosViewController implements Initializable {
 
-    ItemService itemService = new ItemServiceImpl();
+    private final ItemService itemService = new ItemServiceImpl();
+    private final OrderService orderService = new OrderServiceImpl();
 
-    private ObservableList<CartItem> cartList = FXCollections.observableArrayList();
+    private final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm:ss a");
 
-    private double discountRate = 0.0;
+    private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy");
 
-    @FXML
-    private JFXButton btnAllItems;
+    private final ObservableList<CartItem> cartList = FXCollections.observableArrayList();
+
+    private final double discountRate = 0.0;
+
+    private final Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+    private final Alert conformationAlert = new Alert(Alert.AlertType.CONFIRMATION);
+
+    private String orderCode;
 
     @FXML
     private JFXButton btnCancelOrder;
@@ -90,10 +96,10 @@ public class PosViewController implements Initializable {
     private Label lblDate;
 
     @FXML
-    private Label lblDescount;
+    private Label lblDiscount;
 
     @FXML
-    private Label lblNetToal;
+    private Label lblNetTotal;
 
     @FXML
     private Label lblRole;
@@ -123,23 +129,46 @@ public class PosViewController implements Initializable {
     private TextField txtSearch;
 
     @FXML
-    void btnAllItemsonAction(ActionEvent event) {
-        loadItemCards();
-    }
-
-    @FXML
     void btnCancelOrderonAction(ActionEvent event) {
+        CartItem selectedItem = tblSummery.getSelectionModel().getSelectedItem();
 
+        if (selectedItem != null){
+            if(isConformed("Remove Item", "Remove Item "+selectedItem.getItem().getName())){
+                cartList.remove(selectedItem);
+                calculateTotals();
+            }
+
+        }else {
+            if(isConformed("Order Cancellation", "Press OK to Cancel Order")){
+                clearAll();
+            }
+        }
     }
 
     @FXML
     void btnCheckoutonAction(ActionEvent event) {
-        try {
-//            File billFile = BillUtil.generateBill(System.currentTimeMillis() + "", cartList);
-//            EmailUtil.sendBill("dilshansanjeewads7@gmail.com", "Fabrico e-Bill", "Dear customer, please find your bill attached.", billFile);
-//            EmailUtil.sendTestEmail();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+
+        if(!cartList.isEmpty()){
+            String validation = orderService.validateQuantity(cartList);
+
+            if (validation.equals("OK")){
+
+                if(isConformed("Place Order Now", "Press OK to Checkout and Print Bill")){
+                    boolean isSaved = orderService.saveOrder(orderCode, cartList);
+                    if (isSaved){
+                        clearAll();
+                        loadNewOrderCode();
+                    }else {
+                        showErrorAlert("Order have not been added to the system");
+                    }
+                }
+
+            }else {
+                showErrorAlert(validation);
+            }
+
+        } else {
+            showErrorAlert("Please add items to place order");
         }
     }
 
@@ -178,6 +207,34 @@ public class PosViewController implements Initializable {
 
     }
 
+    private void clearAll(){
+        cartList.clear();
+        lblSubTotal.setText("Rs.00.00");
+        lblDiscount.setText("Rs.00.00");
+        lblNetTotal.setText("Rs.00.00");
+    }
+
+    private boolean isConformed(String headerMessage,String contentMessage){
+        Optional<ButtonType> result = showConformationAlert(headerMessage, contentMessage);
+
+        return result.isPresent() && result.get() == ButtonType.OK;
+    }
+
+    private Optional<ButtonType> showConformationAlert(String headerText, String contentText){
+        conformationAlert.setTitle("Confirmation");
+        conformationAlert.setHeaderText(headerText);
+        conformationAlert.setContentText(contentText);
+
+        return conformationAlert.showAndWait();
+    }
+
+    private void showErrorAlert(String errorMessage){
+        errorAlert.setHeaderText("Error Alert");
+        errorAlert.setHeaderText("ERROR");
+        errorAlert.setContentText(errorMessage);
+        errorAlert.showAndWait();
+    }
+
     private void calculateTotals() {
 
         double subTotal = cartList.stream()
@@ -190,8 +247,8 @@ public class PosViewController implements Initializable {
 
         // Display values
         lblSubTotal.setText(String.format("Rs.%.2f", subTotal));
-        lblDescount.setText(String.format("Rs.%.2f", discountAmount));
-        lblNetToal.setText(String.format("Rs.%.2f", netTotal));
+        lblDiscount.setText(String.format("Rs.%.2f", discountAmount));
+        lblNetTotal.setText(String.format("Rs.%.2f", netTotal));
     }
 
     public void addToCart(CartItem cartItem){
@@ -231,6 +288,21 @@ public class PosViewController implements Initializable {
 
     }
 
+    private void setDateTime(){
+        Timeline clock = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
+            LocalDateTime now = LocalDateTime.now();
+            lblTime.setText(now.format(timeFormatter));
+            lblDate.setText(now.format(dateTimeFormatter));
+        }));
+        clock.setCycleCount(Timeline.INDEFINITE);
+        clock.play();
+    }
+
+    private void loadNewOrderCode(){
+        orderCode = orderService.getNewOrderCode();
+        System.out.println(orderCode);
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         colItem.setCellValueFactory(cellData ->
@@ -261,5 +333,8 @@ public class PosViewController implements Initializable {
 
         tblSummery.setItems(cartList);
         loadItemCards();
+
+        loadNewOrderCode();
+        setDateTime();
     }
 }

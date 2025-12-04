@@ -15,14 +15,14 @@ public class OrderDetailEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "order_id", nullable = false)
     private OrderEntity orderEntity;
 
     @Column(name = "item_id", nullable = false)
-    private int itemId;
+    private Long itemId;
 
     @Column(name = "item_name", nullable = false)
     private String itemName;

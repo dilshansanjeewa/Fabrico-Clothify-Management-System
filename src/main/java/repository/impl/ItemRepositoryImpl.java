@@ -1,7 +1,7 @@
 package repository.impl;
 
 import model.entity.ItemEntity;
-import model.entity.SupplierEntity;
+import model.entity.OrderDetailEntity;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import repository.ItemRepository;
@@ -95,5 +95,20 @@ public class ItemRepositoryImpl implements ItemRepository {
         } finally {
             session.close();
         }
+    }
+
+    @Override
+    public void updateQty(Session session, OrderDetailEntity orderDetailEntity) throws Exception {
+
+        ItemEntity itemEntity = session.find(ItemEntity.class, orderDetailEntity.getItemId());
+        itemEntity.setQty(itemEntity.getQty()- orderDetailEntity.getItemQty());
+
+    }
+
+    @Override
+    public ItemEntity getItem(Long id) {
+//        Session session = HibernateUtil.getSessionFactory().openSession();
+
+        return HibernateUtil.getSessionFactory().openSession().find(ItemEntity.class, id);
     }
 }

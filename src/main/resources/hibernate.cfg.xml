@@ -34,6 +34,8 @@
         <mapping class="model.entity.SupplierEntity"/>
         <mapping class="model.entity.BrandEntity"/>
         <mapping class="model.entity.ItemEntity"/>
+        <mapping class="model.entity.OrderEntity"/>
+        <mapping class="model.entity.OrderDetailEntity"/>
 
     </session-factory>
 </hibernate-configuration>
