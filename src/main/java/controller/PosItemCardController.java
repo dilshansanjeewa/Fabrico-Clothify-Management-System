@@ -5,17 +5,20 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
+import model.dto.CartItem;
 import model.dto.Item;
 
-import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.util.function.Consumer;
 
 public class PosItemCardController {
 
-    private Item item;
+    Item cardItem;
+    Consumer<CartItem> cartCallback;
 
     @FXML
     private JFXButton btnAddToCart;
@@ -36,15 +39,16 @@ public class PosItemCardController {
     private Label lblStock;
 
     @FXML
-    private Spinner<?> spinnerQty;
+    private Spinner<Integer> spinnerQty;
 
     @FXML
     void btnAddToCartOnAction(ActionEvent event) {
-
+        cartCallback.accept(new CartItem(cardItem,spinnerQty.getValue()));
     }
 
-    public void setCardData(Item item){
-        this.item = item;
+    public void setCardData(Item item, Consumer<CartItem> callback){
+        cardItem = item;
+        cartCallback = callback;
 
         imgItem.setImage(new Image(new File(item.getImgPath()).toURI().toString()));
         lblName.setText(item.getName());
@@ -57,6 +61,8 @@ public class PosItemCardController {
             lblStock.setText("Low Stock- "+item.getQty());
         }
         lblPrice.setText("Rs. "+item.getSellingPrice()+"0");
+
+        spinnerQty.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 50, 1));
     }
 
 }
