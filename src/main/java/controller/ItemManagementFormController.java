@@ -66,6 +66,6 @@ public class ItemManagementFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        loadContent("/view/save_item_form.fxml");
+        loadContent("/view/all_item_form.fxml");
     }
 }

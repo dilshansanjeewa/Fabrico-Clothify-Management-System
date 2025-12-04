@@ -86,3 +86,21 @@
 .btn-clear-sort:hover {
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 20, 0, 0, 0);
 }
+
+/*-----------product cards-----------*/
+
+.product-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 12;
+    -fx-padding: 10;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0, 0, 2);
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 3);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}

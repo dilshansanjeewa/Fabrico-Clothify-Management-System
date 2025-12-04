@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#ItemCardMouseClickedOnAction" prefHeight="330.0" prefWidth="190.0" styleClass="product-card" stylesheets="@../css/item.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemCardViewFormController">
+   <padding>
+      <Insets bottom="5.0" left="2.0" right="2.0" top="10.0" />
+   </padding>
+   <children>
+      <ImageView fx:id="imgItem" fitHeight="190.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true" />
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <FlowPane alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="lblName" prefHeight="20.0" prefWidth="170.0">
+                     <font>
+                        <Font name="Arial Narrow Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER_LEFT" hgap="3.0" layoutX="10.0" layoutY="10.0" prefHeight="20.0" prefWidth="200.0">
+               <children>
+                  <Label text="Category :" textFill="#777777">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblCategory" layoutX="10.0" layoutY="12.0" prefHeight="15.0" prefWidth="110.0" textFill="#777777">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER_LEFT" hgap="3.0" layoutX="10.0" layoutY="35.0" prefHeight="20.0" prefWidth="200.0">
+               <children>
+                  <Label text="Sub Category :" textFill="#777777">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblSubCategory" layoutX="10.0" layoutY="12.0" prefHeight="15.0" prefWidth="85.0" textFill="#777777">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER_LEFT" hgap="3.0" layoutX="10.0" layoutY="55.0" prefHeight="20.0" prefWidth="200.0">
+               <children>
+                  <Label text="Brand :" textFill="#777777">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblBrand" layoutX="10.0" layoutY="12.0" prefHeight="15.0" prefWidth="125.0" textFill="#777777">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER_LEFT" hgap="3.0" layoutX="10.0" layoutY="75.0" prefHeight="20.0" prefWidth="200.0">
+               <children>
+                  <Label text="Stock Status :" textFill="#777777">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblStock" layoutX="10.0" layoutY="12.0" prefHeight="15.0" prefWidth="90.0" textFill="#777777">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER_LEFT" hgap="3.0" layoutX="10.0" layoutY="95.0" prefHeight="25.0" prefWidth="200.0">
+               <children>
+                  <Label text="Price :" textFill="#b9935a">
+                     <font>
+                        <Font name="Arial Narrow Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblPrice" layoutX="10.0" layoutY="12.0" prefHeight="16.0" prefWidth="130.0" textFill="#b9935a">
+                     <font>
+                        <Font name="Arial Narrow Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+         </children>
+      </VBox>
+   </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</VBox>
