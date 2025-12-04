@@ -24,6 +24,7 @@ import service.ItemService;
 import service.OrderService;
 import service.impl.ItemServiceImpl;
 import service.impl.OrderServiceImpl;
+import util.BillUtil;
 
 import java.io.IOException;
 import java.net.URL;
@@ -156,6 +157,7 @@ public class PosViewController implements Initializable {
                 if(isConformed("Place Order Now", "Press OK to Checkout and Print Bill")){
                     boolean isSaved = orderService.saveOrder(orderCode, cartList);
                     if (isSaved){
+                        BillUtil.generateBill(System.currentTimeMillis()+"_"+orderCode, cartList);
                         clearAll();
                         loadNewOrderCode();
                     }else {
