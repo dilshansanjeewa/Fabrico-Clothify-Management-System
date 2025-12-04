@@ -183,7 +183,7 @@
                                           <Font name="Arial" size="18.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="lblSubTotal" layoutX="370.0" layoutY="2.0" prefHeight="21.0" prefWidth="100.0" text="Rs.00.00">
+                                    <Label fx:id="lblSubTotal" alignment="CENTER_RIGHT" layoutX="303.0" layoutY="2.0" prefHeight="23.0" prefWidth="150.0" text="Rs.00.00">
                                        <font>
                                           <Font name="Arial Narrow" size="20.0" />
                                        </font>
@@ -197,7 +197,7 @@
                                           <Font name="Arial" size="18.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="lblDescount" layoutX="370.0" layoutY="2.0" prefHeight="21.0" prefWidth="100.0" text="Rs.00.00">
+                                    <Label fx:id="lblDescount" alignment="CENTER_RIGHT" layoutX="303.0" layoutY="2.0" prefHeight="23.0" prefWidth="150.0" text="Rs.00.00">
                                        <font>
                                           <Font name="Arial Narrow" size="20.0" />
                                        </font>
@@ -211,7 +211,7 @@
                                           <Font name="Arial Bold" size="18.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="lblNetToal" layoutX="370.0" layoutY="2.0" prefHeight="23.0" prefWidth="100.0" text="Rs.00.00" textFill="#b9935a">
+                                    <Label fx:id="lblNetToal" alignment="CENTER_RIGHT" layoutX="303.0" layoutY="2.0" prefHeight="23.0" prefWidth="150.0" text="Rs.00.00" textFill="#b9935a">
                                        <font>
                                           <Font name="Arial Narrow Bold" size="20.0" />
                                        </font>
