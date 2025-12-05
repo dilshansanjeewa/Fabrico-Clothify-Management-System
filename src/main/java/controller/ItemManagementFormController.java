@@ -19,6 +19,9 @@ public class ItemManagementFormController implements Initializable {
     private JFXButton btnAll;
 
     @FXML
+    private JFXButton btnBarcode;
+
+    @FXML
     private JFXButton btnDeleteItems;
 
     @FXML
@@ -39,6 +42,11 @@ public class ItemManagementFormController implements Initializable {
     @FXML
     void btnAllOnAction(ActionEvent event) {
         loadContent("/view/all_item_form.fxml");
+    }
+
+    @FXML
+    void btnBarcodeOnAction(ActionEvent event) {
+        loadContent("/view/item_barcode_form.fxml");
     }
 
     @FXML
