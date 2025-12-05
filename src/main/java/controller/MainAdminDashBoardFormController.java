@@ -98,7 +98,7 @@ public class MainAdminDashBoardFormController implements Initializable {
 
     @FXML
     void btnOrdersOnAction(ActionEvent event) {
-
+        setContent("/view/orders_form.fxml");
     }
 
     @FXML

@@ -4,9 +4,12 @@ import model.entity.OrderDetailEntity;
 import model.entity.OrderEntity;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import repository.ItemRepository;
 import repository.OrderRepository;
 import util.HibernateUtil;
+
+import java.util.List;
 
 public class OrderRepositoryImpl implements OrderRepository {
 
@@ -42,6 +45,22 @@ public class OrderRepositoryImpl implements OrderRepository {
         }finally {
             session.close();
         }
+    }
+
+    @Override
+    public List<OrderEntity> getAllOrders() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        return session.createQuery("From OrderEntity", OrderEntity.class).list();
+    }
+
+    @Override
+    public OrderEntity getOrder(String visibleId) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Query<OrderEntity> query = session.createQuery("SELECT o FROM OrderEntity o WHERE o.orderCode = :oid", OrderEntity.class);
+        Query<OrderEntity> oid = query.setParameter("oid", visibleId);
+        OrderEntity singleResult = oid.getSingleResult();
+
+        return singleResult;
     }
 
 }

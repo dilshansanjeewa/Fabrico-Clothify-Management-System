@@ -1,11 +1,14 @@
 package service.impl;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.dto.CartItem;
-import model.dto.Item;
+import model.dto.Order;
+import model.dto.OrderDetail;
 import model.entity.ItemEntity;
 import model.entity.OrderDetailEntity;
 import model.entity.OrderEntity;
+import org.modelmapper.ModelMapper;
 import repository.OrderRepository;
 import repository.impl.OrderRepositoryImpl;
 import service.ItemService;
@@ -21,6 +24,8 @@ public class OrderServiceImpl implements OrderService {
     private ItemService itemService = new ItemServiceImpl();
 
     private double netTotal;
+
+    private ModelMapper mapper = new ModelMapper();
 
     @Override
     public String getNewOrderCode() {
@@ -52,6 +57,35 @@ public class OrderServiceImpl implements OrderService {
             }
         }
         return "OK";
+    }
+
+    @Override
+    public ObservableList<Order> getAllOrders() {
+        List<OrderEntity> allOrders = orderRepository.getAllOrders();
+        ObservableList<Order> orderList = FXCollections.observableArrayList();
+
+        for (OrderEntity entity : allOrders){
+            orderList.add(mapper.map(entity, Order.class));
+        }
+
+        return orderList;
+    }
+
+    @Override
+    public ObservableList<OrderDetail> getOrderDetails(String visibleId) {
+        OrderEntity orderEntity = findOrderEntity(visibleId);
+        List<OrderDetailEntity> orderDetailEntities = orderEntity.getOrderDetailEntities();
+        ObservableList<OrderDetail> orderDetails = FXCollections.observableArrayList();
+
+        for (OrderDetailEntity entity : orderDetailEntities){
+            orderDetails.add(mapper.map(entity, OrderDetail.class));
+        }
+
+        return orderDetails;
+    }
+
+    private OrderEntity findOrderEntity(String visibleId) {
+        return orderRepository.getOrder(visibleId);
     }
 
     private OrderEntity getOrderEntity(String orderCode, List<CartItem> cartItems) {

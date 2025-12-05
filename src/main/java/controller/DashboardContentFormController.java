@@ -22,7 +22,7 @@ public class DashboardContentFormController implements Initializable {
         if(hour >= 5 && hour < 12) {
             greeting = "Goog Morning Admin";
         } else if (hour >= 12 && hour < 15) {
-            greeting = "Good Afternoon Admon";
+            greeting = "Good Afternoon Admin";
         } else if (hour >= 15 && hour < 21) {
             greeting = "Good Evening Admin";
         }else {
