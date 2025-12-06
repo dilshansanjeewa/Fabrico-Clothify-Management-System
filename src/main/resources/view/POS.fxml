@@ -63,7 +63,7 @@
             </Pane>
             <HBox alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="240.0" styleClass="user-info-container" GridPane.columnIndex="3">
                <children>
-                  <ImageView fx:id="imgUser" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgUser" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/users/admin%20demo.png" />
                      </image>
@@ -75,7 +75,7 @@
                               <Font name="Arial Narrow" size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblUserName" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="23.0" prefWidth="174.0" text="Dilshan Sanjeewa">
+                        <Label fx:id="lblUserName" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="23.0" prefWidth="174.0" text="Sanjjew">
                            <font>
                               <Font name="Arial Narrow Bold" size="20.0" />
                            </font>
