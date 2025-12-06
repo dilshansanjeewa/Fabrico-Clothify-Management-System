@@ -37,8 +37,8 @@ public class SaveItemFormController implements Initializable {
 
     private FileChooser fileChooser;
     private final String itemImageDir = "item_images/";
-    private File selectedImage ;
-    File itemImagefile ;
+    private File selectedImage;
+    private File itemImagefile;
 
     Alert errorAlert = new Alert(Alert.AlertType.ERROR);
     Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
@@ -267,10 +267,10 @@ public class SaveItemFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //----- Create a Directly to Save Employee Images if not Exists -----//
-//        File dir = new File(itemImageDir);
-//        if(!dir.exists()){
-//            dir.mkdir();
-//        }
+        File dir = new File(itemImageDir);
+        if(!dir.exists()){
+            dir.mkdir();
+        }
 
         //----- Initialize File Chooser -----//
         fileChooser = new FileChooser();
