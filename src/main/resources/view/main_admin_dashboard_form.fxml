@@ -90,7 +90,7 @@
                         <Image url="@../images/icons/employee%20icon.png" />
                      </image>
                   </ImageView>
-                  <JFXButton fx:id="btnSupplyers" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="284.0" onAction="#btnSupplyersOnAction" prefHeight="50.0" prefWidth="180.0" text="         Supplyers" textFill="WHITE">
+                  <JFXButton fx:id="btnSupplyers" alignment="BASELINE_LEFT" buttonType="RAISED" layoutY="284.0" onAction="#btnSupplyersOnAction" prefHeight="50.0" prefWidth="180.0" text="         Suppliers" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="18.0" />
                      </font>

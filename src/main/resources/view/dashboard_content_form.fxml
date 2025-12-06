@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="560.0" prefWidth="1000.0" style="-fx-background-color: F3EDE4;" styleClass="Pane" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardContentFormController">
    <children>
-      <Label fx:id="lblGreeting" layoutX="10.0" layoutY="42.0" text="Good Morning, Dilshan">
+      <Label fx:id="lblGreeting" layoutX="10.0" layoutY="42.0" prefHeight="37.0" prefWidth="512.0" text="Good Morning, Dilshan">
          <font>
             <Font name="Arial Narrow Bold" size="32.0" />
          </font>
@@ -47,7 +47,7 @@
                               <Font name="Arial Bold" size="20.0" />
                            </font>
                         </Label>
-                        <Label layoutX="14.0" layoutY="46.0" prefHeight="29.0" prefWidth="200.0" text="Rs. 31,200.00">
+                        <Label fx:id="lblTodayRevenue" layoutX="14.0" layoutY="46.0" prefHeight="29.0" prefWidth="200.0" text="Rs. 31,200.00">
                            <font>
                               <Font name="Arial Narrow Bold" size="24.0" />
                            </font>
@@ -70,7 +70,7 @@
                               <Font name="Arial Bold" size="20.0" />
                            </font>
                         </Label>
-                        <Label layoutX="14.0" layoutY="46.0" prefHeight="29.0" prefWidth="200.0" text="Rs. 3,550,700.00">
+                        <Label fx:id="lblMonthlyRevenue" layoutX="14.0" layoutY="46.0" prefHeight="29.0" prefWidth="200.0" text="Rs. 3,550,700.00">
                            <font>
                               <Font name="Arial Narrow Bold" size="24.0" />
                            </font>
@@ -93,7 +93,7 @@
                               <Font name="Arial Bold" size="20.0" />
                            </font>
                         </Label>
-                        <Label layoutX="14.0" layoutY="46.0" prefHeight="29.0" prefWidth="183.0" text="51">
+                        <Label fx:id="lblOrderCount" layoutX="14.0" layoutY="46.0" prefHeight="29.0" prefWidth="183.0" text="51">
                            <font>
                               <Font name="Arial Narrow Bold" size="24.0" />
                            </font>
@@ -111,17 +111,17 @@
                               <Image url="@../images/other/line%20chart%203.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="14.0" layoutY="14.0" text="Low Stock Alerts">
+                        <Label fx:id="lblStockAlert" layoutX="14.0" layoutY="14.0" text="Low Stock Alerts">
                            <font>
                               <Font name="Arial Bold" size="20.0" />
                            </font>
                         </Label>
-                        <Label layoutX="14.0" layoutY="46.0" prefHeight="29.0" prefWidth="162.0" text="4">
+                        <Label fx:id="lblItemCount" layoutX="14.0" layoutY="46.0" prefHeight="29.0" prefWidth="121.0" text="4">
                            <font>
                               <Font name="Arial Narrow Bold" size="24.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="51.0" fitWidth="40.0" layoutX="156.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imgStockAlert" fitHeight="51.0" fitWidth="40.0" layoutX="156.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../images/icons/warning%20icon.png" />
                            </image>

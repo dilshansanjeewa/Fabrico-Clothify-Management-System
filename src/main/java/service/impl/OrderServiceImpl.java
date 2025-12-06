@@ -61,10 +61,10 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public ObservableList<Order> getAllOrders() {
-        List<OrderEntity> allOrders = orderRepository.getAllOrders();
+        List<OrderEntity> allOrderEntities = getAllOrderEntities();
         ObservableList<Order> orderList = FXCollections.observableArrayList();
 
-        for (OrderEntity entity : allOrders){
+        for (OrderEntity entity : allOrderEntities){
             orderList.add(mapper.map(entity, Order.class));
         }
 
@@ -82,6 +82,39 @@ public class OrderServiceImpl implements OrderService {
         }
 
         return orderDetails;
+    }
+
+    @Override
+    public long getTodayOrderCount() {
+        List<OrderEntity> allOrderEntities = getAllOrderEntities();
+        LocalDate today = LocalDate.now();
+        return allOrderEntities.stream().filter(orderEntity -> orderEntity.getOrderDate().isEqual(today)).count();
+    }
+
+    @Override
+    public double getTodayRevenue() {
+        List<OrderEntity> allOrderEntities = getAllOrderEntities();
+        LocalDate today = LocalDate.now();
+
+        return allOrderEntities.stream()
+                .filter(orderEntity -> orderEntity.getOrderDate().isEqual(today))
+                .mapToDouble(OrderEntity::getTotalAmount).sum();
+
+    }
+
+    @Override
+    public double getThisMonthRevenue() {
+        List<OrderEntity> allOrderEntities = getAllOrderEntities();
+        LocalDate today = LocalDate.now();
+
+        return allOrderEntities.stream()
+                .filter(orderEntity -> orderEntity.getOrderDate().getMonth() == today.getMonth() && orderEntity.getOrderDate().getYear() == today.getYear())
+                .mapToDouble(OrderEntity::getTotalAmount).sum();
+
+    }
+
+    private List<OrderEntity> getAllOrderEntities(){
+        return orderRepository.getAllOrders();
     }
 
     private OrderEntity findOrderEntity(String visibleId) {

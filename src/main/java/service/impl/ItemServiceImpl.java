@@ -55,6 +55,19 @@ public class ItemServiceImpl implements ItemService {
         return itemRepository.getItem(id);
     }
 
+    @Override
+    public int findLowStockedItems() {
+        loadAllItems();
+        int itmCount = 0;
+
+        for (ItemEntity entity : allItemsEntities){
+            if(entity.getQty() <= 10){
+                itmCount++;
+            }
+        }
+        return itmCount;
+    }
+
     private ObservableList<Item> getItemList(){
         if(! allItemList.isEmpty()){
             allItemList.clear();

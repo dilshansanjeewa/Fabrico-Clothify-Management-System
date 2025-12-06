@@ -12,4 +12,5 @@ public interface ItemService {
     boolean update(Item item);
     boolean delete(Item item);
     ItemEntity getItem(Long id);
+    int findLowStockedItems();
 }

@@ -13,4 +13,7 @@ public interface OrderService {
     String validateQuantity(ObservableList<CartItem> cartList);
     ObservableList<Order> getAllOrders();
     ObservableList<OrderDetail> getOrderDetails(String visibleId);
+    long getTodayOrderCount();
+    double getTodayRevenue();
+    double getThisMonthRevenue();
 }
