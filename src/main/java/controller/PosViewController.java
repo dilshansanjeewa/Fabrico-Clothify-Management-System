@@ -14,9 +14,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.shape.Circle;
 import javafx.util.Duration;
 import model.dto.CartItem;
 import model.dto.Item;
@@ -302,11 +304,18 @@ public class PosViewController implements Initializable {
 
     private void loadNewOrderCode(){
         orderCode = orderService.getNewOrderCode();
-        System.out.println(orderCode);
+    }
+
+    public void setDetails(String name, Image image){
+        imgUser.setImage(image);
+        lblUserName.setText(name);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Circle clip = new Circle(30, 30,25);
+        imgUser.setClip(clip);
+
         colItem.setCellValueFactory(cellData ->
                 new SimpleStringProperty(cellData.getValue().getItem().getName())
         );

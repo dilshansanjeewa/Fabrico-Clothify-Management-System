@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -105,7 +106,13 @@ public class MainAdminDashBoardFormController implements Initializable {
     void btnPosOnAction(ActionEvent event) {
         posStage = new Stage();
         try {
-            posStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/POS.fxml"))));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/POS.fxml"));
+            Parent parent = loader.load();
+            PosViewController controller = loader.getController();
+            controller.setDetails(lblUserName.getText(), imgProfilePic.getImage());
+            imgProfilePic.getImage();
+
+            posStage.setScene(new Scene(parent));
             posStage.show();
         } catch (IOException e) {
             throw new RuntimeException(e);
