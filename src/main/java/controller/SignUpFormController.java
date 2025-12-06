@@ -102,6 +102,15 @@ public class SignUpFormController implements Initializable {
                     txtName.getText(),
                     getImagePath()
             ));
+
+            Stage stage = (Stage) btnBack.getScene().getWindow();
+            stage.close();
+            try {
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/sign_in_form.fxml"))));
+                stage.show();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
