@@ -99,20 +99,6 @@ public class SupplierManagementFormController implements Initializable {
         }
     }
 
-    private boolean isConformed(){
-        Optional<ButtonType> result = showConformationAlert();
-
-        return result.isPresent() && result.get() == ButtonType.OK;
-    }
-
-    private Optional<ButtonType> showConformationAlert(){
-        conformationAlert.setTitle("Delete Confirmation");
-        conformationAlert.setHeaderText("Delete Supplier");
-        conformationAlert.setContentText("Are you sure you want to delete supplier\n"+txtName.getText()+" ?");
-
-        return conformationAlert.showAndWait();
-    }
-
     @FXML
     void btnSaveOnAction(ActionEvent event) {
         if(isValidInputs()){
@@ -145,6 +131,20 @@ public class SupplierManagementFormController implements Initializable {
     @FXML
     void txtSearchOnAction(ActionEvent event) {
 
+    }
+
+    private boolean isConformed(){
+        Optional<ButtonType> result = showConformationAlert();
+
+        return result.isPresent() && result.get() == ButtonType.OK;
+    }
+
+    private Optional<ButtonType> showConformationAlert(){
+        conformationAlert.setTitle("Delete Confirmation");
+        conformationAlert.setHeaderText("Delete Supplier");
+        conformationAlert.setContentText("Are you sure you want to delete supplier\n"+txtName.getText()+" ?");
+
+        return conformationAlert.showAndWait();
     }
 
     private Supplier getSupplier(){

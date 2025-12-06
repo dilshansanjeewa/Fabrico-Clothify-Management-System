@@ -36,7 +36,7 @@
                   <Font name="Arial Narrow Bold" size="22.0" />
                </font>
             </Label>
-            <VBox prefHeight="90.0" prefWidth="400.0">
+            <VBox prefHeight="90.0" prefWidth="400.0" visible="false">
                <children>
                   <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="32.0" prefWidth="400.0" styleClass="search-bar-container">
                      <children>
@@ -98,7 +98,7 @@
                               <Font name="Arial Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label layoutX="10.0" layoutY="10.0" text="E0001">
+                        <Label fx:id="lblVisibleId" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="113.0" text="E0001">
                            <font>
                               <Font name="Arial Bold" size="15.0" />
                            </font>
@@ -114,7 +114,10 @@
                                     <Font name="Arial" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtFirstName" prefHeight="32.0" styleClass="form-input-field" />
+                              <TextField fx:id="txtFirstName" prefHeight="32.0" styleClass="form-input-field">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font></TextField>
                            </children>
                         </VBox>
                         <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="400.0">
@@ -126,7 +129,10 @@
                                           <Font name="Arial" size="14.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="txtLastName" prefHeight="32.0" styleClass="form-input-field" />
+                                    <TextField fx:id="txtLastName" prefHeight="32.0" styleClass="form-input-field">
+                                       <font>
+                                          <Font name="Arial" size="14.0" />
+                                       </font></TextField>
                                  </children>
                               </VBox>
                            </children>
@@ -198,7 +204,10 @@
                                     <Font name="Arial" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtEmail" prefHeight="32.0" styleClass="form-input-field" />
+                              <TextField fx:id="txtEmail" prefHeight="32.0" styleClass="form-input-field">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font></TextField>
                            </children>
                         </VBox>
                         <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="400.0">
@@ -210,7 +219,10 @@
                                           <Font name="Arial" size="14.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="txtNumber" prefHeight="32.0" styleClass="form-input-field" />
+                                    <TextField fx:id="txtNumber" prefHeight="32.0" styleClass="form-input-field">
+                                       <font>
+                                          <Font name="Arial" size="14.0" />
+                                       </font></TextField>
                                  </children>
                               </VBox>
                            </children>
@@ -238,7 +250,7 @@
                                           <Font name="Arial" size="14.0" />
                                        </font>
                                     </Label>
-                                    <ComboBox fx:id="comboDistrict" prefHeight="32.0" prefWidth="350.0" styleClass="form-input-field" />
+                                    <ComboBox fx:id="comboDistrict" disable="true" prefHeight="32.0" prefWidth="350.0" styleClass="form-input-field" />
                                  </children>
                               </VBox>
                            </children>
@@ -254,7 +266,10 @@
                                     <Font name="Arial" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtAddress" prefHeight="32.0" styleClass="form-input-field" />
+                              <TextField fx:id="txtAddress" prefHeight="32.0" styleClass="form-input-field">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font></TextField>
                            </children>
                         </VBox>
                         <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="400.0">
@@ -266,7 +281,10 @@
                                           <Font name="Arial" size="14.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="txtPostalCode" prefHeight="32.0" styleClass="form-input-field" />
+                                    <TextField fx:id="txtPostalCode" prefHeight="32.0" styleClass="form-input-field">
+                                       <font>
+                                          <Font name="Arial" size="14.0" />
+                                       </font></TextField>
                                  </children>
                               </VBox>
                            </children>
@@ -287,11 +305,7 @@
                               <Font name="Arial" size="14.0" />
                            </font>
                         </Label>
-                        <ImageView fx:id="imgEmployee" fitHeight="200.0" fitWidth="200.0" onMouseClicked="#imgEmployeeOnMouseClicked" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../images/other/demo%20employee%20image.png" />
-                           </image>
-                        </ImageView>
+                        <ImageView fx:id="imgEmployee" fitHeight="200.0" fitWidth="200.0" onMouseClicked="#imgEmployeeOnMouseClicked" pickOnBounds="true" preserveRatio="true" />
                      </children>
                      <padding>
                         <Insets top="10.0" />

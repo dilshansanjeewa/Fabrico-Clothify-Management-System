@@ -2,7 +2,11 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import model.dto.Employee;
+
+import java.io.File;
 
 public class EmployeeDetailCardFormController {
 
@@ -41,5 +45,20 @@ public class EmployeeDetailCardFormController {
 
     @FXML
     private Label lblVisibleId;
+
+
+    public void setCardData(Employee employee){
+        lblVisibleId.setText(employee.getVisibleId());
+        lblFirstName.setText(employee.getFirstName());
+        lblGender.setText(employee.getGender());
+        lblDob.setText(employee.getDob().toString());
+        lblEmail.setText(employee.getEmail());
+        lblMobile.setText(employee.getPhone());
+        lblProvince.setText(employee.getProvince());
+        lblDistrict.setText(employee.getDistrict());
+        lblStreetAddress.setText(employee.getStreetAddress());
+        lblPostalCode.setText(employee.getPostalCode());
+        imgEmployee.setImage(new Image(new File(employee.getImgPath()).toURI().toString()));
+    }
 
 }
