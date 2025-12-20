@@ -1,0 +1,27 @@
+package model.entity;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Setter
+@Getter
+@ToString
+
+@Entity
+@Table(name = "supplier")
+public class SupplierEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String name;
+
+    private String email;
+    private String phone;
+
+    @Column(columnDefinition = "TEXT")
+    private String address;
+}

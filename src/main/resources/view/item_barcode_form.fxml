@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="1000.0" stylesheets="@../css/item.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemBarcodeFormController">
+    <top>
+        <FlowPane alignment="CENTER_LEFT" hgap="145.0" maxHeight="-Infinity" prefHeight="70.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+            <children>
+            <Label text="Barcodes" textFill="#b9935a">
+               <font>
+                  <Font name="Arial Narrow Bold" size="22.0" />
+               </font>
+            </Label>
+                <FlowPane alignment="CENTER_LEFT" hgap="2.0" prefHeight="40.0" prefWidth="720.0">
+                    <children>
+                        <Pane prefHeight="9.0" prefWidth="400.0">
+                            <children>
+                                <HBox alignment="CENTER_LEFT" layoutY="8.0" prefHeight="30.0" prefWidth="400.0" styleClass="search-bar-container">
+                                    <children>
+                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../images/icons/search%20icon%20%23b9935a.png" />
+                                            </image>
+                                        </ImageView>
+                                        <TextField fx:id="txtSearch" prefHeight="30.0" prefWidth="378.0" promptText="Search Item by Name" styleClass="search-bar">
+                                            <font>
+                                                <Font name="Arial" size="13.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                    <padding>
+                                        <Insets left="2.0" />
+                                    </padding>
+                                </HBox>
+                            </children>
+                        </Pane>
+                        <ListView fx:id="lstSuggestions" prefHeight="45.0" prefWidth="315.0" style="-fx-background-color: #F3EDE4;" visible="false" />
+                    </children>
+                </FlowPane>
+            </children>
+            <padding>
+                <Insets left="10.0" />
+            </padding>
+        </FlowPane>
+    </top>
+    <center>
+        <GridPane BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="400.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <FlowPane alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0">
+                    <padding>
+                        <Insets top="20.0" />
+                    </padding>
+               <children>
+                  <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="250.0" styleClass="product-card" stylesheets="@../css/item.css">
+                     <padding>
+                        <Insets bottom="5.0" left="2.0" right="2.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <FlowPane alignment="CENTER" prefHeight="220.0" prefWidth="230.0" style="-fx-border-color: Black; -fx-border-radius: 10; -fx-border-width: 0.5;">
+                           <children>
+                              <ImageView fx:id="imgItem" fitHeight="200.0" fitWidth="230.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </FlowPane>
+                        <VBox prefHeight="90.0" prefWidth="233.0">
+                           <children>
+                              <FlowPane alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="lblName" prefHeight="30.0" prefWidth="233.0" text="N/A">
+                                       <font>
+                                          <Font name="Arial Narrow Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </FlowPane>
+                              <FlowPane alignment="CENTER_LEFT" hgap="3.0" layoutX="10.0" layoutY="55.0" prefHeight="25.0" prefWidth="233.0">
+                                 <children>
+                                    <Label text="Brand :" textFill="#777777">
+                                       <font>
+                                          <Font name="Arial" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblBrand" layoutX="10.0" layoutY="12.0" prefHeight="15.0" prefWidth="125.0" text="N/A" textFill="#777777">
+                                       <font>
+                                          <Font name="Arial" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </FlowPane>
+                              <FlowPane alignment="CENTER_LEFT" hgap="8.0" layoutX="10.0" layoutY="95.0" prefHeight="26.0" prefWidth="233.0">
+                                 <children>
+                                    <Label text="Price :" textFill="#b9935a">
+                                       <font>
+                                          <Font name="Arial Narrow Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblPrice" layoutX="10.0" layoutY="12.0" prefHeight="16.0" prefWidth="130.0" text="Rs.00.00" textFill="#b9935a">
+                                       <font>
+                                          <Font name="Arial Narrow Bold" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </FlowPane>
+                           </children>
+                        </VBox>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </VBox>
+               </children>
+                </FlowPane>
+            <FlowPane alignment="CENTER_LEFT" GridPane.columnIndex="2">
+               <children>
+                        <FlowPane alignment="CENTER" prefHeight="150.0" prefWidth="320.0" styleClass="image-container">
+                     <children>
+                        <FlowPane prefHeight="130.0" prefWidth="300.0" style="-fx-border-color: BLACK; -fx-border-width: 0.5;">
+                           <children>
+                              <ImageView fx:id="imgBarcode" fitHeight="130.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </FlowPane>
+                     </children>
+                        </FlowPane>
+               </children>
+            </FlowPane>
+            </children>
+        </GridPane>
+    </center>
+    <bottom>
+        <FlowPane alignment="BOTTOM_RIGHT" hgap="20.0" prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <JFXButton fx:id="btnGenerate" onAction="#btnGenerateOnAction" prefHeight="33.0" prefWidth="105.0" styleClass="btn-save" text="Generate" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Bold" size="18.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="btnPrint" layoutX="890.0" layoutY="11.0" onAction="#btnPrintOnAction" prefHeight="33.0" prefWidth="100.0" styleClass="btn-save" text="Print" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Bold" size="18.0" />
+                    </font>
+                </JFXButton>
+            <JFXButton fx:id="btnCancel" layoutX="770.0" layoutY="11.0" onAction="#btnCancelOnAction" prefHeight="33.0" prefWidth="100.0" styleClass="btn-save" text="Cancel" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            </children>
+            <padding>
+                <Insets bottom="15.0" right="20.0" />
+            </padding>
+        </FlowPane>
+    </bottom>
+</BorderPane>

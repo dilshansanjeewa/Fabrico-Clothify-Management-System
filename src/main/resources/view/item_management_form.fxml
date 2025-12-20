@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="itemManagementBorderPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1000.0" stylesheets="@../css/item.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ItemManagementFormController">
+   <top>
+      <GridPane maxHeight="-Infinity" prefHeight="100.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <FlowPane alignment="CENTER" maxHeight="-Infinity" prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <Label text="Item Management">
+                     <font>
+                        <Font name="Arial Bold" size="32.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <Label text="Item Management">
+                     <font>
+                        <Font name="Arial Bold" size="32.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Label text="Add, Edit and Manage Store Inventry">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <GridPane GridPane.rowIndex="2">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="700.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Pane>
+                           <children>
+                              <JFXButton fx:id="btnAll" alignment="CENTER_RIGHT" layoutY="10.0" onAction="#btnAllOnAction" prefHeight="32.0" prefWidth="110.0" styleClass="btn-navigation" text="All Items    " textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                              <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="6.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons/all.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="20.0" layoutY="10.0">
+                           <children>
+                              <JFXButton fx:id="btnSaveItems" alignment="CENTER_RIGHT" layoutY="10.0" onAction="#btnSaveItemsOnAction" prefHeight="32.0" prefWidth="110.0" styleClass="btn-navigation" text="Save Items  " textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="4.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons/add%20white.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="150.0" layoutY="10.0">
+                           <children>
+                              <JFXButton fx:id="btnUpdateItems" alignment="CENTER_RIGHT" layoutY="10.0" onAction="#btnUpdateItemsOnAction" prefHeight="32.0" prefWidth="110.0" styleClass="btn-navigation" text="Update Items" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                              <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="4.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons/update.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="280.0" layoutY="10.0">
+                           <children>
+                              <JFXButton fx:id="btnDeleteItems" alignment="CENTER_RIGHT" layoutY="10.0" onAction="#btnDeleteItemsOnAction" prefHeight="32.0" prefWidth="110.0" styleClass="btn-navigation" text="Delete Items " textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="2.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons/cancel.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="410.0" layoutY="10.0">
+                           <children>
+                              <JFXButton fx:id="btnBarcode" alignment="CENTER_RIGHT" layoutY="10.0" onAction="#btnBarcodeOnAction" prefHeight="32.0" prefWidth="110.0" styleClass="btn-navigation" text="Barcode  " textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="12.0" />
+                                 </font>
+                              </JFXButton>
+                              <ImageView fitHeight="17.0" fitWidth="34.0" layoutX="5.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons/BARCODE%20icon.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <Pane prefHeight="40.0" prefWidth="240.0" styleClass="low-stock-alert">
+                           <children>
+                              <Label fx:id="lblLowStock" alignment="CENTER_RIGHT" layoutX="60.0" layoutY="9.0" prefHeight="21.0" prefWidth="148.0" text="3 Items are Low">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="imgAlertIcon" fitHeight="35.0" fitWidth="35.0" layoutX="10.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons/warning%20icon.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </children>
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </top>
+</BorderPane>

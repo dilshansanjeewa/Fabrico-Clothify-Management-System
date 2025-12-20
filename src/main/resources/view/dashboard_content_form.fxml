@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="560.0" prefWidth="1000.0" style="-fx-background-color: F3EDE4;" styleClass="Pane" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardContentFormController">
+   <children>
+      <Label fx:id="lblGreeting" layoutX="10.0" layoutY="42.0" prefHeight="37.0" prefWidth="512.0" text="Good Morning, Dilshan">
+         <font>
+            <Font name="Arial Narrow Bold" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="10.0" layoutY="9.0" text="Dashboard" textFill="#b9935a">
+         <font>
+            <Font name="Arial Narrow Bold" size="24.0" />
+         </font>
+      </Label>
+      <GridPane layoutY="91.0" prefHeight="170.0" prefWidth="1000.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Pane id="Pane" layoutX="15.0" layoutY="5.0" prefHeight="160.0" prefWidth="220.0" styleClass="Pane" stylesheets="@../css/style.css">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="10.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/other/line%20chart%201.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="14.0" layoutY="14.0" text="Today's Revenue">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblTodayRevenue" layoutX="14.0" layoutY="46.0" prefHeight="29.0" prefWidth="200.0" text="Rs. 31,200.00">
+                           <font>
+                              <Font name="Arial Narrow Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Pane id="Pane" layoutX="15.0" layoutY="5.0" prefHeight="160.0" prefWidth="220.0" styleClass="Pane" stylesheets="@../css/style.css">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="10.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/other/line%20chart%201.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="14.0" layoutY="14.0" text="Monthly Revenue">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblMonthlyRevenue" layoutX="14.0" layoutY="46.0" prefHeight="29.0" prefWidth="200.0" text="Rs. 3,550,700.00">
+                           <font>
+                              <Font name="Arial Narrow Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+               <children>
+                  <Pane id="Pane" layoutX="15.0" layoutY="5.0" prefHeight="160.0" prefWidth="220.0" styleClass="Pane" stylesheets="@../css/style.css">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="10.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/other/line%20chart%202.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="14.0" layoutY="14.0" text="Total Orders Today">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblOrderCount" layoutX="14.0" layoutY="46.0" prefHeight="29.0" prefWidth="183.0" text="51">
+                           <font>
+                              <Font name="Arial Narrow Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+               <children>
+                  <Pane id="Pane" layoutX="14.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="220.0" styleClass="Pane" stylesheets="@../css/style.css">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="10.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/other/line%20chart%203.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="lblStockAlert" layoutX="14.0" layoutY="14.0" text="Low Stock Alerts">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblItemCount" layoutX="14.0" layoutY="46.0" prefHeight="29.0" prefWidth="121.0" text="4">
+                           <font>
+                              <Font name="Arial Narrow Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="imgStockAlert" fitHeight="51.0" fitWidth="40.0" layoutX="156.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/warning%20icon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

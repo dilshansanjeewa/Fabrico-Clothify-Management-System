@@ -1,0 +1,143 @@
+.root {
+    -fx-background-color: #F3EDE4;
+}
+
+/* Search Bar */
+
+.search-bar-container {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 20;
+    -fx-border-color: #B9935A;
+    -fx-border-radius: 20;
+}
+
+.search-bar-container:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0);
+}
+
+.search-bar-text-field {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 20;
+}
+
+
+/*=============================================================================*/
+
+.table-view{
+   -fx-background-color: transparent;
+}
+
+.table-view:focused{
+    -fx-background-color: transparent;
+}
+
+/*column-header-background -> column-header */
+
+.table-view .column-header-background{
+    -fx-background-color: #b9935a;
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: BLACK;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: black;
+    -fx-font-size: 13px;
+}
+
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #F3EDE4;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #cbae84;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-row-cell:hover{
+    -fx-background-color: #d6e0ee;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #7696c5;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background,
+.table-view > .virtual-flow > .scroll-bar:horizontal,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track-background {
+    -fx-background-color: transparent;
+}
+
+
+
+.table-view > .virtual-flow > .scroll-bar > .increment-button,
+.table-view > .virtual-flow > .scroll-bar > .decrement-button {
+    -fx-opacity: 0;
+}
+/*=============================================================================*/
+
+/* ================================
+   ListView Root Styling
+   ================================ */
+.list-view {
+    -fx-background-color: #F3EDE4;              /* Light background */
+    -fx-control-inner-background: #F3EDE4;
+    -fx-border-color: #CBAE84;                  /* Border in gold brown */
+    -fx-border-width: 1.5;
+    -fx-padding: 5;
+    -fx-background-insets: 0;
+}
+
+/* ================================
+   List Cell Styling
+   ================================ */
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #5a4a3b;                     /* Slightly dark brown text */
+    -fx-font-size: 14px;
+    -fx-padding: 8px 12px;
+}
+
+/* Alternate row colors */
+.list-cell:odd {
+    -fx-background-color: #F3EDE4;
+}
+.list-cell:even {
+    -fx-background-color: #ffffff;
+}
+
+/* Hover effect */
+.list-cell:hover {
+    -fx-background-color: #e2d6c8;              /* Soft hover shade */
+    -fx-cursor: hand;
+}
+
+/* Selected item */
+.list-cell:selected {
+    -fx-background-color: #CBAE84 !important;   /* Gold Brown */
+    -fx-text-fill: #ffffff !important;
+    -fx-font-weight: bold;
+}
+
+/* Focus outline invisible */
+.list-view:focused .list-cell:filled:selected {
+    -fx-effect: none;
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+}
+
+

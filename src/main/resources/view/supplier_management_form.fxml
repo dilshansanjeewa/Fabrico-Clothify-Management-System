@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1000.0" stylesheets="@../css/suplier.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SupplierManagementFormController">
+   <top>
+      <GridPane prefHeight="64.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="35.33332824707031" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="20.000005086263023" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label text="Supplier Management">
+                     <font>
+                        <Font name="Arial Bold" size="32.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Label text="Organize. Track. Build Stronger Supplier Links">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+         </children>
+      </GridPane>
+   </top>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="400.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="3.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="400.0" styleClass="search-bar-container">
+                     <children>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/search%20icon%20%23b9935a.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="txtSearch" onAction="#txtSearchOnAction" prefHeight="30.0" prefWidth="378.0" promptText="Search Supplier by Name" styleClass="search-bar">
+                           <font>
+                              <Font name="Arial" size="13.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                     <padding>
+                        <Insets left="2.0" />
+                     </padding>
+                  </HBox>
+                  <ListView fx:id="lstSuggestions" prefHeight="50.0" prefWidth="390.0" />
+                  <VBox prefHeight="320.0" prefWidth="389.0" spacing="10.0" styleClass="form-bg">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <VBox prefHeight="60.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Supplier Name">
+                                 <font>
+                                    <Font name="Arial Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtName" prefHeight="32.0" styleClass="input-fields">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                        <VBox layoutX="15.0" layoutY="15.0" prefHeight="60.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Email Address">
+                                 <font>
+                                    <Font name="Arial Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtEmail" prefHeight="32.0" styleClass="input-fields">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                        <VBox layoutX="15.0" layoutY="85.0" prefHeight="60.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Phone Number">
+                                 <font>
+                                    <Font name="Arial Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtPhone" prefHeight="32.0" styleClass="input-fields">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                        <VBox layoutX="15.0" layoutY="155.0" prefHeight="60.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Address">
+                                 <font>
+                                    <Font name="Arial Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtAddress" prefHeight="32.0" styleClass="input-fields">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="BOTTOM_RIGHT" layoutX="15.0" layoutY="225.0" prefHeight="40.0" prefWidth="379.0">
+                           <children>
+                              <JFXButton fx:id="btnCancel" onAction="#btnCancelOnAction" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: WHITE; -fx-border-color: #B9935A; -fx-border-width: 0.5; -fx-background-radius: 10; -fx-border-radius: 10;" text="Cancel">
+                                 <font>
+                                    <Font name="Arial" size="16.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                           <padding>
+                              <Insets bottom="2.0" right="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets left="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+               <padding>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <TableView fx:id="tblSupplier" prefHeight="280.0" prefWidth="580.0">
+                    <columns>
+                      <TableColumn fx:id="colName" editable="false" maxWidth="-1.0" minWidth="120.0" prefWidth="120.0" sortable="false" text="Supplier Name" />
+                        <TableColumn fx:id="colEmail" editable="false" maxWidth="-1.0" minWidth="150.0" prefWidth="150.0" sortable="false" text="Email Address" />
+                        <TableColumn fx:id="colPhone" editable="false" maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" sortable="false" text="Phone Number" />
+                        <TableColumn fx:id="colAddress" editable="false" maxWidth="-1.0" minWidth="204.0" prefWidth="100.0" sortable="false" text="Address" />
+                    </columns>
+                  </TableView>
+                  <VBox prefHeight="150.0" prefWidth="580.0" spacing="3.0">
+                     <children>
+                        <Label text="Brands">
+                           <font>
+                              <Font name="Arial Narrow Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="lstBrands" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F3EDE4; -fx-border-color: #B9935A; -fx-border-width: 0.5;" />
+                     </children>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </center>
+   <bottom>
+      <FlowPane alignment="BOTTOM_LEFT" hgap="45.0" prefHeight="60.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="btnSave" onAction="#btnSaveOnAction" prefWidth="100.0" styleClass="btn-action" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnUpdate" layoutX="20.0" layoutY="17.0" onAction="#btnUpdateOnAction" prefWidth="100.0" styleClass="btn-action" text="Update" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnDelete" layoutX="140.0" layoutY="17.0" onAction="#btnDeleteOnAction" prefWidth="100.0" styleClass="btn-action" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" />
+         </padding>
+      </FlowPane>
+   </bottom>
+</BorderPane>

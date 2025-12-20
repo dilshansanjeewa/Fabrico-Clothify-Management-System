@@ -28,7 +28,7 @@
             <Font name="Arial Bold" size="86.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btnGetStarted" layoutX="220.0" layoutY="309.0" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 10;" text="Get Started">
+      <JFXButton fx:id="btnGetStarted" layoutX="220.0" layoutY="309.0" onAction="#btnGetStartedOnAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: FFFFFF; -fx-background-radius: 10;" text="Get Started">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>

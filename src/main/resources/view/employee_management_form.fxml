@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainBorderPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1000.0" stylesheets="@../css/employee.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmployeeManagementFormController">
+   <top>
+      <VBox alignment="CENTER" prefHeight="95.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Employee Management">
+               <font>
+                  <Font name="Arial Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label text="Control and Manage Your Workforce with Ease">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <padding>
+                  <Insets bottom="3.0" left="10.0" />
+               </padding>
+               <children>
+                  <JFXButton fx:id="btnAll" alignment="CENTER_RIGHT" onAction="#btnAllOnAction" prefHeight="32.0" prefWidth="130.0" styleClass="btn-navigation" text="All Employees   " textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <Pane>
+                     <children>
+                        <JFXButton fx:id="btnSave" alignment="CENTER_RIGHT" layoutY="7.0" onAction="#btnSaveOnAction" prefHeight="32.0" prefWidth="130.0" styleClass="btn-navigation" text="Save Employee " textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="2.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/add%20white.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane>
+                     <children>
+                        <JFXButton fx:id="btnUpdate" alignment="CENTER_RIGHT" layoutY="7.0" onAction="#btnUpdateOnAction" prefHeight="32.0" prefWidth="130.0" styleClass="btn-navigation" text="Update Details  " textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="6.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/update.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane>
+                     <children>
+                        <JFXButton fx:id="btnDelete" alignment="CENTER_RIGHT" layoutY="7.0" onAction="#btnDeleteOnAction" prefHeight="32.0" prefWidth="130.0" styleClass="btn-navigation" text="Delete Employee" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="3.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons/cancel.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>

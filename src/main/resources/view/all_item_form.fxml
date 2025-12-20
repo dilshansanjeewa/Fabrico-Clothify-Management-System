@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="1000.0" stylesheets="@../css/item.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AllItemFormController">
+    <top>
+        <FlowPane alignment="CENTER_LEFT" hgap="153.0" maxHeight="-Infinity" prefHeight="45.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="All Items" textFill="#b9935a">
+                    <font>
+                        <Font name="Arial Narrow Bold" size="22.0" />
+                    </font>
+                </Label>
+                <FlowPane alignment="CENTER_LEFT" hgap="2.0" prefHeight="40.0" prefWidth="702.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="400.0" styleClass="search-bar-container">
+                            <children>
+                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/icons/search%20icon%20%23b9935a.png" />
+                                    </image>
+                                </ImageView>
+                                <TextField fx:id="txtSearch" onAction="#txtSearchOnAction" prefHeight="30.0" prefWidth="378.0" promptText="Search Item by Name" styleClass="search-bar">
+                                    <font>
+                                        <Font name="Arial" size="13.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                            <padding>
+                                <Insets left="2.0" />
+                            </padding>
+                        </HBox>
+                        <ListView fx:id="lstSuggestions" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #F3EDE4;" />
+                    </children>
+                </FlowPane>
+            </children>
+            <padding>
+                <Insets left="10.0" />
+            </padding>
+        </FlowPane>
+    </top>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Pane prefHeight="40.0" prefWidth="30.0">
+                     <children>
+                        <Label layoutY="16.0" text="SORT">
+                           <font>
+                              <Font name="Arial Bold" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <FlowPane alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="150.0">
+                     <children>
+                        <ComboBox fx:id="comboCategory" onAction="#comboCategoryOnAction" prefHeight="25.0" prefWidth="150.0" promptText="By Category" styleClass="sort-combo" />
+                     </children>
+                  </FlowPane>
+                  <FlowPane alignment="BOTTOM_CENTER" layoutX="60.0" layoutY="10.0" prefHeight="200.0" prefWidth="150.0">
+                     <children>
+                        <ComboBox fx:id="comboCategory" onAction="#comboCategoryOnAction" prefHeight="25.0" prefWidth="150.0" promptText="By Type" styleClass="sort-combo" />
+                     </children>
+                  </FlowPane>
+                  <FlowPane alignment="BOTTOM_CENTER" layoutX="220.0" layoutY="10.0" prefHeight="200.0" prefWidth="150.0">
+                     <children>
+                        <ComboBox fx:id="comboBrand" onAction="#comboBrandOnAction" prefHeight="25.0" prefWidth="150.0" promptText="By Brand" styleClass="sort-combo" />
+                     </children>
+                  </FlowPane>
+                  <FlowPane alignment="BOTTOM_CENTER" layoutX="380.0" layoutY="10.0" prefHeight="200.0" prefWidth="150.0">
+                     <children>
+                        <ComboBox fx:id="comboPrice" onAction="#comboPriceOnAction" prefHeight="25.0" prefWidth="150.0" promptText="By Price" styleClass="sort-combo" />
+                     </children>
+                  </FlowPane>
+                  <FlowPane alignment="BOTTOM_CENTER" layoutX="60.0" layoutY="10.0" prefHeight="200.0" prefWidth="150.0">
+                     <children>
+                        <JFXButton fx:id="btnClear" onAction="#btnClearOnAction" prefHeight="25.0" prefWidth="100.0" styleClass="btn-clear-sort" text="CLEAR">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </FlowPane>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <ScrollPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+               <content>
+                  <FlowPane fx:id="flowCardContainer" hgap="10.0" prefHeight="799.0" prefWidth="1026.0" prefWrapLength="1200.0" vgap="10.0">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </FlowPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

@@ -15,4 +15,5 @@ public class Starter extends Application{
         stage.setTitle("Main Window");
         stage.show();
     }
+
 }
